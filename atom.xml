@@ -2,44 +2,84 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://redish101.github.io</id>
     <title>Redish101博客</title>
-    <updated>2022-03-06T00:50:07.207Z</updated>
+    <updated>2022-03-06T01:38:56.550Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://redish101.github.io"/>
     <link rel="self" href="https://redish101.github.io/atom.xml"/>
-    <subtitle>积硅步以致千里</subtitle>
+    <subtitle>©️Cpoyright Redish101</subtitle>
     <logo>https://redish101.github.io/images/avatar.png</logo>
     <icon>https://redish101.github.io/favicon.ico</icon>
     <rights>All rights reserved 2022, Redish101博客</rights>
     <entry>
-        <title type="html"><![CDATA[Hello Gridea]]></title>
-        <id>https://redish101.github.io/post/hello-gridea/</id>
-        <link href="https://redish101.github.io/post/hello-gridea/">
+        <title type="html"><![CDATA[docsify - 一个优雅的静态站点生成器]]></title>
+        <id>https://redish101.github.io/post/docsify/</id>
+        <link href="https://redish101.github.io/post/docsify/">
         </link>
-        <updated>2018-12-11T16:00:00.000Z</updated>
-        <summary type="html"><![CDATA[<p>👏  欢迎使用 <strong>Gridea</strong> ！<br>
-✍️  <strong>Gridea</strong> 一个静态博客写作客户端。你可以用它来记录你的生活、心情、知识、笔记、创意... ...</p>
-]]></summary>
-        <content type="html"><![CDATA[<p>👏  欢迎使用 <strong>Gridea</strong> ！<br>
-✍️  <strong>Gridea</strong> 一个静态博客写作客户端。你可以用它来记录你的生活、心情、知识、笔记、创意... ...</p>
-<!-- more -->
-<p><a href="https://github.com/getgridea/gridea">Github</a><br>
-<a href="https://gridea.dev/">Gridea 主页</a><br>
-<a href="http://fehey.com/">示例网站</a></p>
-<h2 id="特性">特性👇</h2>
-<p>📝  你可以使用最酷的 <strong>Markdown</strong> 语法，进行快速创作</p>
-<p>🌉  你可以给文章配上精美的封面图和在文章任意位置插入图片</p>
-<p>🏷️  你可以对文章进行标签分组</p>
-<p>📋  你可以自定义菜单，甚至可以创建外部链接菜单</p>
-<p>💻  你可以在 <strong>Windows</strong>，<strong>MacOS</strong> 或 <strong>Linux</strong> 设备上使用此客户端</p>
-<p>🌎  你可以使用 <strong>𝖦𝗂𝗍𝗁𝗎𝖻 𝖯𝖺𝗀𝖾𝗌</strong> 或 <strong>Coding Pages</strong> 向世界展示，未来将支持更多平台</p>
-<p>💬  你可以进行简单的配置，接入 <a href="https://github.com/gitalk/gitalk">Gitalk</a> 或 <a href="https://github.com/SukkaW/DisqusJS">DisqusJS</a> 评论系统</p>
-<p>🇬🇧  你可以使用<strong>中文简体</strong>或<strong>英语</strong></p>
-<p>🌁  你可以任意使用应用内默认主题或任意第三方主题，强大的主题自定义能力</p>
-<p>🖥  你可以自定义源文件夹，利用 OneDrive、百度网盘、iCloud、Dropbox 等进行多设备同步</p>
-<p>🌱 当然 <strong>Gridea</strong> 还很年轻，有很多不足，但请相信，它会不停向前 🏃</p>
-<p>未来，它一定会成为你离不开的伙伴</p>
-<p>尽情发挥你的才华吧！</p>
-<p>😘 Enjoy~</p>
+        <updated>2022-03-06T01:32:23.000Z</updated>
+        <content type="html"><![CDATA[<blockquote>
+<p>阅读之前，告诉大家一个消息:<strong>本文有彩蛋</strong></p>
+</blockquote>
+<h2 id="docsify好在哪里">docsify好在哪里</h2>
+<p>开源项目的文档往往是一个很大的问题，许多静态站点生成器并不能兼顾<strong>强大</strong>与<strong>简单</strong>。</p>
+<h3 id="对比">对比</h3>
+<h4 id="sphinx">Sphinx</h4>
+<p>先拿Sphinx来说吧，Sphinx因背后有python的驱动，功能十分强大，但是<code>reStructuredText</code>的复杂也劝退了许多人。</p>
+<h4 id="vuepress">Vuepress</h4>
+<p>相比之下，vuepress在文档的编写上就没有那么复杂了，毕竟<code>markdown</code>还是很简单的。<br>
+But，vuepress的配置实在是太复杂了，而且构建速度及其缓慢，最重要的是需要<code>JavaScript</code>的基础。</p>
+<h4 id="mkdocs">mkdocs</h4>
+<p>mkdocs可以说是能和docsify抗衡了，但是，mkdocs需要构建</p>
+<h2 id="使用">使用</h2>
+<p>经过上面的的对比，docsify的优点已经很明显了，下面我们就来安装docsify</p>
+<h3 id="安装">安装</h3>
+<p>全局安装Docsify-cli:</p>
+<pre><code class="language-bash">yarn global add docsify-cli
+# 或者使用npm
+</code></pre>
+<h3 id="开始一个项目">开始一个项目</h3>
+<pre><code class="language-bash">docsify init &lt;项目路径&gt;
+</code></pre>
+<h3 id="配置">配置</h3>
+<p>配置也很简单，可以参考<a href="https://docsify.js.org/#/zh-cn/configuration">配置项 (docsify.js.org)</a></p>
+<h3 id="写作">写作</h3>
+<p>这个更简单，只需要在<code>docs</code>文件夹里新建<code>markdown</code>文件即可。<br>
+(别说你不会，送你个指南<a href="https://markdown.com.cn/">Markdown 官方教程</a>)</p>
+<h4 id="路径问题">路径问题</h4>
+<p>这里要注意一下路径：</p>
+<p>假设你的目录结构如下：</p>
+<pre><code class="language-text">.
+└── docs
+├── README.md
+├── guide.md
+└── zh-cn
+├── README.md
+└── guide.md
+</code></pre>
+<p>那么渲染后的路径就是：</p>
+<pre><code class="language-text">docs/README.md        =&gt; http://domain.com
+docs/guide.md         =&gt; http://domain.com/guide
+docs/zh-cn/README.md  =&gt; http://domain.com/zh-cn/
+docs/zh-cn/guide.md   =&gt; http://domain.com/zh-cn/guide
+</code></pre>
+<h2 id="部署">部署</h2>
+<h3 id="github-pages">Github Pages</h3>
+<p>将Github Pages的工作目录设置到docsify所在目录。</p>
+<h3 id="vercel">Vercel</h3>
+<p>选中docsify所在仓库，无需更改任何配置，点击下面的<code>Deploy</code>按钮</p>
+<h3 id="其他">其他</h3>
+<p>具体我也不会用，只需要记住两点：</p>
+<ul>
+<li>无需构建</li>
+<li>工作目录在根目录</li>
+</ul>
+<h2 id="参考文献">参考文献</h2>
+<ol>
+<li><a href="https://docsify.js.org/#/zh-cn/">docsify中文文档</a></li>
+<li><a href="https://vercel.com/docs">Introduction to Vercel – Vercel Docs</a></li>
+<li><a href="https://segmentfault.com/a/1190000040063325?utm_source=tag-newest">Vercel 上自动部署你的个人博客 Hugo - SegmentFault 思否</a></li>
+</ol>
+<p>感谢阅读<br>
+彩蛋：🥚呵呵呵，答应你们的蛋。</p>
 ]]></content>
     </entry>
 </feed>
