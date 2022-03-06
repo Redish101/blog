@@ -2,6 +2,15 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://redish101.github.io/2022/03/06/docsify/</loc>
+    
+    <lastmod>2022-03-06</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://redish101.github.io/2022/03/01/hello-world/</loc>
     
     <lastmod>2022-03-06</lastmod>
@@ -30,15 +39,6 @@
   
   <url>
     <loc>https://redish101.github.io/tags/index.html</loc>
-    
-    <lastmod>2022-03-06</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://redish101.github.io/2022/03/06/docsify/</loc>
     
     <lastmod>2022-03-06</lastmod>
     
