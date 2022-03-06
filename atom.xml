@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://redish101.github.io</id>
     <title>Redish101博客</title>
-    <updated>2022-03-06T01:42:40.501Z</updated>
+    <updated>2022-03-06T02:11:01.403Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://redish101.github.io"/>
     <link rel="self" href="https://redish101.github.io/atom.xml"/>
@@ -16,11 +16,18 @@
         <link href="https://redish101.github.io/post/docsify/">
         </link>
         <updated>2022-03-06T01:32:23.000Z</updated>
+        <summary type="html"><![CDATA[<blockquote>
+<p>阅读之前，告诉大家一个消息:<strong>本文有彩蛋</strong></p>
+</blockquote>
+<h2 id="docsify好在哪里">docsify好在哪里</h2>
+<p>开源项目的文档往往是一个很大的问题，许多静态站点生成器并不能兼顾<strong>强大</strong>与<strong>简单</strong>。</p>
+]]></summary>
         <content type="html"><![CDATA[<blockquote>
 <p>阅读之前，告诉大家一个消息:<strong>本文有彩蛋</strong></p>
 </blockquote>
 <h2 id="docsify好在哪里">docsify好在哪里</h2>
 <p>开源项目的文档往往是一个很大的问题，许多静态站点生成器并不能兼顾<strong>强大</strong>与<strong>简单</strong>。</p>
+<!--more-->
 <h3 id="对比">对比</h3>
 <h4 id="sphinx">Sphinx</h4>
 <p>先拿Sphinx来说吧，Sphinx因背后有python的驱动，功能十分强大，但是<code>reStructuredText</code>的复杂也劝退了许多人。</p>
