@@ -328,7 +328,7 @@ navbar:
     - { key: "tag", link: "/tags/", icon: "iconfont icon-tags-fill" }
     - { key: "links", link: "/links/", icon: "iconfont icon-link-fill" }
     - { key: "音乐", link: "/music/", icon: "iconfont icon-yinletianchong" }
-    - { key: "管理", link: "https://hpp.redish101.workers.dev/hpp/admin/login", icon: "iconfont icon-setting-fill" }
+    - { key: "管理", link: "https://hpp.redish101.workers.dev/hpp/admin/dash/home", icon: "iconfont icon-setting-fill" }
     - { key: "开往", link: "https://travellings.link/", icon: "iconfont icon-subway" }
 
 
