@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search> 
+  
+  
+    
+    <entry>
+      <title>docsify - 一个优雅的静态文档生成器</title>
+      <link href="/2022/03/06/docsify/"/>
+      <url>/2022/03/06/docsify/</url>
+      
+        <content type="html"><![CDATA[<blockquote><p>阅读之前，告诉大家一个消息:<strong>本文有彩蛋</strong></p></blockquote><h2 id="docsify好在哪里"><a href="#docsify好在哪里" class="headerlink" title="docsify好在哪里"></a>docsify好在哪里</h2><p>开源项目的文档往往是一个很大的问题，许多静态站点生成器并不能兼顾<strong>强大</strong>与<strong>简单</strong>。</p><span id="more"></span><h3 id="对比"><a href="#对比" class="headerlink" title="对比"></a>对比</h3><h4 id="Sphinx"><a href="#Sphinx" class="headerlink" title="Sphinx"></a>Sphinx</h4><p>先拿Sphinx来说吧，Sphinx因背后有python的驱动，功能十分强大，但是<code>reStructuredText</code>的复杂也劝退了许多人。</p><h4 id="Vuepress"><a href="#Vuepress" class="headerlink" title="Vuepress"></a>Vuepress</h4><p>相比之下，vuepress在文档的编写上就没有那么复杂了，毕竟<code>markdown</code>还是很简单的。<br>But，vuepress的配置实在是太复杂了，而且构建速度及其缓慢，最重要的是需要<code>JavaScript</code>的基础。</p><h4 id="mkdocs"><a href="#mkdocs" class="headerlink" title="mkdocs"></a>mkdocs</h4><p>mkdocs可以说是能和docsify抗衡了，但是，mkdocs需要构建</p><h2 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h2><p>经过上面的的对比，docsify的优点已经很明显了，下面我们就来安装docsify</p><h3 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h3><p>全局安装Docsify-cli:</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs bash">yarn global add docsify-cli<br><span class="hljs-comment"># 或者使用npm</span><br></code></pre></td></tr></table></figure><h3 id="开始一个项目"><a href="#开始一个项目" class="headerlink" title="开始一个项目"></a>开始一个项目</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">docsify init &lt;项目路径&gt;<br></code></pre></td></tr></table></figure><h3 id="配置"><a href="#配置" class="headerlink" title="配置"></a>配置</h3><p>配置也很简单，可以参考<a href="https://docsify.js.org/#/zh-cn/configuration">配置项 (docsify.js.org)</a></p><h3 id="写作"><a href="#写作" class="headerlink" title="写作"></a>写作</h3><p>这个更简单，只需要在<code>docs</code>文件夹里新建<code>markdown</code>文件即可。<br>(别说你不会，送你个指南<a href="https://markdown.com.cn/">Markdown 官方教程</a>)</p><h4 id="路径问题"><a href="#路径问题" class="headerlink" title="路径问题"></a>路径问题</h4><p>这里要注意一下路径：</p><p>假设你的目录结构如下：</p><figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs text">.<br>└── docs<br>├── README.md<br>├── guide.md<br>└── zh-cn<br>├── README.md<br>└── guide.md<br></code></pre></td></tr></table></figure><p>那么渲染后的路径就是：</p><figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs text">docs/README.md        =&gt; http://domain.com<br>docs/guide.md         =&gt; http://domain.com/guide<br>docs/zh-cn/README.md  =&gt; http://domain.com/zh-cn/<br>docs/zh-cn/guide.md   =&gt; http://domain.com/zh-cn/guide<br></code></pre></td></tr></table></figure><h2 id="部署"><a href="#部署" class="headerlink" title="部署"></a>部署</h2><h3 id="Github-Pages"><a href="#Github-Pages" class="headerlink" title="Github Pages"></a>Github Pages</h3><p>将Github Pages的工作目录设置到docsify所在目录。</p><h3 id="Vercel"><a href="#Vercel" class="headerlink" title="Vercel"></a>Vercel</h3><p>选中docsify所在仓库，点击下面的<img src="https://cdn.jsdelivr.net/gh/Redish101/redish101.github.io@gh-pages/img/20220304213455.png" alt="配置截图"></p><h3 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h3><p>具体我也不会用，只需要记住两点：</p><ul><li>无需构建</li><li>工作目录在根目录</li></ul><h2 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h2><ol><li><a href="https://docsify.js.org/#/zh-cn/">docsify中文文档</a></li><li><a href="https://vercel.com/docs">Introduction to Vercel – Vercel Docs</a></li><li><a href="https://segmentfault.com/a/1190000040063325?utm_source=tag-newest">Vercel 上自动部署你的个人博客 Hugo - SegmentFault 思否</a></li></ol><p>感谢阅读<br>彩蛋：🥚呵呵呵，答应你们的蛋。</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 教程 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> docsify </tag>
+            
+            <tag> 静态站点 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>你好Hexo</title>
+      <link href="/2022/03/01/hello-world/"/>
+      <url>/2022/03/01/hello-world/</url>
+      
+        <content type="html"><![CDATA[<p>啊啊啊啊啊，我终于升级完了，和typecho的臃肿相比，Hexo显得十分简洁。太nice了！！  </p><span id="more"></span><p>大家都说hexo写作困难，那是在没有HexoPlusPlus的情况下，部署后，写作体验比Typecho还要nice。<br>原来的文章已经备份到了<a href="https://cnblogs.com/redish101">博客园</a>。</p><h2 id="代码块展示"><a href="#代码块展示" class="headerlink" title="代码块展示"></a>代码块展示</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-built_in">print</span>(<span class="hljs-string">&quot;Hello world&quot;</span>)<br></code></pre></td></tr></table></figure>]]></content>
+      
+      
+      
+    </entry>
+    
+    
+  
+  
+</search>
