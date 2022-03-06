@@ -929,10 +929,10 @@ links:
         avatar: 'https://cdn.jsdelivr.net/gh/Redish101/redish101.github.io@gh-pages/img/A6A835C5F636F9662F127215A8EE2C2C.jpg'
       }
     - {
-      title: '致远博客',
-      intro: '此时无声胜有声',
-      link: 'https://blog.uniartisan.com',
-      avatar: 'https://blog.uniartisan.com/favicon.ico'
+        title: '致远博客',
+        intro: '此时无声胜有声',
+        link: 'https://blog.uniartisan.com',
+        avatar: 'https://blog.uniartisan.com/favicon.ico'
     }
 
   # 当成员头像加载失败时，替换为指定图片
