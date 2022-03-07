@@ -11,6 +11,15 @@
   </url>
   
   <url>
+    <loc>https://redish101.github.io/2022/03/07/fluid-config/</loc>
+    
+    <lastmod>2022-03-07</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://redish101.github.io/2022/03/01/hello-world/</loc>
     
     <lastmod>2022-03-07</lastmod>
@@ -64,6 +73,20 @@
   
   <url>
     <loc>https://redish101.github.io/tags/%E9%9D%99%E6%80%81%E7%AB%99%E7%82%B9/</loc>
+    <lastmod>2022-03-07</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://redish101.github.io/tags/Hexo/</loc>
+    <lastmod>2022-03-07</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://redish101.github.io/tags/Fluid/</loc>
     <lastmod>2022-03-07</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
