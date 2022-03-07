@@ -1,6 +1,6 @@
 ---
 title: docsify - 一个优雅的静态文档生成器
-date: {{ date }}
+date: 2022-03-05
 tags: 
  - docsify
  - 静态站点
