@@ -1,2 +1,2 @@
-https://redish101.github.io/2022/03/06/docsify/
+https://redish101.github.io/2022/03/07/docsify/
 https://redish101.github.io/2022/03/01/hello-world/
