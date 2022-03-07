@@ -10,3 +10,4 @@ var cat = site.categories.find({name: page.category}).filter(cat => cat.length).
 %>
 
 <%- partial('_partials/archive-list.ejs', { params: { key: page.layout, postTotal: cat ? cat.posts.length : 0 } }) %>
+<script src="https://cdn.bootcss.com/canvas-nest.js/1.0.1/canvas-nest.js"></script>
