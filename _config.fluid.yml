@@ -926,17 +926,17 @@ links:
         title: 'Kosmor',
         intro: '一个B站up',
         link: 'https://space.bilibili.com/360214564',
-        avatar: 'https://cdn.jsdelivr.net/gh/Redish101/redish101.github.io@gh-pages/img/kosmor.jpg'
+        avatar: 'https://cdn.jsdelivr.net/gh/Redish101/cdn@src/img/kosmor.jpg'
       }
     - {
         title: '致远博客',
         intro: '此时无声胜有声',
         link: 'https://blog.uniartisan.com',
-        avatar: 'https://cdn.jsdelivr.net/gh/Redish101/redish101.github.io@gh-pages/img/favicon.ico'
+        avatar: 'https://blog.uniartisan.com/favicon.ico'
     }
     - {
         title: '幼稚园园长',
-        intro: '学无止境 知行合一 院长你的头像404了，麻烦看到后留言一下新的图片地址',
+        intro: '学无止境 知行合一',
         link: 'https://yzyyz.top',
         avatar: 'https://cdn.jsdelivr.net/gh/yzyyz1387/blogimages/img/bloger.jpeg'
     }

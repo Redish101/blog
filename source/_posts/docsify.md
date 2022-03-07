@@ -92,7 +92,7 @@ docs/zh-cn/guide.md   => http://domain.com/zh-cn/guide
 
 ### Vercel
 
-选中docsify所在仓库，点击下面的![配置截图](https://cdn.jsdelivr.net/gh/Redish101/redish101.github.io@gh-pages/img/20220304213455.png)
+选中docsify所在仓库，点击下面的deploy
 
 ### 其他
 
