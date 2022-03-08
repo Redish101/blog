@@ -6,6 +6,9 @@ tags:
  - 静态站点
 categories: 
  - 教程
+author: 
+ - Redish101
+ - Song Zirui
 ---
 
 > 阅读之前，告诉大家一个消息:**本文有彩蛋**
