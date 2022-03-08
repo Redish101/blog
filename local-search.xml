@@ -5,8 +5,8 @@
   
   <entry>
     <title>我的Fluid主题配置文件参考</title>
-    <link href="/2022/03/07/fluid-config/"/>
-    <url>/2022/03/07/fluid-config/</url>
+    <link href="/2022/03/08/fluid-config/"/>
+    <url>/2022/03/08/fluid-config/</url>
     
     <content type="html"><![CDATA[<script src="https://gist.github.com/Redish101/06f7befeea0959a7580b7df37d8babbe.js"></script>]]></content>
     
@@ -17,6 +17,25 @@
       <tag>Hexo</tag>
       
       <tag>Fluid</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>如何才能把py文件编译为可执行文件？</title>
+    <link href="/2022/03/08/pyinstaller/"/>
+    <url>/2022/03/08/pyinstaller/</url>
+    
+    <content type="html"><![CDATA[<p>有时候，烦人的甲方会要求我们把py程序编译为可执行文件，这时候要怎么办呢，用<strong>pyinstaller</strong></p><h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">pip3 install pyinstaller<br></code></pre></td></tr></table></figure><h2 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">pyinstaller 你的文件.py<br></code></pre></td></tr></table></figure>]]></content>
+    
+    
+    
+    <tags>
+      
+      <tag>pyinstaller</tag>
       
     </tags>
     
