@@ -84,4 +84,50 @@
   
   
   
+  
+  
+  <entry>
+    <title>分类</title>
+    <link href="/"/>
+    <url>/</url>
+    
+    <content type="html"><![CDATA[]]></content>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>友情链接</title>
+    <link href="/"/>
+    <url>/</url>
+    
+    <content type="html"><![CDATA[<div id="qexo-friends"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/qexo-static@1.1.3/hexo/friends/friends.css"/><script src="https://cdn.jsdelivr.net/npm/qexo-static@1.1.3/hexo/friends/friends.js"></script><script>loadQexoFriends("qexo-friends", "https://qexo101.vercel.app")</script>  <center><h2>友链申请</h2></center><div id="friends-api"></div><script src="https://cdn.jsdelivr.net/gh/Fgaoxing/blog-cdn@main/source/js/friends-api.js"></script><script>qexo_friend_api("friends-api","https://qexo101.vercel.app");</script>]]></content>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>音乐</title>
+    <link href="/"/>
+    <url>/</url>
+    
+    <content type="html"><![CDATA[<h2 id="Redish101的电台📻"><a href="#Redish101的电台📻" class="headerlink" title="Redish101的电台📻"></a>Redish101的电台📻</h2>    <div id="aplayer-sqWEOODS" class="aplayer aplayer-tag-marker meting-tag-marker"         data-id="7319831612" data-server="netease" data-type="playlist" data-mode="circulation" data-autoplay="false" data-mutex="true" data-listmaxheight="340px" data-preload="auto" data-theme="#3F51B5"    ></div>]]></content>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>标签</title>
+    <link href="/"/>
+    <url>/</url>
+    
+    <content type="html"><![CDATA[]]></content>
+    
+  </entry>
+  
+  
+  
 </search>
