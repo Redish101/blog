@@ -8,7 +8,7 @@
     <link href="/2022/03/12/fluid-config/"/>
     <url>/2022/03/12/fluid-config/</url>
     
-    <content type="html"><![CDATA[<script src="https://gist.github.com/Redish101/06f7befeea0959a7580b7df37d8babbe.js"></script>]]></content>
+    <content type="html"><![CDATA[<p>这次的代码文件太大，直接放到文章里会拖慢加载速度，所以托管在了Github Gist上，但国内可能无法访问Github Gist，所以就需要这个软件：<a href="https://gitee.com/docmirror/dev-sidecar">dev-sidecar: 开发者边车，github打不开，github 加速, git clone加速，google CDN加速，Stack Overflow加速 (gitee.com)</a>，它可以加速Github的访问，加速之后嗖嗖的🚀</p><script src="https://gist.github.com/Redish101/06f7befeea0959a7580b7df37d8babbe.js"></script>]]></content>
     
     
     
@@ -113,7 +113,7 @@
     <link href="/"/>
     <url>/</url>
     
-    <content type="html"><![CDATA[<h2 id="Redish101的电台📻"><a href="#Redish101的电台📻" class="headerlink" title="Redish101的电台📻"></a>Redish101的电台📻</h2>    <div id="aplayer-AspjFwFl" class="aplayer aplayer-tag-marker meting-tag-marker"         data-id="7319831612" data-server="netease" data-type="playlist" data-mode="circulation" data-autoplay="false" data-mutex="true" data-listmaxheight="340px" data-preload="auto" data-theme="#3F51B5"    ></div>]]></content>
+    <content type="html"><![CDATA[<h2 id="Redish101的电台📻"><a href="#Redish101的电台📻" class="headerlink" title="Redish101的电台📻"></a>Redish101的电台📻</h2>    <div id="aplayer-smQXrKUe" class="aplayer aplayer-tag-marker meting-tag-marker"         data-id="7319831612" data-server="netease" data-type="playlist" data-mode="circulation" data-autoplay="false" data-mutex="true" data-listmaxheight="340px" data-preload="auto" data-theme="#3F51B5"    ></div>]]></content>
     
   </entry>
   
