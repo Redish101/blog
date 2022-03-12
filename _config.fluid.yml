@@ -913,7 +913,7 @@ page404:
 # Links Page
 #---------------------------
 links:
-  enable: true
+  enable: false
   banner_img: https://api.mfstudio.cc/bing/
   banner_img_height: 60
   banner_mask_alpha: 0.3
