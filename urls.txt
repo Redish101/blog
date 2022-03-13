@@ -1,3 +1,4 @@
+https://redish101.github.io/2022/03/13/time/
 https://redish101.github.io/2022/03/12/fluid-config/
 https://redish101.github.io/2022/03/08/pyinstaller/
 https://redish101.github.io/2022/03/05/docsify/
