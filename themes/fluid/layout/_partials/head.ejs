@@ -36,6 +36,16 @@ var ogConfig = Object.assign({ image: ogImage && url_for(ogImage) }, theme.open_
   <title><%= title %></title>
 
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2653896444493474" crossorigin="anonymous"></script>
+  <script>
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?7295ae77cd2791fc3c1459c5a15b2124";
+      var s = document.getElementsByTagName("script")[0]; 
+      s.parentNode.insertBefore(hm, s);
+    })();
+    </script>
+    
 
   <%- partial('_partials/css.ejs') %>
   <%- export_config() %>
