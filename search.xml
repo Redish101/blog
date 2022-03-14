@@ -4,13 +4,19 @@
   
     
     <entry>
-      <title></title>
+      <title>建站之后，应该干什么？</title>
       <link href="/2022/03/14/after-site-build/"/>
       <url>/2022/03/14/after-site-build/</url>
       
-        <content type="html"><![CDATA[]]></content>
+        <content type="html"><![CDATA[<blockquote><p>这篇文章依旧有彩蛋（以后的文章也会有彩蛋）</p></blockquote><p>相信很多新晋站长应在这广袤无垠的互联网世界撑起了自己的小帐篷，但却十分迷茫，我建站完了之后该干啥呢？🤔️</p><p>今天我们就来解决这个问题。</p><h2 id="数据统计"><a href="#数据统计" class="headerlink" title="数据统计"></a>数据统计</h2><p>首先，作为站长，当然要知道自己的网站数据，市面上的数据统计工具有很多，但是有的不易接入，有的难于分析，所以，这里我推荐<a href="https://www.umeng.com/web">友盟+网站统计 | 即安即用，实时统计网站流量数据 (umeng.com)</a>这个东西那可谓是大有来历，它是原来的<strong>CNZZ</strong>，各种功能一应俱全，很多网站都在使用。</p><h3 id="网站接入"><a href="#网站接入" class="headerlink" title="网站接入"></a>网站接入</h3><p>首先，打开CNZZ的官网<a href="https://www.umeng.com/web">友盟+网站统计 | 即安即用，实时统计网站流量数据 (umeng.com)</a>，点击进入控制台，选择添加站点</p><p>![]</p>]]></content>
       
       
+      
+        <tags>
+            
+            <tag> 建站 </tag>
+            
+        </tags>
       
     </entry>
     
