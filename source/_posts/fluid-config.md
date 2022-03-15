@@ -3,7 +3,7 @@ title: 我的Fluid主题配置文件参考
 date: 2022-03-12 12:03
 author:
  - Redish101
-categroies:
+categories:
  - Hexo教程
 tags: 
  - Hexo

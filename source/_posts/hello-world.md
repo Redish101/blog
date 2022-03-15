@@ -6,7 +6,7 @@ author:
 tags:
  - 静态博客
  - Hexo
-categroies:
+categories:
  - Hexo教程
 ---
 

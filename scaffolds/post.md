@@ -5,6 +5,6 @@ author:
  - Redish101
 tags:
  -
-categroies:
+categories:
  -
 ---
