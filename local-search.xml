@@ -30,6 +30,12 @@
     <content type="html"><![CDATA[<p>这次的代码文件太大，直接放到文章里会拖慢加载速度，所以托管在了Github Gist上，但国内可能无法访问Github Gist，所以就需要这个软件：<a href="https://gitee.com/docmirror/dev-sidecar">dev-sidecar: 开发者边车，github打不开，github 加速, git clone加速，google CDN加速，Stack Overflow加速 (gitee.com)</a>，它可以加速Github的访问，加速之后嗖嗖的🚀</p><script src="https://gist.github.com/Redish101/06f7befeea0959a7580b7df37d8babbe.js"></script>]]></content>
     
     
+    <categories>
+      
+      <category>Hexo教程</category>
+      
+    </categories>
+    
     
     <tags>
       
@@ -50,6 +56,12 @@
     
     <content type="html"><![CDATA[<p>有时候，烦人的甲方会要求我们把py程序编译为可执行文件，这时候要怎么办呢，用<strong>pyinstaller</strong></p><h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">pip3 install pyinstaller<br></code></pre></td></tr></table></figure><h2 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">pyinstaller 你的文件.py<br></code></pre></td></tr></table></figure>]]></content>
     
+    
+    <categories>
+      
+      <category>Python教程</category>
+      
+    </categories>
     
     
     <tags>
@@ -97,6 +109,12 @@
     <content type="html"><![CDATA[<p>啊啊啊啊啊，我终于升级完了，和typecho的臃肿相比，Hexo显得十分简洁。太nice了！！<br>大家都说hexo写作困难，那是在没有HexoPlusPlus的情况下，部署后，写作体验比Typecho还要nice。<br>原来的文章已经备份到了<a href="https://cnblogs.com/redish101">博客园</a>。</p><h2 id="代码块展示"><a href="#代码块展示" class="headerlink" title="代码块展示"></a>代码块展示</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-built_in">print</span>(<span class="hljs-string">&quot;Hello world&quot;</span>)<br></code></pre></td></tr></table></figure>]]></content>
     
     
+    <categories>
+      
+      <category>Hexo教程</category>
+      
+    </categories>
+    
     
     <tags>
       
@@ -140,7 +158,7 @@
     <link href="/"/>
     <url>/</url>
     
-    <content type="html"><![CDATA[<h2 id="Redish101的电台📻"><a href="#Redish101的电台📻" class="headerlink" title="Redish101的电台📻"></a>Redish101的电台📻</h2>    <div id="aplayer-ucxSKGMK" class="aplayer aplayer-tag-marker meting-tag-marker"         data-id="7319831612" data-server="netease" data-type="playlist" data-mode="circulation" data-autoplay="false" data-mutex="true" data-listmaxheight="340px" data-preload="auto" data-theme="#3F51B5"    ></div>]]></content>
+    <content type="html"><![CDATA[<h2 id="Redish101的电台📻"><a href="#Redish101的电台📻" class="headerlink" title="Redish101的电台📻"></a>Redish101的电台📻</h2>    <div id="aplayer-elkntzqf" class="aplayer aplayer-tag-marker meting-tag-marker"         data-id="7319831612" data-server="netease" data-type="playlist" data-mode="circulation" data-autoplay="false" data-mutex="true" data-listmaxheight="340px" data-preload="auto" data-theme="#3F51B5"    ></div>]]></content>
     
   </entry>
   
