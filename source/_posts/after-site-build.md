@@ -5,7 +5,7 @@ author:
  - Redish101
 tags:
  - 建站
-categroies:
+categories:
  - 建站之后
 ---
 
@@ -42,5 +42,4 @@ categroies:
 ## 参考文献
 
 1. (2022, February 18). 关于友盟+ U-Web 统计分析产品调整的公告. Info. https://info.umeng.com/detail?id=550&cateId=1
-   
 
