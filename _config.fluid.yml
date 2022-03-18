@@ -254,7 +254,7 @@ web_analytics:  # 网页访问统计
   # 友盟/cnzz 站点统计 web_id
   # cnzz analytics
   # See: https://web.umeng.com/main.php?c=site&a=show
-  cnzz: 1280901185
+  cnzz:
 
   # LeanCloud 计数统计，可用于 PV UV 展示，如果 `web_analytics: enable` 没有开启，PV UV 展示只会查询不会增加
   # LeanCloud count statistics, which can be used for PV UV display. If `web_analytics: enable` is false, PV UV display will only query and not increase
@@ -461,12 +461,12 @@ index:
 
     # 为空则按 hexo config.subtitle 显示
     # If empty, text based on `subtitle` in hexo config
-    text: ""
+    text: "路漫漫而修远兮，吾将上下而求索"
 
     # 通过 API 接口作为首页副标题的内容，必须返回的是 JSON 格式，如果请求失败则按 text 字段显示，该功能必须先开启 typing 打字机功能
     # Subtitle of the homepage through the API, must be returned a JSON. If the request fails, it will be displayed in `text` value. This feature must first enable the typing animation
     api:
-      enable: true
+      enable: false
 
       # 请求地址
       # Request url
