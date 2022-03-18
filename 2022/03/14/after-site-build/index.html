@@ -25,7 +25,7 @@
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://cdn.jsdelivr.net/gh/Redish101/cdn@src/img/20220315210032.png">
 <meta property="article:published_time" content="2022-03-14T20:58:15.000Z">
-<meta property="article:modified_time" content="2022-03-18T14:30:54.912Z">
+<meta property="article:modified_time" content="2022-03-18T15:06:59.833Z">
 <meta property="article:author" content="Redish101">
 <meta property="article:tag" content="建站">
 <meta name="twitter:card" content="summary_large_image">
@@ -577,11 +577,41 @@
     <div class="footer-inner">
   
     <div class="footer-content">
-       ©️Copyright Redish101 2022 
+       ©️Copyright Redish101 2022  
     </div>
   
   
   
+  <span id="timeDate">载入天数...</span><span id="times">载入时分秒...</span>
+  <script>
+      var now = new Date();
+  
+      function createtime() {
+          var grt = new Date("01/23/2022 12:00:00"); //此处修改你的建站时间或者网站上线时间 
+          now.setTime(now.getTime() + 250);
+          days = (now - grt) / 1000 / 60 / 60 / 24;
+          dnum = Math.floor(days);
+          hours = (now - grt) / 1000 / 60 / 60 - (24 * dnum);
+          hnum = Math.floor(hours);
+          if (String(hnum).length == 1) {
+              hnum = "0" + hnum;
+          }
+          minutes = (now - grt) / 1000 / 60 - (24 * 60 * dnum) - (60 * hnum);
+          mnum = Math.floor(minutes);
+          if (String(mnum).length == 1) {
+              mnum = "0" + mnum;
+          }
+          seconds = (now - grt) / 1000 - (24 * 60 * 60 * dnum) - (60 * 60 * hnum) - (60 * mnum);
+          snum = Math.round(seconds);
+          if (String(snum).length == 1) {
+              snum = "0" + snum;
+          }
+          document.getElementById("timeDate").innerHTML = " | 本站已侥幸运行 " + dnum + " 天 ";
+          document.getElementById("times").innerHTML = hnum + " 小时 " + mnum + " 分 " + snum + " 秒";
+      }
+      setInterval("createtime()", 250);
+  </script>
+  |
 </div>
 
   </footer>
