@@ -19,6 +19,9 @@ jobs:
           yarn install
           yarn clean
           yarn build
+          cd public
+          echo "blog.redish101.tk" >> CNAME
+          cd ..
 
       # Popular action to deploy to GitHub Pages:
       # Docs: https://github.com/peaceiris/actions-gh-pages#%EF%B8%8F-docusaurus
