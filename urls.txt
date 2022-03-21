@@ -1,5 +1,5 @@
-https://redish101.github.io/2022/03/14/after-site-build/
-https://redish101.github.io/2022/03/12/fluid-config/
-https://redish101.github.io/2022/03/08/pyinstaller/
-https://redish101.github.io/2022/03/05/docsify/
-https://redish101.github.io/2022/03/01/hello-world/
+https://blog.redish101.tk/2022/03/14/after-site-build/
+https://blog.redish101.tk/2022/03/12/fluid-config/
+https://blog.redish101.tk/2022/03/08/pyinstaller/
+https://blog.redish101.tk/2022/03/05/docsify/
+https://blog.redish101.tk/2022/03/01/hello-world/
