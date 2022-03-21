@@ -328,7 +328,7 @@ navbar:
     - { key: "category", link: "/categories/", icon: "iconfont icon-category-fill" }
     - { key: "tag", link: "/tags/", icon: "iconfont icon-tags-fill" }
     - { key: "links", link: "/links/", icon: "iconfont icon-link-fill" }
-    - { key: "音乐", link: "/music/", icon: "iconfont icon-yinletianchong" }
+    - { key: "电台", link: "/music/", icon: "iconfont icon-yinletianchong" }
     - { key: "说说", link: "/talk/", icon: "iconfont icon-talk" }
     - { key: "管理", link: "https://qexo101.vercel.app/", icon: "iconfont icon-setting-fill" }
     - { key: "开往", link: "https://travellings.link/", icon: "iconfont icon-subway" }
