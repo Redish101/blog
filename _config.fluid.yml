@@ -208,7 +208,7 @@ custom_js:
 # 指定自定义 .css 文件路径，用法和 custom_js 相同
 # The usage is the same as custom_js
 custom_css: 
-  - //at.alicdn.com/t/font_3222048_08ruyl6pz2ij.css
+  - //at.alicdn.com/t/font_3222048_uzvdhxu46sr.css
   - /css/mac.css
   - //cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.css
 
@@ -329,6 +329,7 @@ navbar:
     - { key: "tag", link: "/tags/", icon: "iconfont icon-tags-fill" }
     - { key: "links", link: "/links/", icon: "iconfont icon-link-fill" }
     - { key: "音乐", link: "/music/", icon: "iconfont icon-yinletianchong" }
+    - { key: "说说", link: "/talk/", icon: "iconfont icon-talk" }
     - { key: "管理", link: "https://qexo101.vercel.app/", icon: "iconfont icon-setting-fill" }
     - { key: "开往", link: "https://travellings.link/", icon: "iconfont icon-subway" }
 
