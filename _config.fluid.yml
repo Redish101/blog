@@ -330,7 +330,7 @@ navbar:
     - { key: "links", link: "/links/", icon: "iconfont icon-link-fill" }
     - { key: "电台", link: "/music/", icon: "iconfont icon-yinletianchong" }
     - { key: "说说", link: "/talk/", icon: "iconfont icon-talk" }
-    - { key: "管理", link: "https://qexo101.vercel.app/", icon: "iconfont icon-setting-fill" }
+    - { key: "管理", link: "https://admin.redish101.tk/", icon: "iconfont icon-setting-fill" }
     - { key: "开往", link: "https://travellings.link/", icon: "iconfont icon-subway" }
 
 
