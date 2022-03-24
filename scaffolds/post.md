@@ -1,8 +1,7 @@
 ---
 title: 
 date: {{ date }}
-author: 
- - Redish101
+index_img: 
 tags:
  -
 categories:
