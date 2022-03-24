@@ -1,14 +1,15 @@
 ---
 title: docsify - 一个优雅的静态文档生成器
-date: 2022-03-05
-tags: 
- - docsify
- - 静态站点
-categories: 
- - 教程
-author: 
- - Redish101
- - 宋紫睿
+tags:
+  - docsify
+  - 静态站点
+categories:
+  - 教程
+author:
+  - Redish101
+  - 宋紫睿
+abbrlink: 45082
+date: 2022-03-05 00:00:00
 ---
 
 > 我的同学**宋紫睿**为这篇文章作出了不可磨灭的贡献。

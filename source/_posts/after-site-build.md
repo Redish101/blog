@@ -1,12 +1,13 @@
 ---
 title: 建站之后，应该干什么？(1)
-date: 2022-03-14 20:58:15
-author: 
- - Redish101
+author:
+  - Redish101
 tags:
- - 建站
+  - 建站
 categories:
- - 教程
+  - 教程
+abbrlink: 33392
+date: 2022-03-14 20:58:15
 ---
 
 > 这篇文章依旧有彩蛋（以后的文章也会有彩蛋）
