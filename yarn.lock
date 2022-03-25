@@ -3202,6 +3202,11 @@
   dependencies:
     "nanocolors" "^0.2.12"
 
+"hexo-memorial-day@^0.3.0":
+  "integrity" "sha512-FM9lxW608kGI2Pd/07ga5TxifKg48Kg6+zWe3N0f+TUqUegwAyocNmve2PXh9dySG+rK9qQsOuX/xr1VyH38JA=="
+  "resolved" "https://registry.npmjs.org/hexo-memorial-day/-/hexo-memorial-day-0.3.0.tgz"
+  "version" "0.3.0"
+
 "hexo-offline@^2.0.1":
   "integrity" "sha512-0Ibh3uUk13/UhXgsXw9iPnGU0Avt2qTy9V8GhhzTJVkVz339xEouHAu4K+xfXA7fCs12R5ifgHaur85q1t3C8A=="
   "resolved" "https://registry.npmmirror.com/hexo-offline/-/hexo-offline-2.0.1.tgz"
