@@ -749,7 +749,7 @@ waline:
   serverURL: 'https://waline101.vercel.app/'
   path: window.location.pathname
   placeholder:
-  meta: []
+  meta: ['nick', 'mail', 'link']
   requiredMeta: []
   lang: 'zh-CN'
   emoji: ['https://cdn.jsdelivr.net/gh/walinejs/emojis/weibo']
