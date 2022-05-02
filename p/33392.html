@@ -1,4 +1,30 @@
 
+  <script type="text/javascript">
+    (function () {
+      var dayStr = '03/27';
+      if (/^\d{1,2}\/\d{1,2}$/.test(dayStr)) {
+        dayStr = new Date().getFullYear() + '/' + dayStr;
+      }
+      if (!/^\d{4}\/\d{1,2}\/\d{1,2}$/.test(dayStr)) {
+        return ;
+      }
+      var day = new Date(dayStr);
+      var now = new Date();
+      var isMemorialDay = now.getFullYear() === day.getFullYear() && now.getMonth() === day.getMonth() && now.getDate() === day.getDate();
+      if (isMemorialDay) {
+        if (document.all) {
+          window.style = 'html {     -webkit-filter: grayscale(100%); /* webkit */     -moz-filter: grayscale(100%); /* firefox */     -ms-filter: grayscale(100%); /* ie9 */     -o-filter: grayscale(100%); /* opera */     filter: grayscale(100%);     filter:progid:DXImageTransform.Microsoft.BasicImage(grayscale=1); filter:gray; /* ie9- */   }';
+          document.createStyleSheet('javascript:style');
+        } else {
+          var style = document.createElement('style');
+          style.type = 'text/css';
+          style.innerHTML = 'html {     -webkit-filter: grayscale(100%); /* webkit */     -moz-filter: grayscale(100%); /* firefox */     -ms-filter: grayscale(100%); /* ie9 */     -o-filter: grayscale(100%); /* opera */     filter: grayscale(100%);     filter:progid:DXImageTransform.Microsoft.BasicImage(grayscale=1); filter:gray; /* ie9- */   }';
+          document.getElementsByTagName('HEAD').item(0).appendChild(style);
+        }
+      }
+    })();
+  </script>
+  
 
 <!DOCTYPE html>
 <html lang="zh-CN" data-default-color-scheme=auto>
@@ -7,6 +33,7 @@
 
 <head>
   <meta charset="UTF-8">
+  <meta name="baidu-site-verification" content="code-l7Baw38I2G" />
   <link rel="apple-touch-icon" sizes="76x76" href="/https:/gitee.com/Redish101/img/raw/master/img/avatar.png">
   <link rel="icon" href="https://gitee.com/Redish101/img/raw/master/img/avatar.png">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
@@ -16,24 +43,25 @@
   <meta name="author" content="Redish101">
   <meta name="keywords" content="Redish101">
   
-    <meta name="description" content="啊啊啊啊啊，我终于升级完了，和typecho的臃肿相比，Hexo显得十分简洁。太nice了！！大家都说hexo写作困难，那是在没有HexoPlusPlus的情况下，部署后，写作体验比Typecho还要nice。原来的文章已经备份到了博客园。 代码块展示1print(&quot;Hello world&quot;)">
+    <meta name="description" content="这篇文章依旧有彩蛋（以后的文章也会有彩蛋）  相信很多新晋站长应在这广袤无垠的互联网世界撑起了自己的小帐篷，但却十分迷茫，我建站完了之后该干啥呢？🤔️ 今天我们就来解决这个问题。 数据统计首先，作为站长，当然要知道自己的网站数据，市面上的数据统计工具有很多，但是有的不易接入，有的难于分析，所以，这里我推荐友盟+网站统计 | 即安即用，实时统计网站流量数据 (umeng.com)这个东西那可谓是">
 <meta property="og:type" content="article">
-<meta property="og:title" content="你好Hexo">
-<meta property="og:url" content="https://blog.redish101.tk/2022/03/01/hello-world/index.html">
-<meta property="og:site_name" content="Redish101博客">
-<meta property="og:description" content="啊啊啊啊啊，我终于升级完了，和typecho的臃肿相比，Hexo显得十分简洁。太nice了！！大家都说hexo写作困难，那是在没有HexoPlusPlus的情况下，部署后，写作体验比Typecho还要nice。原来的文章已经备份到了博客园。 代码块展示1print(&quot;Hello world&quot;)">
+<meta property="og:title" content="建站之后，应该干什么？(1)">
+<meta property="og:url" content="https://blog.redish101.tk/p/33392.html">
+<meta property="og:site_name" content="Redish101 Blog">
+<meta property="og:description" content="这篇文章依旧有彩蛋（以后的文章也会有彩蛋）  相信很多新晋站长应在这广袤无垠的互联网世界撑起了自己的小帐篷，但却十分迷茫，我建站完了之后该干啥呢？🤔️ 今天我们就来解决这个问题。 数据统计首先，作为站长，当然要知道自己的网站数据，市面上的数据统计工具有很多，但是有的不易接入，有的难于分析，所以，这里我推荐友盟+网站统计 | 即安即用，实时统计网站流量数据 (umeng.com)这个东西那可谓是">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2022-03-01T03:23:00.000Z">
-<meta property="article:modified_time" content="2022-03-24T10:31:55.149Z">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/Redish101/cdn@src/img/20220315210032.png">
+<meta property="article:published_time" content="2022-03-14T12:58:15.000Z">
+<meta property="article:modified_time" content="2022-05-02T10:41:27.791Z">
 <meta property="article:author" content="Redish101">
-<meta property="article:tag" content="Hexo">
-<meta property="article:tag" content="静态博客">
+<meta property="article:tag" content="建站">
 <meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://cdn.jsdelivr.net/gh/Redish101/cdn@src/img/20220315210032.png">
   
   
     <script data-ad-client="ca-pub-2653896444493474" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
   
-  <title>你好Hexo · Redish101博客</title>
+  <title>建站之后，应该干什么？(1) · Redish101 Blog</title>
 
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2653896444493474" crossorigin="anonymous"></script>
   <script>
@@ -88,7 +116,7 @@
 
   <script id="fluid-configs">
     var Fluid = window.Fluid || {};
-    var CONFIG = {"hostname":"blog.redish101.tk","root":"/","version":"1.8.14","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"always","visible":"hover","icon":"#"},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/local-search.xml"};
+    var CONFIG = {"hostname":"blog.redish101.tk","root":"/","version":"1.8.14","typing":{"enable":true,"typeSpeed":70,"cursorChar":" | ","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"always","visible":"hover","icon":"#"},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":true,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":"K4nisSrovQNbtJqhfJM0yRdO-MdYXbMMI","app_key":"pnRwR4iYi3cebFIyGSki8A10","server_url":null,"path":"window.location.pathname","ignore_local":true}},"search_path":"/local-search.xml"};
   </script>
   <script  src="/js/utils.js" ></script>
   <script  src="/js/color-schema.js" ></script>
@@ -108,7 +136,7 @@
   <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
   <div class="container">
     <a class="navbar-brand" href="/">
-      <strong>Redish101博客</strong>
+      <strong>Redish101 Blog</strong>
     </a>
 
     <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
@@ -210,7 +238,7 @@
           
           
             <li class="nav-item">
-              <a class="nav-link" target="_blank" rel="noopener" href="https://admin.redish101.tk/">
+              <a class="nav-link" target="_blank" rel="noopener" href="https://dash.wexa.top">
                 <i class="iconfont icon-setting-fill"></i>
                 管理
               </a>
@@ -251,13 +279,13 @@
   
 
 <div id="banner" class="banner" parallax=true
-     style="background: url('https://cdn.jsdelivr.net/gh/Redish101/cdn@src/img/banner.jpeg') no-repeat center center; background-size: cover;">
+     style="background: url('https://api.redish101.tk/bing') no-repeat center center; background-size: cover;">
   <div class="full-bg-img">
     <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="你好Hexo"></span>
+            <span id="subtitle" data-typed-text="建站之后，应该干什么？(1)"></span>
           
         </div>
 
@@ -273,8 +301,8 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2022-03-01 11:23" pubdate>
-          2022年3月1日 上午
+        <time datetime="2022-03-14 20:58" pubdate>
+          2022年3月14日 晚上
         </time>
       </span>
     
@@ -286,7 +314,7 @@
         <i class="iconfont icon-chart"></i>
         
           <!-- compatible with older versions-->
-          155 字
+          458 字
         
       </span>
     
@@ -298,12 +326,14 @@
         
         
           <!-- compatible with older versions-->
-          2 分钟
+          4 分钟
         
       </span>
     
 
     
+    
+      
     
   </div>
 
@@ -337,12 +367,27 @@
         <div id="board">
           <article class="post-content mx-auto">
             <!-- SEO header -->
-            <h1 style="display: none">你好Hexo</h1>
+            <h1 style="display: none">建站之后，应该干什么？(1)</h1>
             
             <div class="markdown-body">
               
-              <p>啊啊啊啊啊，我终于升级完了，和typecho的臃肿相比，Hexo显得十分简洁。太nice了！！<br>大家都说hexo写作困难，那是在没有HexoPlusPlus的情况下，部署后，写作体验比Typecho还要nice。<br>原来的文章已经备份到了<a target="_blank" rel="noopener" href="https://cnblogs.com/redish101">博客园</a>。</p>
-<h2 id="代码块展示"><a href="#代码块展示" class="headerlink" title="代码块展示"></a>代码块展示</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-built_in">print</span>(<span class="hljs-string">&quot;Hello world&quot;</span>)<br></code></pre></td></tr></table></figure>
+              <blockquote>
+<p>这篇文章依旧有彩蛋（以后的文章也会有彩蛋）</p>
+</blockquote>
+<p>相信很多新晋站长应在这广袤无垠的互联网世界撑起了自己的小帐篷，但却十分迷茫，我建站完了之后该干啥呢？🤔️</p>
+<p>今天我们就来解决这个问题。</p>
+<h2 id="数据统计"><a href="#数据统计" class="headerlink" title="数据统计"></a>数据统计</h2><p>首先，作为站长，当然要知道自己的网站数据，市面上的数据统计工具有很多，但是有的不易接入，有的难于分析，所以，这里我推荐<a target="_blank" rel="noopener" href="https://www.umeng.com/web">友盟+网站统计 | 即安即用，实时统计网站流量数据 (umeng.com)</a>这个东西那可谓是大有来历，它是原来的<strong>CNZZ</strong>，各种功能一应俱全，很多网站都在使用。</p>
+<h3 id="CNZZ"><a href="#CNZZ" class="headerlink" title="CNZZ"></a>CNZZ</h3><h4 id="网站接入"><a href="#网站接入" class="headerlink" title="网站接入"></a>网站接入</h4><p>首先，打开CNZZ的官网<a target="_blank" rel="noopener" href="https://www.umeng.com/web">友盟+网站统计 | 即安即用，实时统计网站流量数据 (umeng.com)</a>，点击进入控制台，选择添加站点</p>
+<p>不讲了，具体原因大家自己看：</p>
+<p><img src="https://cdn.jsdelivr.net/gh/Redish101/cdn@src/img/20220315210032.png" srcset="/img/loading.gif" lazyload alt="友盟官方的公告"></p>
+<h3 id="百度统计"><a href="#百度统计" class="headerlink" title="百度统计"></a>百度统计</h3><p>首先我们打开官网：<a target="_blank" rel="noopener" href="https://tongji.baidu.com/">官网</a></p>
+<p>恭喜你，找到了<a target="_blank" rel="noopener" href="https://redish101.github.io/jspvz">彩蛋</a></p>
+<p>之后的事情按着教程来就可以了。</p>
+<p>我才不会告诉你我是不想写。</p>
+<h2 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h2><ol>
+<li>(2022, February 18). 关于友盟+ U-Web 统计分析产品调整的公告. Info. <a target="_blank" rel="noopener" href="https://info.umeng.com/detail?id=550&amp;cateId=1">https://info.umeng.com/detail?id=550&amp;cateId=1</a></li>
+</ol>
+
               
             </div>
             <hr/>
@@ -359,7 +404,7 @@
     
       <span class="category-chain">
         
-  <a href="/categories/Hexo%E6%95%99%E7%A8%8B/" class="category-chain-item">Hexo教程</a>
+  <a href="/categories/%E6%95%99%E7%A8%8B/" class="category-chain-item">教程</a>
   
   
 
@@ -374,9 +419,7 @@
     <div class="post-meta">
       <i class="iconfont icon-tags"></i>
       
-        <a href="/tags/Hexo/">#Hexo</a>
-      
-        <a href="/tags/%E9%9D%99%E6%80%81%E5%8D%9A%E5%AE%A2/">#静态博客</a>
+        <a href="/tags/%E5%BB%BA%E7%AB%99/">#建站</a>
       
     </div>
   
@@ -388,8 +431,8 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>你好Hexo</div>
-      <div>https://blog.redish101.tk/2022/03/01/hello-world/</div>
+      <div>建站之后，应该干什么？(1)</div>
+      <div>https://blog.redish101.tk/p/33392.html</div>
     </div>
     <div class="license-meta">
       
@@ -401,7 +444,7 @@
       
         <div class="license-meta-item license-meta-date">
           <div>发布于</div>
-          <div>2022年3月1日</div>
+          <div>2022年3月14日</div>
         </div>
       
       
@@ -443,15 +486,21 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2022/03/04/docsify/" title="docsify - 一个优雅的静态文档生成器">
+                      <a href="/p/55791.html" title="你好，wexagonal">
                         <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">docsify - 一个优雅的静态文档生成器</span>
+                        <span class="hidden-mobile">你好，wexagonal</span>
                         <span class="visible-mobile">上一篇</span>
                       </a>
                     
                   </article>
                   <article class="post-next col-6">
                     
+                    
+                      <a href="/p/39585.html" title="我的Fluid主题配置文件参考">
+                        <span class="hidden-mobile">我的Fluid主题配置文件参考</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
                     
                   </article>
                 </div>
@@ -466,7 +515,7 @@
     Fluid.utils.loadComments('#waline', function() {
       Fluid.utils.createScript('https://cdn.jsdelivr.net/npm/@waline/client@1/dist/Waline.min.js', function() {
         var options = Object.assign(
-          {"serverURL":"https://waline101.vercel.app/","path":"window.location.pathname","placeholder":null,"meta":[],"requiredMeta":[],"lang":"zh-CN","emoji":["https://cdn.jsdelivr.net/gh/walinejs/emojis/weibo"],"dark":"html[data-user-color-scheme=\"dark\"]","avatar":"","avatarCDN":"","avatarForce":false,"wordLimit":0,"pageSize":10,"highlight":true},
+          {"serverURL":"https://waline.redish101.tk","path":"window.location.pathname","placeholder":null,"meta":["nick","mail","link"],"requiredMeta":[],"lang":"zh-CN","emoji":["https://cdn.jsdelivr.net/gh/walinejs/emojis@1.0.1/qq/"],"dark":"html[data-user-color-scheme=\"dark\"]","avatar":"","avatarCDN":"","avatarForce":false,"wordLimit":0,"pageSize":10,"highlight":true},
           {
             el: '#waline',
             path: window.location.pathname
@@ -579,6 +628,31 @@
     </div>
   
   
+    <div class="statistics">
+  
+  
+
+  
+    
+      <span id="leancloud-site-pv-container" style="display: none">
+        总访问量 
+        <span id="leancloud-site-pv"></span>
+         次
+      </span>
+    
+    
+      <span id="leancloud-site-uv-container" style="display: none">
+        总访客数 
+        <span id="leancloud-site-uv"></span>
+         人
+      </span>
+    
+    
+
+  
+</div>
+
+  
   
   <span id="timeDate">载入天数...</span><span id="times">载入时分秒...</span>
   <script>
@@ -650,6 +724,21 @@
   </script>
 
 
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
 
 
 
@@ -794,6 +883,8 @@
 
   <script  src="/js/local-search.js" ></script>
 
+  <script defer src="/js/leancloud.js" ></script>
+
 
 
 
@@ -827,7 +918,7 @@
             const strs = href.split('/');
             if (strs.length >= 3) {
                 const host = strs[2];
-                if (host !== 'redish101.github.io' || window.location.host) {
+                if (host !== 'blog.redish101.tk' || window.location.host) {
                     $this.attr('href', '/go.html?u='+Base64.encode(href)+'').attr('rel', 'external nofollow noopener noreferrer');
                     if (true) {
                         $this.attr('target', '_blank');

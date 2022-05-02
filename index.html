@@ -1,4 +1,30 @@
 
+  <script type="text/javascript">
+    (function () {
+      var dayStr = '03/27';
+      if (/^\d{1,2}\/\d{1,2}$/.test(dayStr)) {
+        dayStr = new Date().getFullYear() + '/' + dayStr;
+      }
+      if (!/^\d{4}\/\d{1,2}\/\d{1,2}$/.test(dayStr)) {
+        return ;
+      }
+      var day = new Date(dayStr);
+      var now = new Date();
+      var isMemorialDay = now.getFullYear() === day.getFullYear() && now.getMonth() === day.getMonth() && now.getDate() === day.getDate();
+      if (isMemorialDay) {
+        if (document.all) {
+          window.style = 'html {     -webkit-filter: grayscale(100%); /* webkit */     -moz-filter: grayscale(100%); /* firefox */     -ms-filter: grayscale(100%); /* ie9 */     -o-filter: grayscale(100%); /* opera */     filter: grayscale(100%);     filter:progid:DXImageTransform.Microsoft.BasicImage(grayscale=1); filter:gray; /* ie9- */   }';
+          document.createStyleSheet('javascript:style');
+        } else {
+          var style = document.createElement('style');
+          style.type = 'text/css';
+          style.innerHTML = 'html {     -webkit-filter: grayscale(100%); /* webkit */     -moz-filter: grayscale(100%); /* firefox */     -ms-filter: grayscale(100%); /* ie9 */     -o-filter: grayscale(100%); /* opera */     filter: grayscale(100%);     filter:progid:DXImageTransform.Microsoft.BasicImage(grayscale=1); filter:gray; /* ie9- */   }';
+          document.getElementsByTagName('HEAD').item(0).appendChild(style);
+        }
+      }
+    })();
+  </script>
+  
 
 <!DOCTYPE html>
 <html lang="zh-CN" data-default-color-scheme=auto>
@@ -7,6 +33,7 @@
 
 <head>
   <meta charset="UTF-8">
+  <meta name="baidu-site-verification" content="code-l7Baw38I2G" />
   <link rel="apple-touch-icon" sizes="76x76" href="/https:/gitee.com/Redish101/img/raw/master/img/avatar.png">
   <link rel="icon" href="https://gitee.com/Redish101/img/raw/master/img/avatar.png">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
@@ -16,12 +43,12 @@
   <meta name="author" content="Redish101">
   <meta name="keywords" content="Redish101">
   
-    <meta name="description" content="积硅步以致千里">
+    <meta name="description" content="Redish101的小站">
 <meta property="og:type" content="website">
-<meta property="og:title" content="Redish101博客">
+<meta property="og:title" content="Redish101 Blog">
 <meta property="og:url" content="https://blog.redish101.tk/index.html">
-<meta property="og:site_name" content="Redish101博客">
-<meta property="og:description" content="积硅步以致千里">
+<meta property="og:site_name" content="Redish101 Blog">
+<meta property="og:description" content="Redish101的小站">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:author" content="Redish101">
 <meta property="article:tag" content="Redish101">
@@ -30,7 +57,7 @@
   
     <script data-ad-client="ca-pub-2653896444493474" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
   
-  <title>Redish101博客</title>
+  <title>Redish101 Blog</title>
 
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2653896444493474" crossorigin="anonymous"></script>
   <script>
@@ -79,7 +106,7 @@
 
   <script id="fluid-configs">
     var Fluid = window.Fluid || {};
-    var CONFIG = {"hostname":"blog.redish101.tk","root":"/","version":"1.8.14","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"always","visible":"hover","icon":"#"},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/local-search.xml"};
+    var CONFIG = {"hostname":"blog.redish101.tk","root":"/","version":"1.8.14","typing":{"enable":true,"typeSpeed":70,"cursorChar":" | ","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"always","visible":"hover","icon":"#"},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":true,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":"K4nisSrovQNbtJqhfJM0yRdO-MdYXbMMI","app_key":"pnRwR4iYi3cebFIyGSki8A10","server_url":null,"path":"window.location.pathname","ignore_local":true}},"search_path":"/local-search.xml"};
   </script>
   <script  src="/js/utils.js" ></script>
   <script  src="/js/color-schema.js" ></script>
@@ -99,7 +126,7 @@
   <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
   <div class="container">
     <a class="navbar-brand" href="/">
-      <strong>Redish101博客</strong>
+      <strong>Redish101 Blog</strong>
     </a>
 
     <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
@@ -201,7 +228,7 @@
           
           
             <li class="nav-item">
-              <a class="nav-link" target="_blank" rel="noopener" href="https://admin.redish101.tk/">
+              <a class="nav-link" target="_blank" rel="noopener" href="https://dash.wexa.top">
                 <i class="iconfont icon-setting-fill"></i>
                 管理
               </a>
@@ -242,13 +269,13 @@
   
 
 <div id="banner" class="banner" parallax=true
-     style="background: url('https://cdn.jsdelivr.net/gh/Redish101/cdn@src/img/banner.jpeg') no-repeat center center; background-size: cover;">
+     style="background: url('https://api.redish101.tk/bing') no-repeat center center; background-size: cover;">
   <div class="full-bg-img">
     <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="路漫漫而修远兮，吾将上下而求索"></span>
+            <span id="subtitle" data-typed-text="Redish101的小站"></span>
           
         </div>
 
@@ -283,15 +310,54 @@
   <div class="row mx-auto index-card">
     
     
+      <div class="col-12 col-md-4 m-auto index-img">
+        <a href="/p/55791.html" target="_self">
+          <img src="https://cdn.jsdelivr.net/gh/Redish101/cdn@src/img/20220324232911.png" srcset="/img/loading.gif" lazyload alt="你好，wexagonal">
+        </a>
+      </div>
+    
+    <article class="col-12 col-md-8 mx-auto index-info">
+      <h1 class="index-header">
+        
+        <a href="/p/55791.html" target="_self">
+          你好，wexagonal
+        </a>
+      </h1>
+
+      <a class="index-excerpt" href="/p/55791.html" target="_self">
+        <div>
+          
+          如果你看到了这篇文章，那么说明我的Wexagonal配置成功了！
+        </div>
+      </a>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2022-03-24 22:33" pubdate>
+              2022-03-24
+            </time>
+          </div>
+        
+        
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
     <article class="col-12 col-md-12 mx-auto index-info">
       <h1 class="index-header">
         
-        <a href="/2022/03/14/after-site-build/" target="_self">
+        <a href="/p/33392.html" target="_self">
           建站之后，应该干什么？(1)
         </a>
       </h1>
 
-      <a class="index-excerpt" href="/2022/03/14/after-site-build/" target="_self">
+      <a class="index-excerpt" href="/p/33392.html" target="_self">
         <div>
           
           这篇文章依旧有彩蛋（以后的文章也会有彩蛋）  相信很多新晋站长应在这广袤无垠的互联网世界撑起了自己的小帐篷，但却十分迷茫，我建站完了之后该干啥呢？🤔️ 今天我们就来解决这个问题。 数据统计首先，作为站长，当然要知道自己的网站数据，市面上的数据统计工具有很多，但是有的不易接入，有的难于分析，所以，这里我推荐友盟+网站统计 | 即安即用，实时统计网站流量数据 (umeng.com)这个东西那可谓是
@@ -347,12 +413,12 @@
     <article class="col-12 col-md-12 mx-auto index-info">
       <h1 class="index-header">
         
-        <a href="/2022/03/12/fluid-config/" target="_self">
+        <a href="/p/39585.html" target="_self">
           我的Fluid主题配置文件参考
         </a>
       </h1>
 
-      <a class="index-excerpt" href="/2022/03/12/fluid-config/" target="_self">
+      <a class="index-excerpt" href="/p/39585.html" target="_self">
         <div>
           
           这次的代码文件太大，直接放到文章里会拖慢加载速度，所以托管在了Github Gist上，但国内可能无法访问Github Gist，所以就需要这个软件：dev-sidecar: 开发者边车，github打不开，github 加速, git clone加速，google CDN加速，Stack Overflow加速 (gitee.com)，它可以加速Github的访问，加速之后嗖嗖的🚀
@@ -410,12 +476,12 @@
     <article class="col-12 col-md-12 mx-auto index-info">
       <h1 class="index-header">
         
-        <a href="/2022/03/07/pyinstaller/" target="_self">
+        <a href="/p/15511.html" target="_self">
           如何才能把py文件编译为可执行文件？
         </a>
       </h1>
 
-      <a class="index-excerpt" href="/2022/03/07/pyinstaller/" target="_self">
+      <a class="index-excerpt" href="/p/15511.html" target="_self">
         <div>
           
           有时候，烦人的甲方会要求我们把py程序编译为可执行文件，这时候要怎么办呢，用pyinstaller 安装1pip3 install pyinstaller 使用1pyinstaller 你的文件.py
@@ -471,12 +537,12 @@
     <article class="col-12 col-md-12 mx-auto index-info">
       <h1 class="index-header">
         
-        <a href="/2022/03/04/docsify/" target="_self">
+        <a href="/p/45082.html" target="_self">
           docsify - 一个优雅的静态文档生成器
         </a>
       </h1>
 
-      <a class="index-excerpt" href="/2022/03/04/docsify/" target="_self">
+      <a class="index-excerpt" href="/p/45082.html" target="_self">
         <div>
           
           我的同学宋紫睿为这篇文章作出了不可磨灭的贡献。阅读之前，告诉大家一个消息:本文有彩蛋。  docsify好在哪里开源项目的文档往往是一个很大的问题，许多静态站点生成器并不能兼顾强大与简单。
@@ -534,12 +600,12 @@
     <article class="col-12 col-md-12 mx-auto index-info">
       <h1 class="index-header">
         
-        <a href="/2022/03/01/hello-world/" target="_self">
+        <a href="/p/8071.html" target="_self">
           你好Hexo
         </a>
       </h1>
 
-      <a class="index-excerpt" href="/2022/03/01/hello-world/" target="_self">
+      <a class="index-excerpt" href="/p/8071.html" target="_self">
         <div>
           
           啊啊啊啊啊，我终于升级完了，和typecho的臃肿相比，Hexo显得十分简洁。太nice了！！大家都说hexo写作困难，那是在没有HexoPlusPlus的情况下，部署后，写作体验比Typecho还要nice。原来的文章已经备份到了博客园。 代码块展示1print(&quot;Hello world&quot;)
@@ -643,6 +709,31 @@
     </div>
   
   
+    <div class="statistics">
+  
+  
+
+  
+    
+      <span id="leancloud-site-pv-container" style="display: none">
+        总访问量 
+        <span id="leancloud-site-pv"></span>
+         次
+      </span>
+    
+    
+      <span id="leancloud-site-uv-container" style="display: none">
+        总访客数 
+        <span id="leancloud-site-uv"></span>
+         人
+      </span>
+    
+    
+
+  
+</div>
+
+  
   
   <span id="timeDate">载入天数...</span><span id="times">载入时分秒...</span>
   <script>
@@ -716,6 +807,21 @@
 
 
 
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
 
 
   
@@ -726,6 +832,8 @@
 
 
   <script  src="/js/local-search.js" ></script>
+
+  <script defer src="/js/leancloud.js" ></script>
 
 
 
@@ -760,7 +868,7 @@
             const strs = href.split('/');
             if (strs.length >= 3) {
                 const host = strs[2];
-                if (host !== 'redish101.github.io' || window.location.host) {
+                if (host !== 'blog.redish101.tk' || window.location.host) {
                     $this.attr('href', '/go.html?u='+Base64.encode(href)+'').attr('rel', 'external nofollow noopener noreferrer');
                     if (true) {
                         $this.attr('target', '_blank');

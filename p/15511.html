@@ -1,4 +1,30 @@
 
+  <script type="text/javascript">
+    (function () {
+      var dayStr = '03/27';
+      if (/^\d{1,2}\/\d{1,2}$/.test(dayStr)) {
+        dayStr = new Date().getFullYear() + '/' + dayStr;
+      }
+      if (!/^\d{4}\/\d{1,2}\/\d{1,2}$/.test(dayStr)) {
+        return ;
+      }
+      var day = new Date(dayStr);
+      var now = new Date();
+      var isMemorialDay = now.getFullYear() === day.getFullYear() && now.getMonth() === day.getMonth() && now.getDate() === day.getDate();
+      if (isMemorialDay) {
+        if (document.all) {
+          window.style = 'html {     -webkit-filter: grayscale(100%); /* webkit */     -moz-filter: grayscale(100%); /* firefox */     -ms-filter: grayscale(100%); /* ie9 */     -o-filter: grayscale(100%); /* opera */     filter: grayscale(100%);     filter:progid:DXImageTransform.Microsoft.BasicImage(grayscale=1); filter:gray; /* ie9- */   }';
+          document.createStyleSheet('javascript:style');
+        } else {
+          var style = document.createElement('style');
+          style.type = 'text/css';
+          style.innerHTML = 'html {     -webkit-filter: grayscale(100%); /* webkit */     -moz-filter: grayscale(100%); /* firefox */     -ms-filter: grayscale(100%); /* ie9 */     -o-filter: grayscale(100%); /* opera */     filter: grayscale(100%);     filter:progid:DXImageTransform.Microsoft.BasicImage(grayscale=1); filter:gray; /* ie9- */   }';
+          document.getElementsByTagName('HEAD').item(0).appendChild(style);
+        }
+      }
+    })();
+  </script>
+  
 
 <!DOCTYPE html>
 <html lang="zh-CN" data-default-color-scheme=auto>
@@ -7,6 +33,7 @@
 
 <head>
   <meta charset="UTF-8">
+  <meta name="baidu-site-verification" content="code-l7Baw38I2G" />
   <link rel="apple-touch-icon" sizes="76x76" href="/https:/gitee.com/Redish101/img/raw/master/img/avatar.png">
   <link rel="icon" href="https://gitee.com/Redish101/img/raw/master/img/avatar.png">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
@@ -19,12 +46,12 @@
     <meta name="description" content="有时候，烦人的甲方会要求我们把py程序编译为可执行文件，这时候要怎么办呢，用pyinstaller 安装1pip3 install pyinstaller 使用1pyinstaller 你的文件.py">
 <meta property="og:type" content="article">
 <meta property="og:title" content="如何才能把py文件编译为可执行文件？">
-<meta property="og:url" content="https://blog.redish101.tk/2022/03/07/pyinstaller/index.html">
-<meta property="og:site_name" content="Redish101博客">
+<meta property="og:url" content="https://blog.redish101.tk/p/15511.html">
+<meta property="og:site_name" content="Redish101 Blog">
 <meta property="og:description" content="有时候，烦人的甲方会要求我们把py程序编译为可执行文件，这时候要怎么办呢，用pyinstaller 安装1pip3 install pyinstaller 使用1pyinstaller 你的文件.py">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2022-03-07T16:00:00.000Z">
-<meta property="article:modified_time" content="2022-03-24T10:31:55.149Z">
+<meta property="article:modified_time" content="2022-05-02T10:41:27.791Z">
 <meta property="article:author" content="Redish101">
 <meta property="article:tag" content="pyinstaller">
 <meta name="twitter:card" content="summary_large_image">
@@ -32,7 +59,7 @@
   
     <script data-ad-client="ca-pub-2653896444493474" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
   
-  <title>如何才能把py文件编译为可执行文件？ · Redish101博客</title>
+  <title>如何才能把py文件编译为可执行文件？ · Redish101 Blog</title>
 
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2653896444493474" crossorigin="anonymous"></script>
   <script>
@@ -87,7 +114,7 @@
 
   <script id="fluid-configs">
     var Fluid = window.Fluid || {};
-    var CONFIG = {"hostname":"blog.redish101.tk","root":"/","version":"1.8.14","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"always","visible":"hover","icon":"#"},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/local-search.xml"};
+    var CONFIG = {"hostname":"blog.redish101.tk","root":"/","version":"1.8.14","typing":{"enable":true,"typeSpeed":70,"cursorChar":" | ","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"always","visible":"hover","icon":"#"},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":true,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":"K4nisSrovQNbtJqhfJM0yRdO-MdYXbMMI","app_key":"pnRwR4iYi3cebFIyGSki8A10","server_url":null,"path":"window.location.pathname","ignore_local":true}},"search_path":"/local-search.xml"};
   </script>
   <script  src="/js/utils.js" ></script>
   <script  src="/js/color-schema.js" ></script>
@@ -107,7 +134,7 @@
   <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
   <div class="container">
     <a class="navbar-brand" href="/">
-      <strong>Redish101博客</strong>
+      <strong>Redish101 Blog</strong>
     </a>
 
     <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
@@ -209,7 +236,7 @@
           
           
             <li class="nav-item">
-              <a class="nav-link" target="_blank" rel="noopener" href="https://admin.redish101.tk/">
+              <a class="nav-link" target="_blank" rel="noopener" href="https://dash.wexa.top">
                 <i class="iconfont icon-setting-fill"></i>
                 管理
               </a>
@@ -250,7 +277,7 @@
   
 
 <div id="banner" class="banner" parallax=true
-     style="background: url('https://cdn.jsdelivr.net/gh/Redish101/cdn@src/img/banner.jpeg') no-repeat center center; background-size: cover;">
+     style="background: url('https://api.redish101.tk/bing') no-repeat center center; background-size: cover;">
   <div class="full-bg-img">
     <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
       <div class="banner-text text-center fade-in-up">
@@ -303,6 +330,8 @@
     
 
     
+    
+      
     
   </div>
 
@@ -387,7 +416,7 @@
   <div class="license-box my-3">
     <div class="license-title">
       <div>如何才能把py文件编译为可执行文件？</div>
-      <div>https://blog.redish101.tk/2022/03/07/pyinstaller/</div>
+      <div>https://blog.redish101.tk/p/15511.html</div>
     </div>
     <div class="license-meta">
       
@@ -441,7 +470,7 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2022/03/12/fluid-config/" title="我的Fluid主题配置文件参考">
+                      <a href="/p/39585.html" title="我的Fluid主题配置文件参考">
                         <i class="iconfont icon-arrowleft"></i>
                         <span class="hidden-mobile">我的Fluid主题配置文件参考</span>
                         <span class="visible-mobile">上一篇</span>
@@ -451,7 +480,7 @@
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2022/03/04/docsify/" title="docsify - 一个优雅的静态文档生成器">
+                      <a href="/p/45082.html" title="docsify - 一个优雅的静态文档生成器">
                         <span class="hidden-mobile">docsify - 一个优雅的静态文档生成器</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
@@ -470,7 +499,7 @@
     Fluid.utils.loadComments('#waline', function() {
       Fluid.utils.createScript('https://cdn.jsdelivr.net/npm/@waline/client@1/dist/Waline.min.js', function() {
         var options = Object.assign(
-          {"serverURL":"https://waline101.vercel.app/","path":"window.location.pathname","placeholder":null,"meta":[],"requiredMeta":[],"lang":"zh-CN","emoji":["https://cdn.jsdelivr.net/gh/walinejs/emojis/weibo"],"dark":"html[data-user-color-scheme=\"dark\"]","avatar":"","avatarCDN":"","avatarForce":false,"wordLimit":0,"pageSize":10,"highlight":true},
+          {"serverURL":"https://waline.redish101.tk","path":"window.location.pathname","placeholder":null,"meta":["nick","mail","link"],"requiredMeta":[],"lang":"zh-CN","emoji":["https://cdn.jsdelivr.net/gh/walinejs/emojis@1.0.1/qq/"],"dark":"html[data-user-color-scheme=\"dark\"]","avatar":"","avatarCDN":"","avatarForce":false,"wordLimit":0,"pageSize":10,"highlight":true},
           {
             el: '#waline',
             path: window.location.pathname
@@ -583,6 +612,31 @@
     </div>
   
   
+    <div class="statistics">
+  
+  
+
+  
+    
+      <span id="leancloud-site-pv-container" style="display: none">
+        总访问量 
+        <span id="leancloud-site-pv"></span>
+         次
+      </span>
+    
+    
+      <span id="leancloud-site-uv-container" style="display: none">
+        总访客数 
+        <span id="leancloud-site-uv"></span>
+         人
+      </span>
+    
+    
+
+  
+</div>
+
+  
   
   <span id="timeDate">载入天数...</span><span id="times">载入时分秒...</span>
   <script>
@@ -654,6 +708,21 @@
   </script>
 
 
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
 
 
 
@@ -798,6 +867,8 @@
 
   <script  src="/js/local-search.js" ></script>
 
+  <script defer src="/js/leancloud.js" ></script>
+
 
 
 
@@ -831,7 +902,7 @@
             const strs = href.split('/');
             if (strs.length >= 3) {
                 const host = strs[2];
-                if (host !== 'redish101.github.io' || window.location.host) {
+                if (host !== 'blog.redish101.tk' || window.location.host) {
                     $this.attr('href', '/go.html?u='+Base64.encode(href)+'').attr('rel', 'external nofollow noopener noreferrer');
                     if (true) {
                         $this.attr('target', '_blank');

@@ -1,4 +1,30 @@
 
+  <script type="text/javascript">
+    (function () {
+      var dayStr = '03/27';
+      if (/^\d{1,2}\/\d{1,2}$/.test(dayStr)) {
+        dayStr = new Date().getFullYear() + '/' + dayStr;
+      }
+      if (!/^\d{4}\/\d{1,2}\/\d{1,2}$/.test(dayStr)) {
+        return ;
+      }
+      var day = new Date(dayStr);
+      var now = new Date();
+      var isMemorialDay = now.getFullYear() === day.getFullYear() && now.getMonth() === day.getMonth() && now.getDate() === day.getDate();
+      if (isMemorialDay) {
+        if (document.all) {
+          window.style = 'html {     -webkit-filter: grayscale(100%); /* webkit */     -moz-filter: grayscale(100%); /* firefox */     -ms-filter: grayscale(100%); /* ie9 */     -o-filter: grayscale(100%); /* opera */     filter: grayscale(100%);     filter:progid:DXImageTransform.Microsoft.BasicImage(grayscale=1); filter:gray; /* ie9- */   }';
+          document.createStyleSheet('javascript:style');
+        } else {
+          var style = document.createElement('style');
+          style.type = 'text/css';
+          style.innerHTML = 'html {     -webkit-filter: grayscale(100%); /* webkit */     -moz-filter: grayscale(100%); /* firefox */     -ms-filter: grayscale(100%); /* ie9 */     -o-filter: grayscale(100%); /* opera */     filter: grayscale(100%);     filter:progid:DXImageTransform.Microsoft.BasicImage(grayscale=1); filter:gray; /* ie9- */   }';
+          document.getElementsByTagName('HEAD').item(0).appendChild(style);
+        }
+      }
+    })();
+  </script>
+  
 
 <!DOCTYPE html>
 <html lang="zh-CN" data-default-color-scheme=auto>
@@ -7,33 +33,34 @@
 
 <head>
   <meta charset="UTF-8">
+  <meta name="baidu-site-verification" content="code-l7Baw38I2G" />
   <link rel="apple-touch-icon" sizes="76x76" href="/https:/gitee.com/Redish101/img/raw/master/img/avatar.png">
   <link rel="icon" href="https://gitee.com/Redish101/img/raw/master/img/avatar.png">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
   
   <meta name="theme-color" content="#2f4154">
-  <meta name="author" content="Redish101">
+  <meta name="author" content="Redish101,宋紫睿">
   <meta name="keywords" content="Redish101">
   
-    <meta name="description" content="这次的代码文件太大，直接放到文章里会拖慢加载速度，所以托管在了Github Gist上，但国内可能无法访问Github Gist，所以就需要这个软件：dev-sidecar: 开发者边车，github打不开，github 加速, git clone加速，google CDN加速，Stack Overflow加速 (gitee.com)，它可以加速Github的访问，加速之后嗖嗖的🚀">
+    <meta name="description" content="我的同学宋紫睿为这篇文章作出了不可磨灭的贡献。阅读之前，告诉大家一个消息:本文有彩蛋。  docsify好在哪里开源项目的文档往往是一个很大的问题，许多静态站点生成器并不能兼顾强大与简单。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="我的Fluid主题配置文件参考">
-<meta property="og:url" content="https://blog.redish101.tk/2022/03/12/fluid-config/index.html">
-<meta property="og:site_name" content="Redish101博客">
-<meta property="og:description" content="这次的代码文件太大，直接放到文章里会拖慢加载速度，所以托管在了Github Gist上，但国内可能无法访问Github Gist，所以就需要这个软件：dev-sidecar: 开发者边车，github打不开，github 加速, git clone加速，google CDN加速，Stack Overflow加速 (gitee.com)，它可以加速Github的访问，加速之后嗖嗖的🚀">
+<meta property="og:title" content="docsify - 一个优雅的静态文档生成器">
+<meta property="og:url" content="https://blog.redish101.tk/p/45082.html">
+<meta property="og:site_name" content="Redish101 Blog">
+<meta property="og:description" content="我的同学宋紫睿为这篇文章作出了不可磨灭的贡献。阅读之前，告诉大家一个消息:本文有彩蛋。  docsify好在哪里开源项目的文档往往是一个很大的问题，许多静态站点生成器并不能兼顾强大与简单。">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2022-03-12T04:03:00.000Z">
-<meta property="article:modified_time" content="2022-03-24T10:31:55.149Z">
+<meta property="article:published_time" content="2022-03-04T16:00:00.000Z">
+<meta property="article:modified_time" content="2022-05-02T10:41:27.791Z">
 <meta property="article:author" content="Redish101">
-<meta property="article:tag" content="Hexo">
-<meta property="article:tag" content="Fluid">
+<meta property="article:tag" content="docsify">
+<meta property="article:tag" content="静态站点">
 <meta name="twitter:card" content="summary_large_image">
   
   
     <script data-ad-client="ca-pub-2653896444493474" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
   
-  <title>我的Fluid主题配置文件参考 · Redish101博客</title>
+  <title>docsify - 一个优雅的静态文档生成器 · Redish101 Blog</title>
 
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2653896444493474" crossorigin="anonymous"></script>
   <script>
@@ -88,7 +115,7 @@
 
   <script id="fluid-configs">
     var Fluid = window.Fluid || {};
-    var CONFIG = {"hostname":"blog.redish101.tk","root":"/","version":"1.8.14","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"always","visible":"hover","icon":"#"},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/local-search.xml"};
+    var CONFIG = {"hostname":"blog.redish101.tk","root":"/","version":"1.8.14","typing":{"enable":true,"typeSpeed":70,"cursorChar":" | ","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"always","visible":"hover","icon":"#"},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":true,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":"K4nisSrovQNbtJqhfJM0yRdO-MdYXbMMI","app_key":"pnRwR4iYi3cebFIyGSki8A10","server_url":null,"path":"window.location.pathname","ignore_local":true}},"search_path":"/local-search.xml"};
   </script>
   <script  src="/js/utils.js" ></script>
   <script  src="/js/color-schema.js" ></script>
@@ -108,7 +135,7 @@
   <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
   <div class="container">
     <a class="navbar-brand" href="/">
-      <strong>Redish101博客</strong>
+      <strong>Redish101 Blog</strong>
     </a>
 
     <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
@@ -210,7 +237,7 @@
           
           
             <li class="nav-item">
-              <a class="nav-link" target="_blank" rel="noopener" href="https://admin.redish101.tk/">
+              <a class="nav-link" target="_blank" rel="noopener" href="https://dash.wexa.top">
                 <i class="iconfont icon-setting-fill"></i>
                 管理
               </a>
@@ -251,13 +278,13 @@
   
 
 <div id="banner" class="banner" parallax=true
-     style="background: url('https://cdn.jsdelivr.net/gh/Redish101/cdn@src/img/banner.jpeg') no-repeat center center; background-size: cover;">
+     style="background: url('https://api.redish101.tk/bing') no-repeat center center; background-size: cover;">
   <div class="full-bg-img">
     <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="我的Fluid主题配置文件参考"></span>
+            <span id="subtitle" data-typed-text="docsify - 一个优雅的静态文档生成器"></span>
           
         </div>
 
@@ -267,14 +294,14 @@
     
       <span class="post-meta mr-2">
         <i class="iconfont icon-author" aria-hidden="true"></i>
-        Redish101
+        Redish101,宋紫睿
       </span>
     
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2022-03-12 12:03" pubdate>
-          2022年3月12日 中午
+        <time datetime="2022-03-05 00:00" pubdate>
+          2022年3月5日 凌晨
         </time>
       </span>
     
@@ -286,7 +313,7 @@
         <i class="iconfont icon-chart"></i>
         
           <!-- compatible with older versions-->
-          184 字
+          1k 字
         
       </span>
     
@@ -298,12 +325,14 @@
         
         
           <!-- compatible with older versions-->
-          2 分钟
+          9 分钟
         
       </span>
     
 
     
+    
+      
     
   </div>
 
@@ -337,14 +366,47 @@
         <div id="board">
           <article class="post-content mx-auto">
             <!-- SEO header -->
-            <h1 style="display: none">我的Fluid主题配置文件参考</h1>
+            <h1 style="display: none">docsify - 一个优雅的静态文档生成器</h1>
             
             <div class="markdown-body">
               
-              <p>这次的代码文件太大，直接放到文章里会拖慢加载速度，所以托管在了Github Gist上，但国内可能无法访问Github Gist，所以就需要这个软件：<a target="_blank" rel="noopener" href="https://gitee.com/docmirror/dev-sidecar">dev-sidecar: 开发者边车，github打不开，github 加速, git clone加速，google CDN加速，Stack Overflow加速 (gitee.com)</a>，它可以加速Github的访问，加速之后嗖嗖的🚀</p>
-<script src="https://gist.github.com/Redish101/06f7befeea0959a7580b7df37d8babbe.js"></script>
+              <blockquote>
+<p>我的同学<strong>宋紫睿</strong>为这篇文章作出了不可磨灭的贡献。<br>阅读之前，告诉大家一个消息:<strong>本文有彩蛋</strong>。</p>
+</blockquote>
+<h2 id="docsify好在哪里"><a href="#docsify好在哪里" class="headerlink" title="docsify好在哪里"></a>docsify好在哪里</h2><p>开源项目的文档往往是一个很大的问题，许多静态站点生成器并不能兼顾<strong>强大</strong>与<strong>简单</strong>。</p>
+<span id="more"></span>
 
+<h3 id="对比"><a href="#对比" class="headerlink" title="对比"></a>对比</h3><h4 id="Sphinx"><a href="#Sphinx" class="headerlink" title="Sphinx"></a>Sphinx</h4><p>先拿Sphinx来说吧，Sphinx因背后有python的驱动，功能十分强大，但是<code>reStructuredText</code>的复杂也劝退了许多人。</p>
+<h4 id="Vuepress"><a href="#Vuepress" class="headerlink" title="Vuepress"></a>Vuepress</h4><p>相比之下，vuepress在文档的编写上就没有那么复杂了，毕竟<code>markdown</code>还是很简单的。<br>But，vuepress的配置实在是太复杂了，而且构建速度及其缓慢，最重要的是需要<code>JavaScript</code>的基础。</p>
+<h4 id="mkdocs"><a href="#mkdocs" class="headerlink" title="mkdocs"></a>mkdocs</h4><p>mkdocs可以说是能和docsify抗衡了，但是，mkdocs需要构建</p>
+<h2 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h2><p>经过上面的的对比，docsify的优点已经很明显了，下面我们就来安装docsify</p>
+<h3 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h3><p>全局安装Docsify-cli:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs bash">yarn global add docsify-cli<br><span class="hljs-comment"># 或者使用npm</span><br></code></pre></td></tr></table></figure>
 
+<h3 id="开始一个项目"><a href="#开始一个项目" class="headerlink" title="开始一个项目"></a>开始一个项目</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">docsify init &lt;项目路径&gt;<br></code></pre></td></tr></table></figure>
+
+<h3 id="配置"><a href="#配置" class="headerlink" title="配置"></a>配置</h3><p>配置也很简单，可以参考<a target="_blank" rel="noopener" href="https://docsify.js.org/#/zh-cn/configuration">配置项 (docsify.js.org)</a></p>
+<h3 id="写作"><a href="#写作" class="headerlink" title="写作"></a>写作</h3><p>这个更简单，只需要在<code>docs</code>文件夹里新建<code>markdown</code>文件即可。<br>(别说你不会，送你个指南<a target="_blank" rel="noopener" href="https://markdown.com.cn/">Markdown 官方教程</a>)</p>
+<h4 id="路径问题"><a href="#路径问题" class="headerlink" title="路径问题"></a>路径问题</h4><p>这里要注意一下路径：</p>
+<p>假设你的目录结构如下：</p>
+<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs text">.<br>└── docs<br>├── README.md<br>├── guide.md<br>└── zh-cn<br>├── README.md<br>└── guide.md<br></code></pre></td></tr></table></figure>
+
+<p>那么渲染后的路径就是：</p>
+<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs text">docs/README.md        =&gt; http://domain.com<br>docs/guide.md         =&gt; http://domain.com/guide<br>docs/zh-cn/README.md  =&gt; http://domain.com/zh-cn/<br>docs/zh-cn/guide.md   =&gt; http://domain.com/zh-cn/guide<br></code></pre></td></tr></table></figure>
+
+<h2 id="部署"><a href="#部署" class="headerlink" title="部署"></a>部署</h2><h3 id="Github-Pages"><a href="#Github-Pages" class="headerlink" title="Github Pages"></a>Github Pages</h3><p>将Github Pages的工作目录设置到docsify所在目录。</p>
+<h3 id="Vercel"><a href="#Vercel" class="headerlink" title="Vercel"></a>Vercel</h3><p>选中docsify所在仓库，点击下面的deploy</p>
+<h3 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h3><p>具体我也不会用，只需要记住两点：</p>
+<ul>
+<li>无需构建</li>
+<li>工作目录在根目录</li>
+</ul>
+<h2 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h2><ol>
+<li><a target="_blank" rel="noopener" href="https://docsify.js.org/#/zh-cn/">docsify中文文档</a></li>
+<li><a target="_blank" rel="noopener" href="https://vercel.com/docs">Introduction to Vercel – Vercel Docs</a></li>
+<li><a target="_blank" rel="noopener" href="https://segmentfault.com/a/1190000040063325?utm_source=tag-newest">Vercel 上自动部署你的个人博客 Hugo - SegmentFault 思否</a></li>
+</ol>
+<p>感谢阅读<br>彩蛋：🥚呵呵呵，答应你们的蛋。</p>
 
               
             </div>
@@ -362,7 +424,7 @@
     
       <span class="category-chain">
         
-  <a href="/categories/Hexo%E6%95%99%E7%A8%8B/" class="category-chain-item">Hexo教程</a>
+  <a href="/categories/%E6%95%99%E7%A8%8B/" class="category-chain-item">教程</a>
   
   
 
@@ -377,9 +439,9 @@
     <div class="post-meta">
       <i class="iconfont icon-tags"></i>
       
-        <a href="/tags/Hexo/">#Hexo</a>
+        <a href="/tags/docsify/">#docsify</a>
       
-        <a href="/tags/Fluid/">#Fluid</a>
+        <a href="/tags/%E9%9D%99%E6%80%81%E7%AB%99%E7%82%B9/">#静态站点</a>
       
     </div>
   
@@ -391,20 +453,20 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>我的Fluid主题配置文件参考</div>
-      <div>https://blog.redish101.tk/2022/03/12/fluid-config/</div>
+      <div>docsify - 一个优雅的静态文档生成器</div>
+      <div>https://blog.redish101.tk/p/45082.html</div>
     </div>
     <div class="license-meta">
       
         <div class="license-meta-item">
           <div>作者</div>
-          <div>Redish101</div>
+          <div>Redish101,宋紫睿</div>
         </div>
       
       
         <div class="license-meta-item license-meta-date">
           <div>发布于</div>
-          <div>2022年3月12日</div>
+          <div>2022年3月5日</div>
         </div>
       
       
@@ -446,9 +508,9 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2022/03/14/after-site-build/" title="建站之后，应该干什么？(1)">
+                      <a href="/p/15511.html" title="如何才能把py文件编译为可执行文件？">
                         <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">建站之后，应该干什么？(1)</span>
+                        <span class="hidden-mobile">如何才能把py文件编译为可执行文件？</span>
                         <span class="visible-mobile">上一篇</span>
                       </a>
                     
@@ -456,8 +518,8 @@
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2022/03/07/pyinstaller/" title="如何才能把py文件编译为可执行文件？">
-                        <span class="hidden-mobile">如何才能把py文件编译为可执行文件？</span>
+                      <a href="/p/8071.html" title="你好Hexo">
+                        <span class="hidden-mobile">你好Hexo</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
@@ -475,7 +537,7 @@
     Fluid.utils.loadComments('#waline', function() {
       Fluid.utils.createScript('https://cdn.jsdelivr.net/npm/@waline/client@1/dist/Waline.min.js', function() {
         var options = Object.assign(
-          {"serverURL":"https://waline101.vercel.app/","path":"window.location.pathname","placeholder":null,"meta":[],"requiredMeta":[],"lang":"zh-CN","emoji":["https://cdn.jsdelivr.net/gh/walinejs/emojis/weibo"],"dark":"html[data-user-color-scheme=\"dark\"]","avatar":"","avatarCDN":"","avatarForce":false,"wordLimit":0,"pageSize":10,"highlight":true},
+          {"serverURL":"https://waline.redish101.tk","path":"window.location.pathname","placeholder":null,"meta":["nick","mail","link"],"requiredMeta":[],"lang":"zh-CN","emoji":["https://cdn.jsdelivr.net/gh/walinejs/emojis@1.0.1/qq/"],"dark":"html[data-user-color-scheme=\"dark\"]","avatar":"","avatarCDN":"","avatarForce":false,"wordLimit":0,"pageSize":10,"highlight":true},
           {
             el: '#waline',
             path: window.location.pathname
@@ -588,6 +650,31 @@
     </div>
   
   
+    <div class="statistics">
+  
+  
+
+  
+    
+      <span id="leancloud-site-pv-container" style="display: none">
+        总访问量 
+        <span id="leancloud-site-pv"></span>
+         次
+      </span>
+    
+    
+      <span id="leancloud-site-uv-container" style="display: none">
+        总访客数 
+        <span id="leancloud-site-uv"></span>
+         人
+      </span>
+    
+    
+
+  
+</div>
+
+  
   
   <span id="timeDate">载入天数...</span><span id="times">载入时分秒...</span>
   <script>
@@ -659,6 +746,21 @@
   </script>
 
 
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
 
 
 
@@ -803,6 +905,8 @@
 
   <script  src="/js/local-search.js" ></script>
 
+  <script defer src="/js/leancloud.js" ></script>
+
 
 
 
@@ -836,7 +940,7 @@
             const strs = href.split('/');
             if (strs.length >= 3) {
                 const host = strs[2];
-                if (host !== 'redish101.github.io' || window.location.host) {
+                if (host !== 'blog.redish101.tk' || window.location.host) {
                     $this.attr('href', '/go.html?u='+Base64.encode(href)+'').attr('rel', 'external nofollow noopener noreferrer');
                     if (true) {
                         $this.attr('target', '_blank');

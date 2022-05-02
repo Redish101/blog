@@ -1,5 +1,6 @@
-https://blog.redish101.tk/2022/03/14/after-site-build/
-https://blog.redish101.tk/2022/03/12/fluid-config/
-https://blog.redish101.tk/2022/03/07/pyinstaller/
-https://blog.redish101.tk/2022/03/04/docsify/
-https://blog.redish101.tk/2022/03/01/hello-world/
+https://blog.redish101.tk/p/55791.html
+https://blog.redish101.tk/p/33392.html
+https://blog.redish101.tk/p/39585.html
+https://blog.redish101.tk/p/15511.html
+https://blog.redish101.tk/p/45082.html
+https://blog.redish101.tk/p/8071.html
