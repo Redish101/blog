@@ -949,7 +949,7 @@ links:
   # Custom content at the bottom of the links
   custom:
     enable: true
-    content: '<hr><p>在下方留言申请加入我的友链，按如下格式提供信息：</p><ul><li>博客名：xxx</li><li>简介：xxx</li><li>链接：https://example.com</li><li>图片：https://example.com/xxx.xxx</li></ul><p>友链申请将在7个工作日内受理，申请之前请先添加本站友链</p>'
+    content: '友链申请是不可能的'
 
   # 评论插件
   # Comment plugin
