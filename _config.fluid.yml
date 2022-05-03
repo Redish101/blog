@@ -567,7 +567,7 @@ post:
       # 统计数据来源
       # Data Source
       # Options: busuanzi | leancloud
-      source: "lleancloud"
+      source: "leancloud"
       format: "{} 次"
 
   # 在文章开头显示文章更新时间，该时间默认是 md 文件更新时间，可通过 front-matter 中 `updated` 手动指定（和 date 一样格式）
@@ -658,7 +658,7 @@ post:
   # 评论插件
   # Comment plugin
   comments:
-    enable: true
+    enable: false
     # 指定的插件，需要同时设置对应插件的必要参数
     # The specified plugin needs to set the necessary parameters at the same time
     # Options: utterances | disqus | gitalk | valine | waline | changyan | livere | remark42 | twikoo | cusdis
