@@ -22,7 +22,7 @@ favicon: https://gitee.com/Redish101/img/raw/master/img/avatar.png
 
 # 用于苹果设备的图标
 # Icon for Apple touch
-apple_touch_icon: /https://gitee.com/Redish101/img/raw/master/img/avatar.png
+apple_touch_icon: https://gitee.com/Redish101/img/raw/master/img/avatar.png
 
 # 浏览器标签页中的标题分隔符，效果： 文章名 - 站点名
 # Title separator in browser tab, eg: article - site
@@ -30,7 +30,7 @@ tab_title_separator: " · "
 
 # 强制所有链接升级为 HTTPS（适用于图片等资源出现 HTTP 混入报错）
 # Force all links to be HTTPS (applicable to HTTP mixed error)
-force_https: false
+force_https: true
 
 # 代码块的增强配置
 # Enhancements to code blocks
@@ -87,7 +87,7 @@ fun_features:
 
     # 游标字符
     # Cursor character
-    cursorChar: " | "
+    cursorChar: "_"
 
     # 是否循环播放效果
     # If true, loop animation
