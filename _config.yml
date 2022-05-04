@@ -108,7 +108,7 @@ sitemap:
   path: /sitemap.xml
 
 baidu_url_submit:
-  count: 10000 ## 比如3，代表提交最新的三个链接 ## 请注意这是您的秘钥， 请不要发布在公众仓库里!
+  count: 0 ## 比如3，代表提交最新的三个链接 ## 请注意这是您的秘钥， 请不要发布在公众仓库里!
   path: urls.txt ## 文本文档的地址， 新链接会保存在此文本文档里
 
 hexo_external_link:
@@ -127,9 +127,3 @@ hexo_external_link:
 aplayer:  
   meting: true  
   asset_inject: false
-
-memorial_day:
-  # Better to close it when it is not used
-  enable: true
-  # Specified date will be greyed, you can set yyyy-MM-dd or MM-dd
-  day: 03-27
