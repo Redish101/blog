@@ -1,30 +1,4 @@
 
-  <script type="text/javascript">
-    (function () {
-      var dayStr = '03/27';
-      if (/^\d{1,2}\/\d{1,2}$/.test(dayStr)) {
-        dayStr = new Date().getFullYear() + '/' + dayStr;
-      }
-      if (!/^\d{4}\/\d{1,2}\/\d{1,2}$/.test(dayStr)) {
-        return ;
-      }
-      var day = new Date(dayStr);
-      var now = new Date();
-      var isMemorialDay = now.getFullYear() === day.getFullYear() && now.getMonth() === day.getMonth() && now.getDate() === day.getDate();
-      if (isMemorialDay) {
-        if (document.all) {
-          window.style = 'html {     -webkit-filter: grayscale(100%); /* webkit */     -moz-filter: grayscale(100%); /* firefox */     -ms-filter: grayscale(100%); /* ie9 */     -o-filter: grayscale(100%); /* opera */     filter: grayscale(100%);     filter:progid:DXImageTransform.Microsoft.BasicImage(grayscale=1); filter:gray; /* ie9- */   }';
-          document.createStyleSheet('javascript:style');
-        } else {
-          var style = document.createElement('style');
-          style.type = 'text/css';
-          style.innerHTML = 'html {     -webkit-filter: grayscale(100%); /* webkit */     -moz-filter: grayscale(100%); /* firefox */     -ms-filter: grayscale(100%); /* ie9 */     -o-filter: grayscale(100%); /* opera */     filter: grayscale(100%);     filter:progid:DXImageTransform.Microsoft.BasicImage(grayscale=1); filter:gray; /* ie9- */   }';
-          document.getElementsByTagName('HEAD').item(0).appendChild(style);
-        }
-      }
-    })();
-  </script>
-  
 
 <!DOCTYPE html>
 <html lang="zh-CN" data-default-color-scheme=auto>
@@ -34,10 +8,12 @@
 <head>
   <meta charset="UTF-8">
   <meta name="baidu-site-verification" content="code-l7Baw38I2G" />
-  <link rel="apple-touch-icon" sizes="76x76" href="/https:/gitee.com/Redish101/img/raw/master/img/avatar.png">
+  <link rel="apple-touch-icon" sizes="76x76" href="https://gitee.com/Redish101/img/raw/master/img/avatar.png">
   <link rel="icon" href="https://gitee.com/Redish101/img/raw/master/img/avatar.png">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
   
   <meta name="theme-color" content="#2f4154">
   <meta name="author" content="Redish101">
@@ -52,7 +28,7 @@
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://cdn.jsdelivr.net/gh/Redish101/cdn@src/img/20220315210032.png">
 <meta property="article:published_time" content="2022-03-14T12:58:15.000Z">
-<meta property="article:modified_time" content="2022-05-02T10:41:27.791Z">
+<meta property="article:modified_time" content="2022-05-08T02:02:54.043Z">
 <meta property="article:author" content="Redish101">
 <meta property="article:tag" content="建站">
 <meta name="twitter:card" content="summary_large_image">
@@ -62,7 +38,20 @@
     <script data-ad-client="ca-pub-2653896444493474" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
   
   <title>建站之后，应该干什么？(1) · Redish101 Blog</title>
-
+  <script>
+  /*window.addEventListener('load', async () => {
+    navigator.serviceWorker.register(`/sw.js?time=${new Date().getTime()}`)
+        .then(async reg => {
+            if (window.localStorage.getItem('install') != 'true') {
+                window.localStorage.setItem('install', 'true');
+                setTimeout(() => {
+                    window.location.reload();
+                }, 1000)
+            }
+        }).catch(err => {
+        })
+  })*/
+  </script>
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2653896444493474" crossorigin="anonymous"></script>
   <script>
     var _hmt = _hmt || [];
@@ -116,7 +105,7 @@
 
   <script id="fluid-configs">
     var Fluid = window.Fluid || {};
-    var CONFIG = {"hostname":"blog.redish101.tk","root":"/","version":"1.8.14","typing":{"enable":true,"typeSpeed":70,"cursorChar":" | ","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"always","visible":"hover","icon":"#"},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":true,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":"K4nisSrovQNbtJqhfJM0yRdO-MdYXbMMI","app_key":"pnRwR4iYi3cebFIyGSki8A10","server_url":null,"path":"window.location.pathname","ignore_local":true}},"search_path":"/local-search.xml"};
+    var CONFIG = {"hostname":"blog.redish101.tk","root":"/","version":"1.8.14","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"always","visible":"hover","icon":"#"},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":true,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":"K4nisSrovQNbtJqhfJM0yRdO-MdYXbMMI","app_key":"pnRwR4iYi3cebFIyGSki8A10","server_url":null,"path":"window.location.pathname","ignore_local":true}},"search_path":"/local-search.xml"};
   </script>
   <script  src="/js/utils.js" ></script>
   <script  src="/js/color-schema.js" ></script>
@@ -334,6 +323,12 @@
     
     
       
+        <span id="leancloud-page-views-container" class="post-meta" style="display: none">
+          <i class="iconfont icon-eye" aria-hidden="true"></i>
+          <span id="leancloud-page-views"></span> 次
+        </span>
+        
+      
     
   </div>
 
@@ -508,34 +503,6 @@
             </div>
 
             
-  <article id="comments" lazyload>
-    
-  <div id="waline"></div>
-  <script type="text/javascript">
-    Fluid.utils.loadComments('#waline', function() {
-      Fluid.utils.createScript('https://cdn.jsdelivr.net/npm/@waline/client@1/dist/Waline.min.js', function() {
-        var options = Object.assign(
-          {"serverURL":"https://waline.redish101.tk","path":"window.location.pathname","placeholder":null,"meta":["nick","mail","link"],"requiredMeta":[],"lang":"zh-CN","emoji":["https://cdn.jsdelivr.net/gh/walinejs/emojis@1.0.1/qq/"],"dark":"html[data-user-color-scheme=\"dark\"]","avatar":"","avatarCDN":"","avatarForce":false,"wordLimit":0,"pageSize":10,"highlight":true},
-          {
-            el: '#waline',
-            path: window.location.pathname
-          }
-        )
-        new Waline(options);
-        Fluid.utils.waitElementVisible('#waline .vcontent', () => {
-          var imgSelector = '#waline .vcontent img:not(.vemoji)';
-          Fluid.plugins.imageCaption(imgSelector);
-          Fluid.plugins.fancyBox(imgSelector);
-        })
-      });
-    });
-  </script>
-  <noscript>Please enable JavaScript to view the comments</noscript>
-
-
-  </article>
-
-
           </article>
         </div>
       </div>
@@ -624,7 +591,7 @@
     <div class="footer-inner">
   
     <div class="footer-content">
-       ©️Copyright Redish101 2022  
+       ©️Copyright Redish101 2022 | 部署在Cloudflare | 基于Hexo与Fluid主题 | 使用Wexagonal管理 
     </div>
   
   
@@ -891,7 +858,6 @@
   
 <script src="//cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.js"></script>
 <script src="//cdn.jsdelivr.net/gh/metowolf/MetingJS@1.2/dist/Meting.min.js"></script>
-<script src="https://redish101.github.io/cdn/js/blog_console_print.js"></script>
 
 
 
