@@ -40,13 +40,12 @@ const config = {
         ],
         mode: "npm",//加速模式：mirror|npm
         mirrors: [
-            'blog-images-01.redish101.tk',
-            'blog-images-02.redish101.tk'
+            'blog-images-01.redish101.tk'
         ],
         npm: {
             accelerator: true,
             package: "redish-blog",
-            version: "0.0.5"
+            version: "0.0.6"
         }
     }
 }
