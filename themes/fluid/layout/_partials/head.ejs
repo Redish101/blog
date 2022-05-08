@@ -35,7 +35,20 @@ var ogConfig = Object.assign({ image: ogImage && url_for(ogImage) }, theme.open_
     <%- theme.custom_head %>
   <% } %>
   <title><%= title %></title>
-
+  <script>
+  /*window.addEventListener('load', async () => {
+    navigator.serviceWorker.register(`/sw.js?time=${new Date().getTime()}`)
+        .then(async reg => {
+            if (window.localStorage.getItem('install') != 'true') {
+                window.localStorage.setItem('install', 'true');
+                setTimeout(() => {
+                    window.location.reload();
+                }, 1000)
+            }
+        }).catch(err => {
+        })
+  })*/
+  </script>
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2653896444493474" crossorigin="anonymous"></script>
   <script>
     var _hmt = _hmt || [];

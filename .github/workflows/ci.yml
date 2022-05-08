@@ -19,3 +19,6 @@ jobs:
           publish_dir: ./public
           user_name: cooler-ci[bot]
           user_email: cooler-ci@users.noreply.github.com
+      - uses: JS-DevTools/npm-publish@v1
+        with:
+          token: ${{ secrets.NPM_TOKEN }}
