@@ -36,8 +36,7 @@ const config = {
     blog: {
         accelerator: true,
         origin: [
-            "redish101.github.io",
-            "rational-relate-university-bright.trycloudflare.com"//临时调试域名
+            "blog.redish101.tk"
         ],
         mode: "npm",//加速模式：mirror|npm
         mirrors: [
@@ -46,7 +45,7 @@ const config = {
         npm: {
             accelerator: true,
             package: "redish-blog",
-            version: "0.0.2"
+            version: "0.0.3"
         }
     }
 }
@@ -83,7 +82,7 @@ self.addEventListener('fetch', async event => {
     }
 });
 const handleerr = async (req, msg) => {
-    return new Response(`<h1>Redish101BlogHelper Error</h1>
+    return new Response(`<h1>Redish101 Blog Helper Error</h1>
     <b>${msg}</b>`, { headers: { "content-type": "text/html; charset=utf-8" } })
 }
 const handle = async (req) => {
