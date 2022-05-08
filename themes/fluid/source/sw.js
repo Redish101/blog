@@ -45,19 +45,19 @@ const config = {
         ],
         npm: {
             accelerator: true,
-            package: "",
-            version: ""
+            package: "redish-blog",
+            version: "0.0.2"
         }
     }
 }
 
 config.blog.npm.urls = [
 
-    `https://npm.elemecdn.com/${config.blog.npm.package}@${config.blog.npm.version}`,
-    `https://cdn.tianli0.top/npm/${config.blog.npm.package}@${config.blog.npm.version}`,
-    `https://cdn.oplog.cn/npm/${config.blog.npm.package}@${config.blog.npm.version}`,
-    `https://cdn.jsdelivr.net/npm/${config.blog.npm.package}@${config.blog.npm.version}`,
-    `https://unpkg.com/${config.blog.npm.package}@${config.blog.npm.version}`
+    `https://npm.elemecdn.com/${config.blog.npm.package}@${config.blog.npm.version}/public`,
+    `https://cdn.tianli0.top/npm/${config.blog.npm.package}@${config.blog.npm.version}/public`,
+    `https://cdn.oplog.cn/npm/${config.blog.npm.package}@${config.blog.npm.version}/public`,
+    `https://cdn.jsdelivr.net/npm/${config.blog.npm.package}@${config.blog.npm.version}/public`,
+    `https://unpkg.com/${config.blog.npm.package}@${config.blog.npm.version}/public`
 ]
 
 
@@ -141,16 +141,23 @@ const handle = async (req) => {
                                 config.blog.mirrors.forEach(mirror => {
                                     ansUrl.push(urlStr.replace(domain, mirror))
                                 })
-                                lfetch(ansUrl, urlStr).then(async res => {
-                                    if (self.cache_it) {
-                                        await caches.open(config.cache.name).then(cache => {
-                                            cache.put(req, res.clone())
-                                        })
-                                        self.cache_it = false
-                                    }
-                                    resolve(res)
+
+                            }
+                            if (config.blog.mode === "npm") {
+                                config.blog.npm.urls.forEach(url => {
+                                    ansUrl.push(npm_prefix(url, urlObj))
                                 })
                             }
+                            ansUrl.push(urlStr)
+                            lfetch(ansUrl, urlStr).then(async res => {
+                                if (self.cache_it) {
+                                    await caches.open(config.cache.name).then(cache => {
+                                        cache.put(req, res.clone())
+                                    })
+                                    self.cache_it = false
+                                }
+                                resolve(res)
+                            })
                         }, 0);
                     })
                 })
@@ -168,7 +175,14 @@ const handle = async (req) => {
 
 
 //Function 功能区
-
+const npm_prefix = (url, urlObj) => {
+    let path = urlObj.pathname.split("#")[0];
+    if (path.endsWith("/")) path += "index"
+    if (!path.split('/')[path.split('/').length - 1].includes(".")) {
+        path += ".html"
+    }
+    return url + path
+}
 const lfetch = async (urls, url) => {
     let controller = new AbortController();
     const PauseProgress = async (res) => {
