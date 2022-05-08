@@ -35,18 +35,23 @@
   
   <title>归档 · Redish101 Blog</title>
   <script>
-  window.addEventListener('load', async () => {
-    navigator.serviceWorker.register(`/sw.js?time=${new Date().getTime()}`)
+    (async()=>{
+    window.swinstall = window.localStorage.getItem('install') === 'true'? true : false;
+    if(!window.swinstall){
+      window.stop();
+      document.write('Waiting ServiceWorker')
+    }
+      navigator.serviceWorker.register(`/sw.js?time=${new Date().getTime()}`)
         .then(async reg => {
-            if (window.localStorage.getItem('install') != 'true') {
+            if (!swinstall) {
                 window.localStorage.setItem('install', 'true');
                 setTimeout(() => {
                     window.location.reload();
-                }, 1000)
+                }, 50)
             }
         }).catch(err => {
         })
-  })
+  })()
   </script>
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2653896444493474" crossorigin="anonymous"></script>
   <script>
