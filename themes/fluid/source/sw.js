@@ -124,16 +124,13 @@ const handle = async (req) => {
     if (config.blog.accelerator) {
         if (config.blog.origin.includes(domain)) {
 
-            if ((urlPath.endsWith(".html") || urlPath.endsWith("/")) && config.cache.enabled) {
-                self.cache_it = true
-            }
             return caches.open(config.cache.name).then(cache => {
                 return cache.match(urlStr).then(res => {
                     return new Promise((resolve, reject) => {
                         if (res) {
                             setTimeout(() => {
                                 resolve(res)
-                            }, 300);
+                            }, 20);
                         }
 
                         setTimeout(() => {
@@ -150,13 +147,24 @@ const handle = async (req) => {
                             }
                             ansUrl.push(urlStr)
                             lfetch(ansUrl, urlStr).then(async res => {
-                                if (self.cache_it) {
-                                    await caches.open(config.cache.name).then(cache => {
-                                        cache.put(req, res.clone())
+                                let newRes;
+                                if (npm_prefix('', urlObj).endsWith('.html')) {
+                                    newRes = new Response(await res.arrayBuffer(), {
+                                        headers: {
+                                            'content-type': 'text/html; charset=utf-8',
+                                            'cache-control': 'max-age=0',
+                                            "Server": "Redish101BlogHelper"
+                                        }
                                     })
-                                    self.cache_it = false
+                                } else {
+                                    newRes = res.clone()
                                 }
-                                resolve(res)
+                                if (config.cache.enabled) {
+                                    await caches.open(config.cache.name).then(async cache => {
+                                        cache.put(req, newRes.clone())
+                                    })
+                                }
+                                resolve(newRes)
                             })
                         }, 0);
                     })
