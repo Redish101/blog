@@ -1,2 +1,236 @@
-if(!self.define){let e,i={};const a=(a,d)=>(a=new URL(a+".js",d).href,i[a]||new Promise((i=>{if("document"in self){const e=document.createElement("script");e.src=a,e.onload=i,document.head.appendChild(e)}else e=a,importScripts(a),i()})).then((()=>{let e=i[a];if(!e)throw new Error(`Module ${a} didn’t register its module`);return e})));self.define=(d,s)=>{const r=e||("document"in self?document.currentScript.src:"")||location.href;if(i[r])return;let c={};const l=e=>a(e,r),f={module:{uri:r},exports:c,require:l};i[r]=Promise.all(d.map((e=>f[e]||l(e)))).then((e=>(s(...e),c)))}}define(["./workbox-ae4235ce"],(function(e){"use strict";self.addEventListener("message",(e=>{e.data&&"SKIP_WAITING"===e.data.type&&self.skipWaiting()})),e.precacheAndRoute([{url:"404.html",revision:"9c299859183363c7dab55e71bf86a82f"},{url:"archives/2022/03/index.html",revision:"a9402f4312d8fcb5ab106c0692c4a4c4"},{url:"archives/2022/index.html",revision:"d6109ff5bf401d31d68651c201ff2d04"},{url:"archives/index.html",revision:"958b86ae4d6099b6605a5948d45b896d"},{url:"baidu_verify_code-l7Baw38I2G.html",revision:"569a828927958a84b67c9991f57d23f2"},{url:"categories/Hexo教程/index.html",revision:"6b0a8208604deaadce27b5343945d979"},{url:"categories/index.html",revision:"df74dd459b8037dfa461bb9cc3e1f824"},{url:"categories/Python教程/index.html",revision:"eb279d6752026be91c17ee12197fef06"},{url:"categories/教程/index.html",revision:"c076faab993c927fb846135f686e5984"},{url:"css/gitalk.css",revision:"5ce280d86637a41c57fdc51fd463237a"},{url:"css/highlight-dark.css",revision:"be3af4b8abf2074e66acb737867c43dc"},{url:"css/highlight.css",revision:"fdd56de5edd1e833674574fdc74bbfe7"},{url:"css/mac.css",revision:"b767e9e92dfa6163a6f0f22616daf04a"},{url:"css/main.css",revision:"18cb051c33f547c8f5ec2afdc833086c"},{url:"go.html",revision:"0c55af851dbfd4f5503598e8eba5136a"},{url:"img/avatar.png",revision:"2d9aa61e592b26e2745f3c161c48c397"},{url:"img/default.png",revision:"beb05a6b5b201044b6d80cacdf29f905"},{url:"img/fluid.png",revision:"5603316bb5bc54a9d5cab14fddd4c510"},{url:"img/loading.gif",revision:"15657539044e11a19a1c6c7e3073d1b3"},{url:"img/police_beian.png",revision:"b769e8dfde5660239317ed60758dba13"},{url:"index.html",revision:"7ef36be4dad71dae5d6b326d3a081391"},{url:"js/boot.js",revision:"9a954f041665f6c6dd239e94803cd150"},{url:"js/color-schema.js",revision:"6552e853a9a711bc68ba3319a7ddfdff"},{url:"js/events.js",revision:"035809ecd3b1aa9612c11c9b0bf71387"},{url:"js/img-lazyload.js",revision:"fab30a410e5f490fce3f977a6936a714"},{url:"js/leancloud.js",revision:"26ff27e9c7abf1d66d5bf0acab1a5d76"},{url:"js/local-search.js",revision:"13adc3aec731d37d3ae6eaf07e94c716"},{url:"js/plugins.js",revision:"017e220f2a03605608af09e6f8464323"},{url:"js/utils.js",revision:"8a0ef4d80a973a1514c6d22a24fac883"},{url:"links/index.html",revision:"06e0d0ff6c986f2a8197c4e47e4a23f5"},{url:"music/index.html",revision:"5a5c5af8ab4660a3d32084319544a431"},{url:"p/15511.html",revision:"366d7a150fe90d41a6ab12de5768b048"},{url:"p/33392.html",revision:"4bd19aa61d227eec1c8c9df298e39877"},{url:"p/39585.html",revision:"dc82537005316913b3f9f5bf8d3bc719"},{url:"p/45082.html",revision:"359a78e0c01be7d09f62147b66406a52"},{url:"p/55791.html",revision:"4d0ac6bf6808b48f4faf62b82385b503"},{url:"p/8071.html",revision:"6d711174043a9a25bf1232de6b6cf7cc"},{url:"tags/docsify/index.html",revision:"51b2f135667ba4a371a67cc6fef99d08"},{url:"tags/Fluid/index.html",revision:"491ba839e4595225d13d587f013b9331"},{url:"tags/Hexo/index.html",revision:"104eac8d33b67a542005554e638e8d53"},{url:"tags/index.html",revision:"b0bf60b615c896c9c1940a569e92bc30"},{url:"tags/pyinstaller/index.html",revision:"9bd8e9a8e9ab4543d5a53c5456947865"},{url:"tags/建站/index.html",revision:"23b21af4a246becba6ed4eb6efa0deb5"},{url:"tags/静态博客/index.html",revision:"024c7a5db2c27c60ee509de722edbe3c"},{url:"tags/静态站点/index.html",revision:"5b218493ca7577ace1128f8b2af53775"},{url:"talk/index.html",revision:"0362a1bcff5f9a3cc74294d94da9079b"}],{}),e.registerRoute(/^https:\/\/cdn\.jsdelivr\.net\/.*/,new e.CacheFirst,"GET")}));
-//# sourceMappingURL=sw.js.map
+const config = {
+    dev: {
+        blog: false,
+        accelerator: false
+    },
+    cache: {
+        name: "Redish101BlogCache",
+        enabled: true
+    },
+    accelerator: [
+        //加速组，同一组内的url会被并发请求其余的url
+        //JsDelivr Github
+        [
+            "https://cdn.jsdelivr.net/gh",
+            "https://cdn1.tianli0.top/gh",
+            "https://cdn.oplog.cn/gh"
+        ],
+        //JsDelivr Combine
+        [
+            "https://cdn.jsdelivr.net/combine",
+            "https://cdn1.tianli0.top/combine",
+            "https://cdn.oplog.cn/combine"
+        ],
+        //NPM
+        [
+            "https://cdn.jsdelivr.net/npm",
+            "https://npm.elemecdn.com",
+            "https://cdn1.tianli0.top/npm",
+            "https://cdn.oplog.cn/npm",
+            "https://unpkg.zhimg.com",
+            "https://unpkg.com",
+            "https://code.bdstatic.com/npm"
+        ]
+
+    ],
+    blog: {
+        accelerator: true,
+        origin: [
+            "blog.redish101.tk"
+        ],
+        mode: "npm",//加速模式：mirror|npm
+        mirrors: [
+            'blog-images-01.redish101.tk',
+            'blog-images-02.redish101.tk'
+        ],
+        npm: {
+            accelerator: true,
+            package: "redish-blog",
+            version: "0.0.4"
+        }
+    }
+}
+
+config.blog.npm.urls = [
+
+    `https://npm.elemecdn.com/${config.blog.npm.package}@${config.blog.npm.version}/public`,
+    `https://cdn.tianli0.top/npm/${config.blog.npm.package}@${config.blog.npm.version}/public`,
+    `https://cdn.oplog.cn/npm/${config.blog.npm.package}@${config.blog.npm.version}/public`,
+    `https://cdn.jsdelivr.net/npm/${config.blog.npm.package}@${config.blog.npm.version}/public`,
+    `https://unpkg.com/${config.blog.npm.package}@${config.blog.npm.version}/public`
+]
+
+
+
+
+//以下源代码，看不懂勿动
+
+
+self.addEventListener('install', async function (installEvent) {
+    self.skipWaiting();
+    installEvent.waitUntil(
+        caches.open(config.cache.name)
+            .then(cache => {
+                return cache.addAll([]);
+            })
+    );
+});
+self.addEventListener('fetch', async event => {
+    try {
+        event.respondWith(handle(event.request))
+    } catch (msg) {
+        event.respondWith(handleerr(event.request, msg))
+    }
+});
+const handleerr = async (req, msg) => {
+    return new Response(`<h1>Redish101 Blog Helper Error</h1>
+    <b>${msg}</b>`, { headers: { "content-type": "text/html; charset=utf-8" } })
+}
+const handle = async (req) => {
+    const urlObj = new URL(req.url);
+    const urlStr = urlObj.toString();
+    const urlPath = urlObj.pathname;
+    const query = (q) => urlObj.searchParams.get(q);
+    const domain = urlObj.hostname;
+    //accelerator 加速
+
+
+    let ansUrl = [];
+    config.accelerator.forEach(group => {
+        group.forEach(url => {
+            if (urlStr.match(url)) {
+                group.forEach(Aurl => {
+                    ansUrl.push(urlStr.replace(url, Aurl))
+                })
+            }
+        })
+    })
+    if (ansUrl.length > 0) {
+        return caches.open(config.cache.name).then(cache => {
+            return cache.match(urlStr).then(res => {
+                if (res) return res;
+                return lfetch(ansUrl, urlStr).then(async res => {
+                    if (config.cache.enabled) {
+                        await caches.open(config.cache.name).then(cache => {
+                            cache.put(req, res.clone())
+                        })
+                    }
+                    return res
+                })
+            })
+        })
+    }
+    //blog 加速
+    if (config.blog.accelerator) {
+        if (config.blog.origin.includes(domain)) {
+
+            return caches.open(config.cache.name).then(cache => {
+                return cache.match(urlStr).then(res => {
+                    return new Promise((resolve, reject) => {
+                        if (res) {
+                            setTimeout(() => {
+                                resolve(res)
+                            }, 20);
+                        }
+
+                        setTimeout(() => {
+                            if (config.blog.mode === "mirror") {
+                                config.blog.mirrors.forEach(mirror => {
+                                    ansUrl.push(urlStr.replace(domain, mirror))
+                                })
+
+                            }
+                            if (config.blog.mode === "npm") {
+                                config.blog.npm.urls.forEach(url => {
+                                    ansUrl.push(npm_prefix(url, urlObj))
+                                })
+                            }
+                            ansUrl.push(urlStr)
+                            lfetch(ansUrl, urlStr).then(async res => {
+                                let newRes;
+                                if (npm_prefix('', urlObj).endsWith('.html')) {
+                                    newRes = new Response(await res.arrayBuffer(), {
+                                        headers: {
+                                            'content-type': 'text/html; charset=utf-8',
+                                            'cache-control': 'max-age=0',
+                                            "Server": "Redish101BlogHelper"
+                                        }
+                                    })
+                                } else {
+                                    newRes = res.clone()
+                                }
+                                if (config.cache.enabled) {
+                                    await caches.open(config.cache.name).then(async cache => {
+                                        cache.put(req, newRes.clone())
+                                    })
+                                }
+                                resolve(newRes)
+                            })
+                        }, 0);
+                    })
+                })
+
+
+
+
+            })
+        }
+    }
+
+    return fetch(req);
+}
+
+
+
+//Function 功能区
+const npm_prefix = (url, urlObj) => {
+    let path = urlObj.pathname.split("#")[0];
+    if (path.endsWith("/")) path += "index"
+    if (!path.split('/')[path.split('/').length - 1].includes(".")) {
+        path += ".html"
+    }
+    return url + path
+}
+const lfetch = async (urls, url) => {
+    let controller = new AbortController();
+    const PauseProgress = async (res) => {
+        return new Response(await (res).arrayBuffer(), { status: res.status, headers: res.headers });
+    };
+    if (!Promise.any) {
+        Promise.any = function (promises) {
+            return new Promise((resolve, reject) => {
+                promises = Array.isArray(promises) ? promises : []
+                let len = promises.length
+                let errs = []
+                if (len === 0) return reject(new AggregateError('All promises were rejected'))
+                promises.forEach((promise) => {
+                    promise.then(value => {
+                        resolve(value)
+                    }, err => {
+                        len--
+                        errs.push(err)
+                        if (len === 0) {
+                            reject(new AggregateError(errs))
+                        }
+                    })
+                })
+            })
+        }
+    }
+    return Promise.any(urls.map(urls => {
+        return new Promise((resolve, reject) => {
+            fetch(urls, {
+                signal: controller.signal
+            })
+                .then(PauseProgress)
+                .then(res => {
+                    if (res.status == 200) {
+                        controller.abort();
+                        resolve(res)
+                    } else {
+                        reject(res)
+                    }
+                })
+        })
+    }))
+}
