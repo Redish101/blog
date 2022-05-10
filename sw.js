@@ -44,7 +44,7 @@ const config = {
         npm: {
             accelerator: true,
             package: "redish-blog",
-            version: "0.0.7"
+            version: "0.0.8"
         }
     }
 }

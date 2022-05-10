@@ -4,6 +4,35 @@
   
     
     <entry>
+      <title>FastAPI部署到Vercel实现基于Python的无服务器函数</title>
+      <link href="/p/49350.html"/>
+      <url>/p/49350.html</url>
+      
+        <content type="html"><![CDATA[<blockquote><p>施工中</p></blockquote>]]></content>
+      
+      
+      <categories>
+          
+          <category> 白嫖万法 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Vercel </tag>
+            
+            <tag> Python </tag>
+            
+            <tag> FastAPI </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>你好，wexagonal</title>
       <link href="/p/55791.html"/>
       <url>/p/55791.html</url>
@@ -137,9 +166,9 @@
       
         <tags>
             
-            <tag> Hexo </tag>
-            
             <tag> 静态博客 </tag>
+            
+            <tag> Hexo </tag>
             
         </tags>
       
