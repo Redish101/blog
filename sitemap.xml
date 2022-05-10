@@ -38,7 +38,7 @@
   </url>
   
   <url>
-    <loc>https://blog.redish101.tk/p/8071.html</loc>
+    <loc>https://blog.redish101.tk/p/39585.html</loc>
     
     <lastmod>2022-05-10</lastmod>
     
@@ -47,7 +47,7 @@
   </url>
   
   <url>
-    <loc>https://blog.redish101.tk/p/39585.html</loc>
+    <loc>https://blog.redish101.tk/p/8071.html</loc>
     
     <lastmod>2022-05-10</lastmod>
     
@@ -179,13 +179,6 @@
   </url>
   
   <url>
-    <loc>https://blog.redish101.tk/tags/%E9%9D%99%E6%80%81%E5%8D%9A%E5%AE%A2/</loc>
-    <lastmod>2022-05-10</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
     <loc>https://blog.redish101.tk/tags/Hexo/</loc>
     <lastmod>2022-05-10</lastmod>
     <changefreq>weekly</changefreq>
@@ -194,6 +187,13 @@
   
   <url>
     <loc>https://blog.redish101.tk/tags/Fluid/</loc>
+    <lastmod>2022-05-10</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.redish101.tk/tags/%E9%9D%99%E6%80%81%E5%8D%9A%E5%AE%A2/</loc>
     <lastmod>2022-05-10</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
