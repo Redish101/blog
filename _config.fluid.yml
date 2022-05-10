@@ -18,15 +18,15 @@
 
 # 用于浏览器标签的图标
 # Icon for browser tab
-favicon: https://gitee.com/Redish101/img/raw/master/img/avatar.png
+favicon: https://main-1302090947.cos.ap-beijing.myqcloud.com/64068446.png
 
 # 用于苹果设备的图标
 # Icon for Apple touch
-apple_touch_icon: https://gitee.com/Redish101/img/raw/master/img/avatar.png
+apple_touch_icon: https://main-1302090947.cos.ap-beijing.myqcloud.com/64068446.png
 
 # 浏览器标签页中的标题分隔符，效果： 文章名 - 站点名
 # Title separator in browser tab, eg: article - site
-tab_title_separator: " · "
+tab_title_separator: " - "
 
 # 强制所有链接升级为 HTTPS（适用于图片等资源出现 HTTP 混入报错）
 # Force all links to be HTTPS (applicable to HTTP mixed error)
@@ -658,11 +658,11 @@ post:
   # 评论插件
   # Comment plugin
   comments:
-    enable: false
+    enable: true
     # 指定的插件，需要同时设置对应插件的必要参数
     # The specified plugin needs to set the necessary parameters at the same time
     # Options: utterances | disqus | gitalk | valine | waline | changyan | livere | remark42 | twikoo | cusdis
-    type: waline
+    type: gitalk
 
 
 #---------------------------
@@ -702,11 +702,11 @@ disqus:
 # Based on GitHub Issues
 # See: https://github.com/gitalk/gitalk#options
 gitalk:
-  clientID:
-  clientSecret:
-  repo:
-  owner:
-  admin: ['name']
+  clientID: 53c1243721dc1de225f7
+  clientSecret: cc56f7c22ddb4191b9e3fcc10f34047b373a8024
+  repo: blog
+  owner: Redish101
+  admin: ['Redish101']
   language: zh-CN
   labels: ['评论']
   perPage: 10
@@ -717,7 +717,7 @@ gitalk:
   # The default proxy may be invalid, refer to the links for solutions
   # https://github.com/gitalk/gitalk/issues/429
   # https://github.com/Zibri/cloudflare-cors-anywhere
-  proxy: https://cors-anywhere.azm.workers.dev/https://github.com/login/oauth/access_token
+  proxy: https://github.com/login/oauth/access_token
 
 # Valine
 # 基于 LeanCloud
@@ -868,7 +868,7 @@ tag:
 # About Page
 #---------------------------
 about:
-  enable: true
+  enable: false
   banner_img: https://main-1302090947.cos.ap-beijing.myqcloud.com/th.jpeg
   banner_img_height: 60
   banner_mask_alpha: 0.3
@@ -949,7 +949,7 @@ links:
   # Custom content at the bottom of the links
   custom:
     enable: true
-    content: '友链申请是不可能的'
+    content: '<center><a href="../friend-links-policy" id="commentbutton" class="ui-box bottom-rightStart-burst" style="background-color:var(--link-hover-bg-color);font-size:20px">申请加入友链</a></center>'
 
   # 评论插件
   # Comment plugin
