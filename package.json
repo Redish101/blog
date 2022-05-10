@@ -1,5 +1,5 @@
 {
-  "name": "redish101-os",
+  "name": "redish-blog",
   "version": "0.0.9",
   "scripts": {
     "build": "hexo generate",
