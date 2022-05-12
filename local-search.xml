@@ -33,19 +33,6 @@
   
   
   <entry>
-    <title>你好，wexagonal</title>
-    <link href="/p/55791.html"/>
-    <url>/p/55791.html</url>
-    
-    <content type="html"><![CDATA[<p>如果你看到了这篇文章，那么说明我的<a href="https://wexa.top/">Wexagonal</a>配置成功了！</p>]]></content>
-    
-    
-    
-  </entry>
-  
-  
-  
-  <entry>
     <title>建站之后，应该干什么？(1)</title>
     <link href="/p/33392.html"/>
     <url>/p/33392.html</url>
@@ -154,7 +141,7 @@
     <link href="/p/8071.html"/>
     <url>/p/8071.html</url>
     
-    <content type="html"><![CDATA[<p>啊啊啊啊啊，我终于升级完了，和typecho的臃肿相比，Hexo显得十分简洁。太nice了！！<br>大家都说hexo写作困难，那是在没有HexoPlusPlus的情况下，部署后，写作体验比Typecho还要nice。<br>原来的文章已经备份到了<a href="https://cnblogs.com/redish101">博客园</a>。</p><h2 id="代码块展示"><a href="#代码块展示" class="headerlink" title="代码块展示"></a>代码块展示</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-built_in">print</span>(<span class="hljs-string">&quot;Hello world&quot;</span>)<br></code></pre></td></tr></table></figure>]]></content>
+    <content type="html"><![CDATA[<p>啊啊啊啊啊，我终于升级完了，和wp的臃肿相比，Hexo显得十分简洁。<br>大家都说hexo写作困难，那是在没有HexoPlusPlus的情况下，部署后，写作体验比Typecho还要nice。  </p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-built_in">print</span>(<span class="hljs-string">&quot;Hello world&quot;</span>)<br></code></pre></td></tr></table></figure>]]></content>
     
     
     <categories>
@@ -228,7 +215,7 @@
     <link href="/"/>
     <url>/</url>
     
-    <content type="html"><![CDATA[    <div id="aplayer-pWNvDNfk" class="aplayer aplayer-tag-marker meting-tag-marker"         data-id="7319831612" data-server="netease" data-type="playlist" data-mode="circulation" data-autoplay="false" data-mutex="true" data-listmaxheight="340px" data-preload="auto" data-theme="#3F51B5"    ></div>]]></content>
+    <content type="html"><![CDATA[    <div id="aplayer-qFerkYwF" class="aplayer aplayer-tag-marker meting-tag-marker"         data-id="7319831612" data-server="netease" data-type="playlist" data-mode="circulation" data-autoplay="false" data-mutex="true" data-listmaxheight="340px" data-preload="auto" data-theme="#3F51B5"    ></div>]]></content>
     
   </entry>
   
