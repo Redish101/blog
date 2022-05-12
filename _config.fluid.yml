@@ -18,11 +18,11 @@
 
 # 用于浏览器标签的图标
 # Icon for browser tab
-favicon: https://main-1302090947.cos.ap-beijing.myqcloud.com/64068446.png
+favicon: favicon.ico
 
 # 用于苹果设备的图标
 # Icon for Apple touch
-apple_touch_icon: https://main-1302090947.cos.ap-beijing.myqcloud.com/64068446.png
+apple_touch_icon: favicon.ico
 
 # 浏览器标签页中的标题分隔符，效果： 文章名 - 站点名
 # Title separator in browser tab, eg: article - site
@@ -444,7 +444,7 @@ footer:
 index:
   # 首页 Banner 头图，可以是相对路径或绝对路径，以下相同
   # Path of Banner image, can be a relative path or an absolute path, the same on other pages
-  banner_img: https://main-1302090947.cos.ap-beijing.myqcloud.com/th.jpeg
+  banner_img: /bg.jpg
   # 头图高度，屏幕百分比
   # Height ratio of banner image
   # Available: 0 - 100
@@ -515,7 +515,7 @@ index:
 # Post Page
 #---------------------------
 post:
-  banner_img: https://main-1302090947.cos.ap-beijing.myqcloud.com/th.jpeg
+  banner_img: /bg.jpg
   banner_img_height: 70
   banner_mask_alpha: 0.3
 
@@ -702,8 +702,8 @@ disqus:
 # Based on GitHub Issues
 # See: https://github.com/gitalk/gitalk#options
 gitalk:
-  clientID: 53c1243721dc1de225f7
-  clientSecret: cc56f7c22ddb4191b9e3fcc10f34047b373a8024
+  clientID: 
+  clientSecret: 
   repo: blog
   owner: Redish101
   admin: ['Redish101']
@@ -724,8 +724,8 @@ gitalk:
 # Based on LeanCloud
 # See: https://valine.js.org/
 valine:
-  appId: R7WglV5NUfGnsMebqRi0ayYK-MdYXbMMI
-  appKey: LbAXNwxGbwxIUDytvJwNJxWF
+  appId: 
+  appKey: 
   path: window.location.pathname
   placeholder: '快来评论吧（温馨提示：可以将昵称改成自己的QQ号，会自动补全头像与邮箱）'
   avatar: 'retro'
@@ -735,7 +735,7 @@ valine:
   lang: 'zh-CN'
   highlight: true
   recordIP: false
-  serverURLs: 'https://r7wglv5n.api.lncldglobal.com'
+  serverURLs: ''
   emojiCDN:
   emojiMaps:
   enableQQ: true
@@ -745,7 +745,7 @@ valine:
 # Derived from Valine, with self-hosted service and new features
 # See: https://waline.js.org/
 waline:
-  serverURL: 'https://waline.redish101.tk'
+  serverURL: ''
   path: window.location.pathname
   placeholder:
   meta: ['nick', 'mail', 'link']
@@ -809,7 +809,7 @@ cusdis:
 # Archive Page
 #---------------------------
 archive:
-  banner_img: https://main-1302090947.cos.ap-beijing.myqcloud.com/th.jpeg
+  banner_img: /bg.jpg
   banner_img_height: 60
   banner_mask_alpha: 0.3
   subtitle:
@@ -821,7 +821,7 @@ archive:
 #---------------------------
 category:
   enable: true
-  banner_img: https://main-1302090947.cos.ap-beijing.myqcloud.com/th.jpeg
+  banner_img: /bg.jpg
   banner_img_height: 60
   banner_mask_alpha: 0.3
   subtitle:
@@ -851,7 +851,7 @@ category:
 #---------------------------
 tag:
   enable: true
-  banner_img: https://main-1302090947.cos.ap-beijing.myqcloud.com/th.jpeg
+  banner_img: /bg.jpg
   banner_img_height: 80
   banner_mask_alpha: 0.3
   subtitle:
@@ -869,7 +869,7 @@ tag:
 #---------------------------
 about:
   enable: false
-  banner_img: https://main-1302090947.cos.ap-beijing.myqcloud.com/th.jpeg
+  banner_img: /bg.jpg
   banner_img_height: 60
   banner_mask_alpha: 0.3
   subtitle:
@@ -892,7 +892,7 @@ about:
 # Custom Page through `hexo new page`
 #---------------------------
 page:
-  banner_img: https://main-1302090947.cos.ap-beijing.myqcloud.com/th.jpeg
+  banner_img: /bg.jpg
   banner_img_height: 60
   banner_mask_alpha: 0.3
 
@@ -903,7 +903,7 @@ page:
 #---------------------------
 page404:
   enable: true
-  banner_img: https://main-1302090947.cos.ap-beijing.myqcloud.com/th.jpeg
+  banner_img: /bg.jpg
   banner_img_height: 85
   banner_mask_alpha: 0.3
   subtitle: "404 - Page not found"
@@ -915,7 +915,7 @@ page404:
 #---------------------------
 links:
   enable: true
-  banner_img: https://main-1302090947.cos.ap-beijing.myqcloud.com/th.jpeg
+  banner_img: /bg.jpg
   banner_img_height: 60
   banner_mask_alpha: 0.3
   subtitle:
