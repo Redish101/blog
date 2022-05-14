@@ -19,7 +19,7 @@ date: 2022-05-10 21:01:41
 ```yaml
 标题: Redish101 Blog
 介绍: Redish101的小站
-logo: https://main-1302090947.cos.ap-beijing.myqcloud.com/64068446.png
+logo: https://blog.redish101.tk/favicon.ico
 链接: https://blog.redish101.tk/
 ```
 
