@@ -208,12 +208,11 @@ custom_js:
 # The usage is the same as custom_js
 custom_css: 
   - //at.alicdn.com/t/font_3222048_uzvdhxu46sr.css
-  - /css/mac.css
   - //cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.css
 
 # 自定义 <head> 节点中的 HTML 内容
 # Customize <head> HTML content
-custom_head: '<script data-ad-client="ca-pub-2653896444493474" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>'
+custom_head: ''
 
 # 自定义底部 HTML 内容（位于 footer 上方），注意不要和 `post: custom` 配置冲突
 # Customize the HTML content at the bottom (located above the footer), be careful not to conflict with `post: custom`
