@@ -14,14 +14,12 @@ const config = {
             "https://fastly.jsdelivr.net/gh",
             "https://cdn1.tianli0.top/gh",
             "https://cdn.oplog.cn/gh",
-            "https://gcore.jsdelivr.net/gh"
         ],
         //JsDelivr Combine
         [
             "https://fastly.jsdelivr.net/combine",
             "https://cdn1.tianli0.top/combine",
             "https://cdn.oplog.cn/combine",
-            "https://gcore.jsdelivr.net/combine"
         ],
         //NPM
         [
@@ -31,7 +29,6 @@ const config = {
             "https://cdn1.tianli0.top/npm",
             "https://cdn.oplog.cn/npm",
             "https://unpkg.com",
-            "https://code.bdstatic.com/npm"
         ]
 
     ],
@@ -45,8 +42,8 @@ const config = {
         ],
         npm: {
             accelerator: true,
-            package: "redish-blog",
-            version: "0.0.15"
+            package: "redish-os",
+            version: "0.0.16"
         }
     }
 }
@@ -58,8 +55,6 @@ config.blog.npm.urls = [
     `https://cdn.oplog.cn/npm/${config.blog.npm.package}@${config.blog.npm.version}/public`,
     `https://fastly.jsdelivr.net/npm/${config.blog.npm.package}@${config.blog.npm.version}/public`,
     `https://unpkg.com/${config.blog.npm.package}@${config.blog.npm.version}/public`,
-    `https://gcore.jsdelivr.net/npm/${config.blog.npm.package}@${config.blog.npm.version}/public`,
-    `https://code.bdstatic.com/npm/${config.blog.npm.package}@${config.blog.npm.version}/public`
 ]
 
 
