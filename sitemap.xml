@@ -2,60 +2,6 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>https://blog.redish101.tk/categories/index.html</loc>
-    
-    <lastmod>2022-05-22</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://blog.redish101.tk/friend-links-policy/index.html</loc>
-    
-    <lastmod>2022-05-22</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://blog.redish101.tk/links/index.html</loc>
-    
-    <lastmod>2022-05-22</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://blog.redish101.tk/music/index.html</loc>
-    
-    <lastmod>2022-05-22</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://blog.redish101.tk/tags/index.html</loc>
-    
-    <lastmod>2022-05-22</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://blog.redish101.tk/talk/index.html</loc>
-    
-    <lastmod>2022-05-22</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>https://blog.redish101.tk/p/49350.html</loc>
     
     <lastmod>2022-05-22</lastmod>
@@ -111,6 +57,60 @@
   
   <url>
     <loc>https://blog.redish101.tk/baidu_verify_code-l7Baw38I2G.html</loc>
+    
+    <lastmod>2022-05-22</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.redish101.tk/categories/index.html</loc>
+    
+    <lastmod>2022-05-22</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.redish101.tk/friend-links-policy/index.html</loc>
+    
+    <lastmod>2022-05-22</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.redish101.tk/links/index.html</loc>
+    
+    <lastmod>2022-05-22</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.redish101.tk/music/index.html</loc>
+    
+    <lastmod>2022-05-22</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.redish101.tk/tags/index.html</loc>
+    
+    <lastmod>2022-05-22</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.redish101.tk/talk/index.html</loc>
     
     <lastmod>2022-05-22</lastmod>
     
