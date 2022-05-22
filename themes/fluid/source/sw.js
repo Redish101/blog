@@ -43,7 +43,7 @@ const config = {
         npm: {
             accelerator: true,
             package: "redish-os",
-            version: "0.0.16"
+            version: "0.0.17"
         }
     }
 }

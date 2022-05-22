@@ -1,6 +1,6 @@
 {
   "name": "redish-os",
-  "version": "0.0.16",
+  "version": "0.0.17",
   "scripts": {
     "build": "hexo generate",
     "clean": "hexo clean",
