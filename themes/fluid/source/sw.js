@@ -35,7 +35,7 @@ const config = {
     blog: {
         accelerator: true,
         origin: [
-            "blog.redish101.tk"
+            "blog.redish101.top"
         ],
         mode: "npm",//加速模式：mirror|npm
         mirrors: [
@@ -43,7 +43,7 @@ const config = {
         npm: {
             accelerator: true,
             package: "redish101-os",
-            version: "0.0.18"
+            version: "0.0.19"
         }
     }
 }

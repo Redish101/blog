@@ -13,7 +13,7 @@ timezone: 'Asia/Shanghai'
 
 # URL
 ## Set your site url here. For example, if you use GitHub Page, set url as 'https://username.github.io/project'
-url: https://blog.redish101.tk
+url: https://blog.redish101.top
 permalink: p/:abbrlink.html
 # permalink_defaults:
 pretty_urls:
@@ -118,7 +118,7 @@ hexo_external_link:
   html_file_name: 'go.html'
   target_blank: true
   link_rel: 'external nofollow noopener noreferrer'
-  domain: 'blog.redish101.tk' # 如果开启了防盗链
+  domain: 'blog.redish101.top' # 如果开启了防盗链
   safety_chain: false
   ignore_attrs: 
     - 'data-fancybox'
