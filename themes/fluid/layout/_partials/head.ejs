@@ -36,30 +36,23 @@ var ogConfig = Object.assign({ image: ogImage && url_for(ogImage) }, theme.open_
   <% } %>
   <title><%= title %></title>
   <script>
-    ;(function () {
-      if ('serviceWorker' in navigator) {
-        navigator.serviceWorker
-          .register('/sw.js?v=b7abe247b5')
-          .then((result) => {
-            // 判断是否安装了sw
-            if (!localStorage.getItem('installSW')) {
-              localStorage.setItem('installSW', true)
-              // 这里就不用清理setInterval了，因为页面刷新后就没有了
-              setInterval(() => {
-                // 判断sw安装后，是否处于激活状态，激活后刷新页面
-                if (result && result.active && result.active.state === 'activated') {
-                  location.reload()
-                }
-              }, 100)
+    (async()=>{
+    window.swinstall = window.localStorage.getItem('install') === 'true'? true : false;
+    if(!window.swinstall){
+      window.stop();
+      document.write('Waiting ServiceWorker')
+    }
+      navigator.serviceWorker.register(`/sw.js?time=${new Date().getTime()}`)
+        .then(async reg => {
+            if (!swinstall) {
+                window.localStorage.setItem('install', 'true');
+                setTimeout(() => {
+                    window.location.reload();
+                }, 50)
             }
-          })
-          .catch((err) => {
-            console.log("Redish101 Blog Service Worker Error:")
-            console.log(err)
-            console.log("请将日志反馈给Redish101以获取支持")
-          })
-      }
-    })()
+        }).catch(err => {
+        })
+  })()
   </script>
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2653896444493474" crossorigin="anonymous"></script>
   <script>
