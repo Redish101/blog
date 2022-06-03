@@ -1,6 +1,7 @@
 name: Deploy to NPM CDN
 'on':
   - workflow_dispatch
+  - push
 jobs:
   deploy:
     runs-on: ubuntu-latest
