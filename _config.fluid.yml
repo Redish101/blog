@@ -201,14 +201,14 @@ font:
 # 指定自定义 .js 文件路径，支持列表；路径是相对 source 目录，如 /js/custom.js 对应存放目录 source/js/custom.js
 # Specify the path of your custom js file, support list. The path is relative to the source directory, such as `/js/custom.js` corresponding to the directory `source/js/custom.js`
 custom_js: 
-  - //cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.js  #/APlayer#/APlayer依赖
-  - //cdn.jsdelivr.net/gh/metowolf/MetingJS@1.2/dist/Meting.min.js  #/APlayer依赖
+  - //fastly.jsdelivr.net/npm/aplayer/dist/APlayer.min.js  #/APlayer#/APlayer依赖
+  - //fastly.jsdelivr.net/gh/metowolf/MetingJS@1.2/dist/Meting.min.js  #/APlayer依赖
 
 # 指定自定义 .css 文件路径，用法和 custom_js 相同
 # The usage is the same as custom_js
 custom_css: 
   - //at.alicdn.com/t/font_3222048_uzvdhxu46sr.css
-  - //cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.css
+  - //fastly.jsdelivr.net/npm/aplayer/dist/APlayer.min.css
 
 # 自定义 <head> 节点中的 HTML 内容
 # Customize <head> HTML content

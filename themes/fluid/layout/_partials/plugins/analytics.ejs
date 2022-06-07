@@ -13,27 +13,7 @@
     </script>
   <% } %>
 
-  <% if (theme.web_analytics.google){ %>
-    <!-- Google Analytics -->
-    <script defer>
-      window.ga = window.ga || function () { (ga.q = ga.q || []).push(arguments) };
-      ga.l = +new Date;
-      ga('create', '<%= theme.web_analytics.google %>', 'auto');
-      ga('send', 'pageview');
-    </script>
-    <script async src='https://www.google-analytics.com/analytics.js'></script>
-  <% } %>
-
-  <% if (theme.web_analytics.gtag){ %>
-    <!-- Google gtag.js -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=<%- theme.web_analytics.gtag %>"></script>
-    <script defer>
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
-        gtag('config', '<%- theme.web_analytics.gtag %>');
-    </script>
-  <% } %>
+ 
 
   <% if(theme.web_analytics.tencent && theme.web_analytics.tencent.sid && theme.web_analytics.tencent.cid) { %>
     <!-- Tencent Analytics -->

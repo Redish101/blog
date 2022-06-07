@@ -4,7 +4,7 @@ const config = {
       accelerator: false
   },
   cache: {
-      name: "Redish101BlogCache",
+      name: "Redish101 Blog Cache",
       enabled: true
   },
   accelerator: [
@@ -42,8 +42,8 @@ const config = {
       ],
       npm: {
           accelerator: true,
-          package: "redish101-os",
-          version: "0.0.20"
+          package: "redish101-blog",
+          version: "1.0.0"
       }
   }
 }
@@ -150,7 +150,7 @@ const handle = async (req) => {
                                       headers: {
                                           'content-type': 'text/html; charset=utf-8',
                                           'cache-control': 'max-age=0',
-                                          "Server": "Redish101BlogHelper"
+                                          "Server": "Redish101 Blog Servive Worker"
                                       }
                                   })
                               } else {
@@ -231,3 +231,4 @@ const lfetch = async (urls, url) => {
       })
   }))
 }
+console.log("Redish101 Blog Service Worker加载完毕")    
