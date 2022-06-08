@@ -1,6 +1,6 @@
 {
   "name": "redish101-blog",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "scripts": {
     "build": "hexo generate",
     "clean": "hexo clean",
@@ -11,6 +11,7 @@
     "version": "6.0.0"
   },
   "dependencies": {
+    "axios": "^0.27.2",
     "hexo": "^6.0.0",
     "hexo-abbrlink": "^2.2.1",
     "hexo-baidu-url-submit": "^0.0.6",

@@ -48,6 +48,63 @@ const config = {
   }
 }
 
+self.db = { //全局定义db,只要read和write,看不懂可以略过
+  read: (key, config) => {
+      if (!config) { config = { type: "text" } }
+      return new Promise((resolve, reject) => {
+          caches.open(CACHE_NAME).then(cache => {
+              cache.match(new Request(`https://LOCALCACHE/${encodeURIComponent(key)}`)).then(function (res) {
+                  if (!res) resolve(null)
+                  res.text().then(text => resolve(text))
+              }).catch(() => {
+                  resolve(null)
+              })
+          })
+      })
+  },
+  write: (key, value) => {
+      return new Promise((resolve, reject) => {
+          caches.open(CACHE_NAME).then(function (cache) {
+              cache.put(new Request(`https://LOCALCACHE/${encodeURIComponent(key)}`), new Response(value));
+              resolve()
+          }).catch(() => {
+              reject()
+          })
+      })
+  }
+}
+
+const mirror = [
+  `https://registry.npmmirror.com/chenyfan-blog/latest`,
+  `https://registry.npmjs.org/chenyfan-blog/latest`,
+  `https://mirrors.cloud.tencent.com/npm/chenyfan-blog/latest`
+]
+const get_newest_version = async (mirror) => {
+return lfetch(mirror, mirror[0])
+  .then(res => res.json())
+  .then(res.version)
+}
+
+
+const set_newest_version = async (mirror) => { //改为最新版本写入数据库
+  return lfetch(mirror, mirror[0])
+      .then(res => res.json()) //JSON Parse
+      .then(async res => {
+          await db.write('blog_version', res.version) //写入
+          return;
+      })
+}
+
+setInterval(async() => {
+  await set_newest_version(mirror) //定时更新,一分钟一次
+}, 60*1000);
+
+setTimeout(async() => { 
+  await set_newest_version(mirror)//打开五秒后更新,避免堵塞
+},5000)
+
+config.blog.npm.version = db.read('blog_version')
+
 config.blog.npm.urls = [
 
   `https://npm.elemecdn.com/${config.blog.npm.package}@${config.blog.npm.version}/public`,
@@ -231,4 +288,4 @@ const lfetch = async (urls, url) => {
       })
   }))
 }
-console.log("Redish101 Blog Service Worker加载完毕")    
+console.log("Redish101 Blog Service Worker加载完毕")   
