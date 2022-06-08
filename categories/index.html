@@ -33,23 +33,34 @@
   
   <title>分类 - Redish101 Blog</title>
   <script>
-    (async()=>{
-    window.swinstall = window.localStorage.getItem('install') === 'true'? true : false;
-    if(!window.swinstall){
-      window.stop();
-      document.write()
+    (async () => {//使用匿名函数确保body已载入
+    /*
+    ChenBlogHelper_Set 存储在LocalStorage中,用于指示sw安装状态
+    0 或不存在 未安装
+    1 已打断
+    2 已安装
+    3 已激活,并且已缓存必要的文件(此处未写出,无需理会)
+    */
+    const $ = document.querySelector.bind(document);//语法糖
+    if ('serviceWorker' in navigator) { //如果支持sw
+        if (Number(window.localStorage.getItem('Redish101BlogHelper_Set')) < 1) {
+            window.localStorage.setItem('Redish101BlogHelper_Set', 1)
+            window.stop()
+            document.body.innerHTML = await (await fetch('/sw_loading.html')).text()
+        }
+        navigator.serviceWorker.register(`/sw.js?time=${ranN(1, 88888888888888888888)}`)//随机数,强制更新
+            .then(async () => {
+                if (Number(window.localStorage.getItem('Redish101BlogHelper_Set')) < 2) {
+                    setTimeout(() => {
+                        window.localStorage.setItem('Redish101BlogHelper_Set', 2)
+                        //window.location.search = `?time=${ranN(1, 88888888888888888888)}` //已弃用,在等待500ms安装成功后直接刷新没有问题
+                        window.location.reload()//刷新,以载入sw
+                    }, 1000)//安装后等待500ms使其激活
+                }
+            })
+            .catch(err => console.error(`Redish101BlogHelperErr:${err}`))
     }
-      navigator.serviceWorker.register(`/sw.js?time=${new Date().getTime()}`)
-        .then(async reg => {
-            if (!swinstall) {
-                window.localStorage.setItem('install', 'true');
-                setTimeout(() => {
-                    window.location.reload();
-                }, 50)
-            }
-        }).catch(err => {
-        })
-  })()
+})()
   </script>
     
 
@@ -295,6 +306,57 @@
     
     <div class="category row nomargin-x">
       <a class="category-item collapsed
+          list-group-item category-item-action col-10 col-md-11 col-xm-11" title="白嫖万法"
+        id="heading-47970b736e5449fd2cca1624dd5e5583" role="tab" data-toggle="collapse" href="#collapse-47970b736e5449fd2cca1624dd5e5583"
+        aria-expanded="false"
+      >
+        白嫖万法
+        <span class="list-group-count"></span>
+        <i class="iconfont icon-arrowright"></i>
+      </a>
+      
+        <a href="/categories/%E7%99%BD%E5%AB%96%E4%B8%87%E6%B3%95/" class="category-count col-2 col-md-1 col-xm-1">
+          <i class="iconfont icon-articles"></i>
+          <span>2</span>
+        </a>
+      
+      <div class="category-collapse collapse " id="collapse-47970b736e5449fd2cca1624dd5e5583"
+           role="tabpanel" aria-labelledby="heading-47970b736e5449fd2cca1624dd5e5583">
+        
+        
+          
+  <div class="category-post-list">
+    
+    
+      
+      
+        <a href="/p/36200.html" title="Github Codespace初体验"
+           class="list-group-item list-group-item-action
+           ">
+          <span class="category-post">Github Codespace初体验</span>
+        </a>
+      
+    
+      
+      
+        <a href="/p/49350.html" title="FastAPI部署到Vercel实现基于Python的无服务器函数"
+           class="list-group-item list-group-item-action
+           ">
+          <span class="category-post">FastAPI部署到Vercel实现基于Python的无服务器函数</span>
+        </a>
+      
+    
+  </div>
+
+        
+      </div>
+    </div>
+  
+    
+    
+    
+    <div class="category row nomargin-x">
+      <a class="category-item collapsed
           list-group-item category-item-action col-10 col-md-11 col-xm-11" title="教程"
         id="heading-b7824d5cd41d06de995a661879fefd3d" role="tab" data-toggle="collapse" href="#collapse-b7824d5cd41d06de995a661879fefd3d"
         aria-expanded="false"
@@ -383,48 +445,6 @@
            class="list-group-item list-group-item-action
            ">
           <span class="category-post">你好Hexo</span>
-        </a>
-      
-    
-  </div>
-
-        
-      </div>
-    </div>
-  
-    
-    
-    
-    <div class="category row nomargin-x">
-      <a class="category-item collapsed
-          list-group-item category-item-action col-10 col-md-11 col-xm-11" title="白嫖万法"
-        id="heading-47970b736e5449fd2cca1624dd5e5583" role="tab" data-toggle="collapse" href="#collapse-47970b736e5449fd2cca1624dd5e5583"
-        aria-expanded="false"
-      >
-        白嫖万法
-        <span class="list-group-count"></span>
-        <i class="iconfont icon-arrowright"></i>
-      </a>
-      
-        <a href="/categories/%E7%99%BD%E5%AB%96%E4%B8%87%E6%B3%95/" class="category-count col-2 col-md-1 col-xm-1">
-          <i class="iconfont icon-articles"></i>
-          <span>1</span>
-        </a>
-      
-      <div class="category-collapse collapse " id="collapse-47970b736e5449fd2cca1624dd5e5583"
-           role="tabpanel" aria-labelledby="heading-47970b736e5449fd2cca1624dd5e5583">
-        
-        
-          
-  <div class="category-post-list">
-    
-    
-      
-      
-        <a href="/p/49350.html" title="FastAPI部署到Vercel实现基于Python的无服务器函数"
-           class="list-group-item list-group-item-action
-           ">
-          <span class="category-post">FastAPI部署到Vercel实现基于Python的无服务器函数</span>
         </a>
       
     
