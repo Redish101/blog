@@ -1,1 +1,39 @@
-{"name": "redish101-blog", "version": "1.1.654874468", "scripts": {"build": "hexo generate", "clean": "hexo clean", "deploy": "hexo deploy", "server": "hexo server"}, "type": "module", "hexo": {"version": "6.0.0"}, "dependencies": {"axios": "^0.27.2", "hexo": "^6.0.0", "hexo-abbrlink": "^2.2.1", "hexo-baidu-url-submit": "^0.0.6", "hexo-external-link": "^1.0.8", "hexo-generator-archive": "^1.0.0", "hexo-generator-baidu-sitemap": "^0.1.9", "hexo-generator-category": "^1.0.0", "hexo-generator-index": "^2.0.0", "hexo-generator-search": "^2.4.3", "hexo-generator-sitemap": "^2.2.0", "hexo-generator-tag": "^1.0.0", "hexo-memorial-day": "^0.3.0", "hexo-offline": "^2.0.1", "hexo-renderer-ejs": "^2.0.0", "hexo-renderer-marked": "^5.0.0", "hexo-renderer-stylus": "^2.0.0", "hexo-server": "^3.0.0", "hexo-tag-aplayer": "^3.0.4"}, "devDependencies": {"@commitlint/cli": "^16.2.1", "@commitlint/config-conventional": "^16.2.1", "husky": "^7.0.4"}}
+{
+  "name": "redish101-blog",
+  "version": "1.1.654874468",
+  "scripts": {
+    "build": "hexo generate",
+    "clean": "hexo clean",
+    "deploy": "hexo deploy",
+    "server": "hexo server"
+  },
+  "type": "module",
+  "hexo": {
+    "version": "6.0.0"
+  },
+  "dependencies": {
+    "axios": "^0.27.2",
+    "hexo": "^6.0.0",
+    "hexo-abbrlink": "^2.2.1",
+    "hexo-baidu-url-submit": "^0.0.6",
+    "hexo-external-link": "^1.0.8",
+    "hexo-generator-archive": "^1.0.0",
+    "hexo-generator-baidu-sitemap": "^0.1.9",
+    "hexo-generator-category": "^1.0.0",
+    "hexo-generator-index": "^2.0.0",
+    "hexo-generator-search": "^2.4.3",
+    "hexo-generator-sitemap": "^2.2.0",
+    "hexo-generator-tag": "^1.0.0",
+    "hexo-memorial-day": "^0.3.0",
+    "hexo-renderer-ejs": "^2.0.0",
+    "hexo-renderer-marked": "^5.0.0",
+    "hexo-renderer-stylus": "^2.0.0",
+    "hexo-server": "^3.0.0",
+    "hexo-tag-aplayer": "^3.0.4"
+  },
+  "devDependencies": {
+    "@commitlint/cli": "^16.2.1",
+    "@commitlint/config-conventional": "^16.2.1",
+    "husky": "^7.0.4"
+  }
+}
