@@ -2,8 +2,7 @@ const CACHE_NAME = "Redish101BlogHelper"
 
 const mirror = [
   `https://registry.npmmirror.com/redish101-blog/latest`,
-  `https://registry.npmjs.org/redish101-blog/latest`,
-  `https://mirrors.cloud.tencent.com/npm/redish101-blog/latest`
+  `https://registry.npmjs.org/redish101-blog/latest`
 ]
 
 self.db = { 
@@ -90,7 +89,7 @@ const config = {
     npm: {
       accelerator: true,
       package: "redish101-blog",
-      version: db.read('blog_version') || "1.0.2",
+      version: db.read('blog_version') || "1.1.654874754",
     },
   },
 };
