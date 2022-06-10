@@ -404,7 +404,7 @@ footer:
   # 页脚第一行文字的 HTML，建议保留 Fluid 的链接，用于向更多人推广本主题
   # HTML of the first line of the footer, it is recommended to keep the Fluid link to promote this theme to more people
   content: '
-    ©️Copyright Redish101 2022 | 部署在Cloudflare | 基于Hexo与Fluid主题 | 使用Wexagonal管理
+    ©️Copyright Redish101 2022 | 部署在Redish101 Blog Helper | 基于Hexo与Fluid主题 | 使用Wexagonal管理
   '
 
   # 展示网站的 PV、UV 统计数
@@ -608,7 +608,7 @@ post:
   # Custom content at the bottom of the post page (located above the footer)
   custom:
     enable: false
-    content: '<img src="https://octodex.github.com/images/jetpacktocat.png" class="rounded mx-auto d-block mt-5" style="width:150px; height:150px;">'
+    content: '<center>如果您觉得文章不错的话，可以<a href="https://afdian.net/@rRedish101>请我喝一杯咖啡</a>"></center>'
 
   # 文章图片可点击放大
   # Zoom feature of images

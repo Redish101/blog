@@ -1,12 +1,13 @@
 {
   "name": "redish101-blog",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "scripts": {
     "build": "hexo generate",
     "clean": "hexo clean",
     "deploy": "hexo deploy",
     "server": "hexo server"
   },
+  "type": "module",
   "hexo": {
     "version": "6.0.0"
   },
