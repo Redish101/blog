@@ -130,7 +130,6 @@ const handleerr = async (req, msg) => {
   );
 };
 const handle = async (req) => {
-  console.log("Redish101 Blog Helper已经开始加载");
   const urlObj = new URL(req.url);
   const urlStr = urlObj.toString();
   const urlPath = urlObj.pathname;
@@ -278,3 +277,4 @@ const lfetch = async (urls, url) => {
     })
   );
 };
+console.log("\n %c Redish101 Blog Helper %c https://blog.redish101.top/sw.js \n","color: #fadfa3; background: #030307; padding:5px 0;","background: #fadfa3; padding:5px 0;");
