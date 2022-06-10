@@ -11,7 +11,7 @@ jobs:
         with:
           node-version: 16.x
       - run: npm install
-      - run: npx webpack
+      - run: python3 ./kits/gen_new_version.py
       - run: npm run build
       
       - name: Deploy to GitHub Pages
