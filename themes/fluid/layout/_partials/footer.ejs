@@ -11,7 +11,7 @@
     <!-- 备案信息 ICP for China -->
     <%- partial('_partials/footer/beian.ejs') %>
   <% } %>
-  <span id="timeDate">载入天数...</span><span id="times">载入时分秒...</span>
+  <span id="timeDate">正在载入天数</span>
   <script>
       var now = new Date();
   
@@ -35,10 +35,8 @@
           if (String(snum).length == 1) {
               snum = "0" + snum;
           }
-          document.getElementById("timeDate").innerHTML = " | 本站已侥幸运行 " + dnum + " 天 ";
-          document.getElementById("times").innerHTML = hnum + " 小时 " + mnum + " 分 " + snum + " 秒";
+          document.getElementById("timeDate").innerHTML = " 本站已运行 " + '<b>'+dnum + '</b>' + " 天 " + '<b>'+hnum +'</b>'+ " 小时 " + '<b>'+mnum + '</b>' + " 分 " + '<b>' + snum + '</b>'+" 秒"
       }
       setInterval("createtime()", 250);
   </script>
-  |
 </div>
