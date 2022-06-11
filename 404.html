@@ -323,11 +323,7 @@
   <footer>
     <div class="footer-inner">
   
-    <div class="footer-content">
-       ©️Copyright Redish101 2022 | 部署在Redish101 Blog Helper | 基于Hexo与Fluid主题 | 使用Wexagonal管理 
-    </div>
-  
-  
+  <div class="footer-content"> ©️Copyright Redish101 2022 | 部署在Redish101 Blog Helper | 基于Hexo与Fluid主题 | 使用Wexagonal管理 </div>
     <div class="statistics">
   
   
@@ -351,36 +347,95 @@
 
   
 </div>
-
   
-  
-  <span id="timeDate">正在载入天数</span>
+  <span id="timeDate">正在获取时间</span>
+  <span id="version">正在获取版本</span>
   <script>
-      var now = new Date();
-  
-      function createtime() {
-          var grt = new Date("01/23/2022 12:00:00"); //此处修改你的建站时间或者网站上线时间 
-          now.setTime(now.getTime() + 250);
-          days = (now - grt) / 1000 / 60 / 60 / 24;
-          dnum = Math.floor(days);
-          hours = (now - grt) / 1000 / 60 / 60 - (24 * dnum);
-          hnum = Math.floor(hours);
-          if (String(hnum).length == 1) {
-              hnum = "0" + hnum;
-          }
-          minutes = (now - grt) / 1000 / 60 - (24 * 60 * dnum) - (60 * hnum);
-          mnum = Math.floor(minutes);
-          if (String(mnum).length == 1) {
-              mnum = "0" + mnum;
-          }
-          seconds = (now - grt) / 1000 - (24 * 60 * 60 * dnum) - (60 * 60 * hnum) - (60 * mnum);
-          snum = Math.round(seconds);
-          if (String(snum).length == 1) {
-              snum = "0" + snum;
-          }
-          document.getElementById("timeDate").innerHTML = " 本站已运行 " + '<b>'+dnum + '</b>' + " 天 " + '<b>'+hnum +'</b>'+ " 小时 " + '<b>'+mnum + '</b>' + " 分 " + '<b>' + snum + '</b>'+" 秒"
+    var now = new Date();
+
+    function createtime() {
+      var grt = new Date("01/23/2022 12:00:00"); //此处修改你的建站时间或者网站上线时间
+      now.setTime(now.getTime() + 250);
+      days = (now - grt) / 1000 / 60 / 60 / 24;
+      dnum = Math.floor(days);
+      hours = (now - grt) / 1000 / 60 / 60 - 24 * dnum;
+      hnum = Math.floor(hours);
+      if (String(hnum).length == 1) {
+        hnum = "0" + hnum;
       }
-      setInterval("createtime()", 250);
+      minutes = (now - grt) / 1000 / 60 - 24 * 60 * dnum - 60 * hnum;
+      mnum = Math.floor(minutes);
+      if (String(mnum).length == 1) {
+        mnum = "0" + mnum;
+      }
+      seconds =
+        (now - grt) / 1000 - 24 * 60 * 60 * dnum - 60 * 60 * hnum - 60 * mnum;
+      snum = Math.round(seconds);
+      if (String(snum).length == 1) {
+        snum = "0" + snum;
+      }
+      document.getElementById("timeDate").innerHTML =
+        " 本站已运行 " +
+        "<b>" +
+        dnum +
+        "</b>" +
+        " 天 " +
+        "<b>" +
+        hnum +
+        "</b>" +
+        " 小时 " +
+        "<b>" +
+        mnum +
+        "</b>" +
+        " 分 " +
+        "<b>" +
+        snum +
+        "</b>" +
+        " 秒";
+    }
+    setInterval("createtime()", 250);
+  </script>
+  <script>
+    self.db = {
+      read: (key, config) => {
+        if (!config) {
+          config = { type: "text" };
+        }
+        return new Promise((resolve, reject) => {
+          caches.open(CACHE_NAME).then((cache) => {
+            cache
+              .match(
+                new Request(`https://LOCALCACHE/${encodeURIComponent(key)}`)
+              )
+              .then(function (res) {
+                if (!res) resolve(null);
+                res.text().then((text) => resolve(text));
+              })
+              .catch(() => {
+                resolve(null);
+              });
+          });
+        });
+      },
+      write: (key, value) => {
+        return new Promise((resolve, reject) => {
+          caches
+            .open(CACHE_NAME)
+            .then(function (cache) {
+              cache.put(
+                new Request(`https://LOCALCACHE/${encodeURIComponent(key)}`),
+                new Response(value)
+              );
+              resolve();
+            })
+            .catch(() => {
+              reject();
+            });
+        });
+      },
+    };
+    var version = db.read('blog_version');
+    document.getElementById('version').innerHTML='当前博客版本: '+'<b>'+version+'</b>'
   </script>
 </div>
 
