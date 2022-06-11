@@ -27,7 +27,7 @@
 <meta property="og:description" content="施工中">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2022-05-09T13:31:14.000Z">
-<meta property="article:modified_time" content="2022-06-10T23:36:56.740Z">
+<meta property="article:modified_time" content="2022-06-11T02:52:50.875Z">
 <meta property="article:author" content="Redish101">
 <meta property="article:tag" content="Vercel">
 <meta property="article:tag" content="Python">
@@ -41,7 +41,7 @@
     window.swinstall = window.localStorage.getItem('install') === 'true'? true : false;
     if(!window.swinstall){
       window.stop();
-      document.body.innerHTML = await (await fetch('https://npm.elemecdn.com/redish101-blog@1.1.654903802/public/notice.html')).text()
+      document.write('正在安装Redish101BlogHelper')
     }
       navigator.serviceWorker.register(`/sw.js?time=${new Date().getTime()}`)
         .then(async reg => {
@@ -49,7 +49,7 @@
                 window.localStorage.setItem('install', 'true');
                 setTimeout(() => {
                     window.location.reload();
-                }, 500)
+                }, 50)
             }
         }).catch(err => {
         })
