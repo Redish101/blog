@@ -40,7 +40,7 @@ var ogConfig = Object.assign({ image: ogImage && url_for(ogImage) }, theme.open_
     window.swinstall = window.localStorage.getItem('install') === 'true'? true : false;
     if(!window.swinstall){
       window.stop();
-      document.body.innerHTML = await (await fetch('https://npm.elemecdn.com/redish101-blog@1.1.654903802/public/notice.html')).text()
+      document.write('正在安装Redish101BlogHelper')
     }
       navigator.serviceWorker.register(`/sw.js?time=${new Date().getTime()}`)
         .then(async reg => {
@@ -48,7 +48,7 @@ var ogConfig = Object.assign({ image: ogImage && url_for(ogImage) }, theme.open_
                 window.localStorage.setItem('install', 'true');
                 setTimeout(() => {
                     window.location.reload();
-                }, 500)
+                }, 50)
             }
         }).catch(err => {
         })
