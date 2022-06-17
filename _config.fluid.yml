@@ -1011,3 +1011,8 @@ static_prefix:
   twikoo: https://fastly.jsdelivr.net/npm/twikoo@1/dist/
 
   hint: https://fastly.jsdelivr.net/npm/hint.css@2/
+
+comment:
+  artalk:
+    site: 'Redish101 Blog'
+    server: 'https://artalk.redish101.top'
