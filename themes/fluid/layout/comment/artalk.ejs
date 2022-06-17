@@ -1,0 +1,14 @@
+<link href="/lib/Artalk.css" rel="stylesheet">
+<script src="/lib/Artalk.js"></script>
+
+<div id="Comments"></div>
+
+<script>
+  var artalk = new Artalk({
+    el: '#Comments',
+    pageKey: '<%= page.permalink %>',
+    pageTitle: '<%= page.title %>',
+    server: '<%= theme.comment.artalk.server %>',
+    site: '<%= theme.comment.artalk.site %>',
+  })
+</script>

@@ -276,5 +276,6 @@ const lfetch = async (urls, url) => {
     })
   );
 };
-console.log("\n %c Redish101 Blog Helper %c https://blog.redish101.top/sw.js \n","color: #fadfa3; background: #030307; padding:5px 0;","background: #fadfa3; padding:5px 0;");
-console.log("\n %c Redish101 Blog %c "+db.read('blog_version')+" \n","color: #fadfa3; background: #030307; padding:5px 0;","background: #fadfa3; padding:5px 0;");;
+const blog_version_console = (async () => {
+  return await config.blog.npm.version
+})
