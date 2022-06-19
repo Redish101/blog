@@ -939,6 +939,12 @@ links:
         link: 'https://yzyyz.top',
         avatar: 'https://fastly.jsdelivr.net/gh/yzyyz1387/blogimages/img/bloger.jpeg'
     }
+    - {
+        title: '陈YF的博客',
+        intro: '一个在互联网角落挣扎的小小博客，很小很小',
+        link: 'https://blog.cyfan.top',
+        avatar: 'https://npm.elemecdn.com/chenyfan-oss@3'
+    }
 
   # 当成员头像加载失败时，替换为指定图片
   # When the member avatar fails to load, replace the specified image
