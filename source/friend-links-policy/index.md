@@ -1,1 +1,3 @@
+# 申请
+
 我懒得说，去[仓库](https://github.com/redish101/blog)提交pr吧，在_config.fluid.yml的923行左右按着格式加就行了，完事之后提pr，我会看的
