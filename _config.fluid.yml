@@ -326,9 +326,7 @@ navbar:
     - { key: "category", link: "/categories/", icon: "iconfont icon-category-fill" }
     - { key: "tag", link: "/tags/", icon: "iconfont icon-tags-fill" }
     - { key: "links", link: "/links/", icon: "iconfont icon-link-fill" }
-    - { key: "电台", link: "/music/", icon: "iconfont icon-yinletianchong" }
-    - { key: "说说", link: "/talk/", icon: "iconfont icon-talk" }
-    - { key: "管理", link: "https://dash.wexa.top", icon: "iconfont icon-setting-fill" }
+    - { key: "管理", link: "https://admin.redish101.top", icon: "iconfont icon-setting-fill" }
     - { key: "开往", link: "https://travellings.link/", icon: "iconfont icon-subway" }
 
 
@@ -913,7 +911,7 @@ page404:
 # Links Page
 #---------------------------
 links:
-  enable: true
+  enable: false
   banner_img: /bg.jpg
   banner_img_height: 60
   banner_mask_alpha: 0.3
