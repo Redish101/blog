@@ -61,23 +61,17 @@ const config = {
     //加速组，同一组内的url会被并发请求其余的url
     //JsDelivr Github
     [
-      "https://fastly.jsdelivr.net/gh",
-      "https://cdn1.tianli0.top/gh",
-      "https://cdn.oplog.cn/gh",
+      "https://fastly.jsdelivr.net/gh"
     ],
     //JsDelivr Combine
     [
-      "https://fastly.jsdelivr.net/combine",
-      "https://cdn1.tianli0.top/combine",
-      "https://cdn.oplog.cn/combine",
+      "https://fastly.jsdelivr.net/combine"
     ],
     //NPM
     [
       "https://fastly.jsdelivr.net/npm",
       "https://gcore.jsdelivr.net/npm",
       "https://npm.elemecdn.com",
-      "https://cdn1.tianli0.top/npm",
-      "https://cdn.oplog.cn/npm",
       "https://unpkg.com",
     ],
   ],
