@@ -61,16 +61,22 @@ const config = {
     //加速组，同一组内的url会被并发请求其余的url
     //JsDelivr Github
     [
-      "https://fastly.jsdelivr.net/gh"
+      "https://fastly.jsdelivr.net/gh",
+      "https://gcore.jsdelivr.net/gh",
+      "https://cdn1.tianli0.top/gh",
+      "https://cdn.jsdelivr.net/gh"
     ],
     //JsDelivr Combine
     [
-      "https://fastly.jsdelivr.net/combine"
+      "https://fastly.jsdelivr.net/combine",
+      "https://gcore.jsdelivr.net/combine",
+      "https://cdn.jsdelivr.net/combine"
     ],
     //NPM
     [
       "https://fastly.jsdelivr.net/npm",
       "https://gcore.jsdelivr.net/npm",
+      "https://cdn.jsdelivr.net/npm",
       "https://npm.elemecdn.com",
       "https://unpkg.com",
     ],
@@ -83,7 +89,7 @@ const config = {
     npm: {
       accelerator: true,
       package: "redish101-blog",
-      version: db.read('blog_version') || "1.1.654874754",
+      version: db.read('blog_version'),
     },
   },
 };
@@ -91,8 +97,9 @@ const config = {
 config.blog.npm.urls = [
   `https://npm.elemecdn.com/${config.blog.npm.package}@${config.blog.npm.version}/public`,
   `https://cdn.tianli0.top/npm/${config.blog.npm.package}@${config.blog.npm.version}/public`,
-  `https://cdn.oplog.cn/npm/${config.blog.npm.package}@${config.blog.npm.version}/public`,
   `https://fastly.jsdelivr.net/npm/${config.blog.npm.package}@${config.blog.npm.version}/public`,
+  `https://gcore.jsdelivr.net/npm/${config.blog.npm.package}@${config.blog.npm.version}/public`,
+  `https://cdn.jsdelivr.net/npm/${config.blog.npm.package}@${config.blog.npm.version}/public`,
   `https://unpkg.com/${config.blog.npm.package}@${config.blog.npm.version}/public`,
 ];
 
@@ -271,5 +278,5 @@ const lfetch = async (urls, url) => {
   );
 };
 const blog_version_console = (async () => {
-  return await config.blog.npm.version
+  await console.log(config.blog.npm.version);
 })
