@@ -93,7 +93,7 @@ const config = {
     npm: {
       accelerator: true,
       package: "redish101-blog",
-      version: read_version,
+      version: read_version(),
     },
   },
 };
