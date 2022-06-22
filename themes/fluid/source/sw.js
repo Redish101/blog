@@ -12,7 +12,7 @@ self.db = {
           caches.open(CACHE_NAME).then(cache => {
               cache.match(new Request(`https://LOCALCACHE/${encodeURIComponent(key)}`)).then(function (res) {
                   if (!res) resolve(null)
-                  res.text().then(text => resolve(text))
+                  await res.text().then(text => resolve(text))
               }).catch(() => {
                   resolve(null)
               })
