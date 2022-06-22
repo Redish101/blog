@@ -12,7 +12,7 @@ self.db = {
           caches.open(CACHE_NAME).then(cache => {
               cache.match(new Request(`https://LOCALCACHE/${encodeURIComponent(key)}`)).then(function (res) {
                   if (!res) resolve(null)
-                  await res.text().then(text => resolve(text))
+                  res.text().then(text => resolve(text))
               }).catch(() => {
                   resolve(null)
               })
@@ -47,6 +47,10 @@ setInterval(async() => {
 setTimeout(async() => { 
   await set_newest_version(mirror)//打开五秒后更新,避免堵塞
 },5000)
+
+const read_version = async () => {
+  return await db.read('blog_version')
+}
 
 const config = {
   dev: {
@@ -89,7 +93,7 @@ const config = {
     npm: {
       accelerator: true,
       package: "redish101-blog",
-      version: db.read('blog_version'),
+      version: read_version,
     },
   },
 };
