@@ -1,23 +1,5 @@
 const CACHE_NAME = "Redish101BlogHelper"
 
-self.cons = {
-  s: (m) => {
-      console.log(`%c[SUCCESS]%c ${m}`, 'color:white;background:green;', '')
-  },
-  w: (m) => {
-      console.log(`%c[WARNING]%c ${m}`, 'color:brown;background:yellow;', '')
-  },
-  i: (m) => {
-      console.log(`%c[INFO]%c ${m}`, 'color:white;background:blue;', '')
-  },
-  e: (m) => {
-      console.log(`%c[ERROR]%c ${m}`, 'color:white;background:red;', '')
-  },
-  d: (m) => {
-      console.log(`%c[DEBUG]%c ${m}`, 'color:white;background:black;', '')
-  }
-}
-
 const mirror = [
   `https://registry.npmmirror.com/redish101-blog/latest`,
   `https://registry.npmjs.org/redish101-blog/latest`
@@ -100,6 +82,7 @@ const config = {
       "https://cdn.jsdelivr.net/npm",
       "https://npm.elemecdn.com",
       "https://unpkg.com",
+      "https://cdn.tianli0.top/npm"
     ],
   ],
   blog: {
@@ -110,10 +93,12 @@ const config = {
     npm: {
       accelerator: true,
       package: "redish101-blog",
-      version: await db.read('blog_version'),
+      version: "1.1.654903802",
     },
   },
 };
+
+config.blog.npm.version = await db.read('blog_version');
 
 config.blog.npm.urls = [
   `https://npm.elemecdn.com/${config.blog.npm.package}@${config.blog.npm.version}/public`,
@@ -247,7 +232,6 @@ const npm_prefix = (url, urlObj) => {
   return url + path;
 };
 const lfetch = async (urls, url) => {
-  cons.i(`LFetch Handled! | Mirrors Count:${urls.length} | Origin: ${url}`)
   let controller = new AbortController();
   const PauseProgress = async (res) => {
     return new Response(await res.arrayBuffer(), {
