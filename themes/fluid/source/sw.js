@@ -1,5 +1,23 @@
 const CACHE_NAME = "Redish101BlogHelper"
 
+self.cons = {
+  s: (m) => {
+      console.log(`%c[SUCCESS]%c ${m}`, 'color:white;background:green;', '')
+  },
+  w: (m) => {
+      console.log(`%c[WARNING]%c ${m}`, 'color:brown;background:yellow;', '')
+  },
+  i: (m) => {
+      console.log(`%c[INFO]%c ${m}`, 'color:white;background:blue;', '')
+  },
+  e: (m) => {
+      console.log(`%c[ERROR]%c ${m}`, 'color:white;background:red;', '')
+  },
+  d: (m) => {
+      console.log(`%c[DEBUG]%c ${m}`, 'color:white;background:black;', '')
+  }
+}
+
 const mirror = [
   `https://registry.npmmirror.com/redish101-blog/latest`,
   `https://registry.npmjs.org/redish101-blog/latest`
@@ -31,6 +49,7 @@ self.db = {
   }
 }
 
+
 const set_newest_version = async (mirror) => { //改为最新版本写入数据库
   return lfetch(mirror, mirror[0])
       .then(res => res.json()) //JSON Parse
@@ -42,15 +61,13 @@ const set_newest_version = async (mirror) => { //改为最新版本写入数据�
 
 setInterval(async() => {
   await set_newest_version(mirror) //定时更新,一分钟一次
+  con.i("获取最新版本"); //控制台输出最新版本
 }, 60*1000);
 
 setTimeout(async() => { 
   await set_newest_version(mirror)//打开五秒后更新,避免堵塞
 },5000)
 
-const read_version = async () => {
-  return await db.read('blog_version')
-}
 
 const config = {
   dev: {
@@ -93,7 +110,7 @@ const config = {
     npm: {
       accelerator: true,
       package: "redish101-blog",
-      version: read_version(),
+      version: await db.read('blog_version'),
     },
   },
 };
@@ -230,6 +247,7 @@ const npm_prefix = (url, urlObj) => {
   return url + path;
 };
 const lfetch = async (urls, url) => {
+  cons.i(`LFetch Handled! | Mirrors Count:${urls.length} | Origin: ${url}`)
   let controller = new AbortController();
   const PauseProgress = async (res) => {
     return new Response(await res.arrayBuffer(), {
@@ -281,6 +299,3 @@ const lfetch = async (urls, url) => {
     })
   );
 };
-const blog_version_console = (async () => {
-  await console.log(config.blog.npm.version);
-})
