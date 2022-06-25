@@ -1,11 +1,114 @@
-const CACHE_NAME = "Redish101BlogHelper"
+const CACHE_NAME = 'Redish101BlogHelper';
+let cachelist = [];
+self.addEventListener('install', async function (installEvent) {
+    self.skipWaiting();
+    installEvent.waitUntil(
+        caches.open(CACHE_NAME)
+            .then(function (cache) {
+                console.log('Redish101 Blog Helper');
+                return cache.addAll(cachelist);
+            })
+    );
+});
+self.addEventListener('fetch', async event => {
+    try {
+        event.respondWith(handle(event.request))
+    } catch (msg) {
+        event.respondWith(handleerr(event.request, msg))
+    }
+});
+const handleerr = async (req, msg) => {
+    return new Response(`<h1>Redish101 Blog Helper Error</h1>
+    <b>${msg}</b>`, { headers: { "content-type": "text/html; charset=utf-8" } })
+}
+let cdn = {//镜像列表
+    "gh": {
+        jsdelivr: {
+            "url": "https://cdn.jsdelivr.net/gh"
+        },
+        jsdelivr_fastly: {
+            "url": "https://fastly.jsdelivr.net/gh"
+        },
+        jsdelivr_gcore: {
+            "url": "https://gcore.jsdelivr.net/gh"
+        }
+    },
+    "combine": {
+        jsdelivr: {
+            "url": "https://cdn.jsdelivr.net/combine"
+        },
+        jsdelivr_fastly: {
+            "url": "https://fastly.jsdelivr.net/combine"
+        },
+        jsdelivr_gcore: {
+            "url": "https://gcore.jsdelivr.net/combine"
+        }
+    },
+    "npm": {
+        eleme: {
+            "url": "https://npm.elemecdn.com"
+        },
+        jsdelivr: {
+            "url": "https://cdn.jsdelivr.net/npm"
+        },
+        zhimg: {
+            "url": "https://unpkg.zhimg.com"
+        },
+        unpkg: {
+            "url": "https://unpkg.com"
+        },
+        bdstatic: {
+            "url": "https://code.bdstatic.com/npm"
+        },
+        tianli: {
+            "url": "https://cdn1.tianli0.top/npm"
+        },
+        sourcegcdn: {
+            "url": "https://npm.sourcegcdn.com/npm"
+        }
+
+    }
+}
+
+const fullpath = (path) => {
+  path = path.split('?')[0].split('#')[0]
+  if (path.match(/\/$/)) {
+      path += 'index'
+  }
+  if (!path.match(/\.[a-zA-Z]+$/)) {
+      path += '.html'
+  }
+  return path
+}
+
+const generate_blog_urls = (packagename, blogversion, path) => {
+  const npmmirror = [
+      `https://unpkg.com/${packagename}@${blogversion}/public`,
+      `https://npm.elemecdn.com/${packagename}@${blogversion}/public`,
+      `https://cdn.jsdelivr.net/npm/${packagename}@${blogversion}/public`,
+      `https://gcore.jsdelivr.net/npm/${packagename}@${blogversion}/public`,
+      `https://fastly.jsdelivr.net/npm/${packagename}@${blogversion}/public`,
+      `https://npm.sourcegcdn.com/npm/${packagename}@${blogversion}/public`,
+      `https://cdn1.tianli0.top/npm/${packagename}@${blogversion}/public`
+  ]
+  for (var i in npmmirror) {
+      npmmirror[i] += path
+  }
+  return npmmirror
+}
 
 const mirror = [
   `https://registry.npmmirror.com/redish101-blog/latest`,
-  `https://registry.npmjs.org/redish101-blog/latest`
+  `https://registry.npmjs.org/redish101-blog/latest`,
+  `https://mirrors.cloud.tencent.com/npm/redish101-blog/latest`
 ]
+const get_newest_version = async (mirror) => {
+return lfetch(mirror, mirror[0])
+  .then(res => res.json())
+  .then(res.version)
+}
 
-self.db = { 
+self.db = { //全局定义db
   read: (key, config) => {
       if (!config) { config = { type: "text" } }
       return new Promise((resolve, reject) => {
@@ -31,7 +134,6 @@ self.db = {
   }
 }
 
-
 const set_newest_version = async (mirror) => { //改为最新版本写入数据库
   return lfetch(mirror, mirror[0])
       .then(res => res.json()) //JSON Parse
@@ -43,243 +145,88 @@ const set_newest_version = async (mirror) => { //改为最新版本写入数据�
 
 setInterval(async() => {
   await set_newest_version(mirror) //定时更新,一分钟一次
-  con.i("获取最新版本"); //控制台输出最新版本
 }, 60*1000);
 
 setTimeout(async() => { 
   await set_newest_version(mirror)//打开五秒后更新,避免堵塞
 },5000)
 
-
-const config = {
-  dev: {
-    blog: false,
-    accelerator: false,
-  },
-  cache: {
-    name: "Redish101BlogHelper",
-    enabled: true,
-  },
-  accelerator: [
-    //加速组，同一组内的url会被并发请求其余的url
-    //JsDelivr Github
-    [
-      "https://fastly.jsdelivr.net/gh",
-      "https://gcore.jsdelivr.net/gh",
-      "https://cdn1.tianli0.top/gh",
-      "https://cdn.jsdelivr.net/gh"
-    ],
-    //JsDelivr Combine
-    [
-      "https://fastly.jsdelivr.net/combine",
-      "https://gcore.jsdelivr.net/combine",
-      "https://cdn.jsdelivr.net/combine"
-    ],
-    //NPM
-    [
-      "https://fastly.jsdelivr.net/npm",
-      "https://gcore.jsdelivr.net/npm",
-      "https://cdn.jsdelivr.net/npm",
-      "https://npm.elemecdn.com",
-      "https://unpkg.com",
-      "https://cdn.tianli0.top/npm"
-    ],
-  ],
-  blog: {
-    accelerator: true,
-    origin: ["blog.redish101.top"],
-    mode: "npm",
-    mirrors: [],
-    npm: {
-      accelerator: true,
-      package: "redish101-blog",
-      version: "1.1.654903802",
-    },
-  },
-};
-
-config.blog.npm.version = await db.read('blog_version');
-
-config.blog.npm.urls = [
-  `https://npm.elemecdn.com/${config.blog.npm.package}@${config.blog.npm.version}/public`,
-  `https://cdn.tianli0.top/npm/${config.blog.npm.package}@${config.blog.npm.version}/public`,
-  `https://fastly.jsdelivr.net/npm/${config.blog.npm.package}@${config.blog.npm.version}/public`,
-  `https://gcore.jsdelivr.net/npm/${config.blog.npm.package}@${config.blog.npm.version}/public`,
-  `https://cdn.jsdelivr.net/npm/${config.blog.npm.package}@${config.blog.npm.version}/public`,
-  `https://unpkg.com/${config.blog.npm.package}@${config.blog.npm.version}/public`,
-];
-
-self.addEventListener("install", async function (installEvent) {
-  self.skipWaiting();
-  installEvent.waitUntil(
-    caches.open(config.cache.name).then((cache) => {
-      return cache.addAll([]);
-    })
-  );
-});
-self.addEventListener("fetch", async (event) => {
-  try {
-    event.respondWith(handle(event.request));
-  } catch (msg) {
-    event.respondWith(handleerr(event.request, msg));
-  }
-});
-const handleerr = async (req, msg) => {
-  return new Response(
-    `<h1>Redish101 Blog Helper Error</h1>
-    <p>Redish101 Blog Helper出现致命错误</p>
-    <p>这有可能是Redish101 Blog Helper本身出现了问题（Blog Helper在正式上线到生产环境钱经历了在预览环境下严谨的测试，可能性极小）</p>
-    <p>也有可能是Redish101 Blog Helper的加速节点停止了服务</p>
-    <p>请尝试通过报错信息解决问题，如果无法解决，请千万不要问101，以下为报错信息</p>
-    <b>${msg}</b>`,
-    { headers: { "content-type": "text/html; charset=utf-8" } }
-  );
-};
-const handle = async (req) => {
-  const urlObj = new URL(req.url);
-  const urlStr = urlObj.toString();
-  const urlPath = urlObj.pathname;
-  const query = (q) => urlObj.searchParams.get(q);
-  const domain = urlObj.hostname;
-  //accelerator 加速
-
-  let ansUrl = [];
-  config.accelerator.forEach((group) => {
-    group.forEach((url) => {
-      if (urlStr.match(url)) {
-        group.forEach((Aurl) => {
-          ansUrl.push(urlStr.replace(url, Aurl));
-        });
-      }
-    });
-  });
-  if (ansUrl.length > 0) {
-    return caches.open(config.cache.name).then((cache) => {
-      return cache.match(urlStr).then((res) => {
-        if (res) return res;
-        return lfetch(ansUrl, urlStr).then(async (res) => {
-          if (config.cache.enabled) {
-            await caches.open(config.cache.name).then((cache) => {
-              cache.put(req, res.clone());
-            });
-          }
-          return res;
-        });
-      });
-    });
-  }
-  //blog 加速
-  if (config.blog.accelerator) {
-    if (config.blog.origin.includes(domain)) {
-      return caches.open(config.cache.name).then((cache) => {
-        return cache.match(urlStr).then((res) => {
-          return new Promise((resolve, reject) => {
-            if (res) {
-              setTimeout(() => {
-                resolve(res);
-              }, 20);
-            }
-
-            setTimeout(() => {
-              if (config.blog.mode === "mirror") {
-                config.blog.mirrors.forEach((mirror) => {
-                  ansUrl.push(urlStr.replace(domain, mirror));
-                });
-              }
-              if (config.blog.mode === "npm") {
-                config.blog.npm.urls.forEach((url) => {
-                  ansUrl.push(npm_prefix(url, urlObj));
-                });
-              }
-              ansUrl.push(urlStr);
-              lfetch(ansUrl, urlStr).then(async (res) => {
-                let newRes;
-                if (npm_prefix("", urlObj).endsWith(".html")) {
-                  newRes = new Response(await res.arrayBuffer(), {
-                    headers: {
-                      "content-type": "text/html; charset=utf-8",
-                      "cache-control": "max-age=0",
-                      Server: "Redish101BlogHelper",
-                    },
-                  });
-                } else {
-                  newRes = res.clone();
-                }
-                if (config.cache.enabled) {
-                  await caches.open(config.cache.name).then(async (cache) => {
-                    cache.put(req, newRes.clone());
-                  });
-                }
-                resolve(newRes);
-              });
-            }, 0);
-          });
-        });
-      });
+//主控函数
+const handle = async function (req) {
+    const urlStr = req.url
+    const urlObj = new URL(urlStr);
+    const urlPath = urlObj.pathname;
+    const domain = urlObj.hostname;
+    if(domain === "blog.redish101.top"){//这里写你需要拦截的域名
+      return lfetch(generate_blog_urls('redish101-blog',await db.read('blog_version') || '1.1.655986384',fullpath(urlPath)))
+      .then(res=>res.arrayBuffer())//arrayBuffer最科学也是最快的返回
+      .then(buffer=>new Response(buffer,{headers:{"Content-Type":"text/html;charset=utf-8"}}))//重新定义header
     }
-  }
-
-  return fetch(req);
-};
-
-//Function 功能区
-const npm_prefix = (url, urlObj) => {
-  let path = urlObj.pathname.split("#")[0];
-  if (path.endsWith("/")) path += "index";
-  if (!path.split("/")[path.split("/").length - 1].includes(".")) {
-    path += ".html";
-  }
-  return url + path;
-};
+    let urls = []
+    for (let i in cdn) {
+        for (let j in cdn[i]) {
+            if (domain == cdn[i][j].url.split('https://')[1].split('/')[0] && urlStr.match(cdn[i][j].url)) {
+                urls = []
+                for (let k in cdn[i]) {
+                    urls.push(urlStr.replace(cdn[i][j].url, cdn[i][k].url))
+                }
+                if (urlStr.indexOf('@latest/') > -1) {
+                    return lfetch(urls, urlStr)
+                } else {
+                    return caches.match(req).then(function (resp) {
+                        return resp || lfetch(urls, urlStr).then(function (res) {
+                            return caches.open(CACHE_NAME).then(function (cache) {
+                                cache.put(req, res.clone());
+                                return res;
+                            });
+                        });
+                    })
+                }
+            }
+        }
+    }
+    return fetch(req)
+}
 const lfetch = async (urls, url) => {
-  let controller = new AbortController();
-  const PauseProgress = async (res) => {
-    return new Response(await res.arrayBuffer(), {
-      status: res.status,
-      headers: res.headers,
-    });
-  };
-  if (!Promise.any) {
-    Promise.any = function (promises) {
-      return new Promise((resolve, reject) => {
-        promises = Array.isArray(promises) ? promises : [];
-        let len = promises.length;
-        let errs = [];
-        if (len === 0)
-          return reject(new AggregateError("All promises were rejected"));
-        promises.forEach((promise) => {
-          promise.then(
-            (value) => {
-              resolve(value);
-            },
-            (err) => {
-              len--;
-              errs.push(err);
-              if (len === 0) {
-                reject(new AggregateError(errs));
-              }
-            }
-          );
-        });
-      });
+    let controller = new AbortController();
+    const PauseProgress = async (res) => {
+        return new Response(await (res).arrayBuffer(), { status: res.status, headers: res.headers });
     };
-  }
-  return Promise.any(
-    urls.map((urls) => {
-      return new Promise((resolve, reject) => {
-        fetch(urls, {
-          signal: controller.signal,
+    if (!Promise.any) {
+        Promise.any = function (promises) {
+            return new Promise((resolve, reject) => {
+                promises = Array.isArray(promises) ? promises : []
+                let len = promises.length
+                let errs = []
+                if (len === 0) return reject(new AggregateError('All promises were rejected'))
+                promises.forEach((promise) => {
+                    promise.then(value => {
+                        resolve(value)
+                    }, err => {
+                        len--
+                        errs.push(err)
+                        if (len === 0) {
+                            reject(new AggregateError(errs))
+                        }
+                    })
+                })
+            })
+        }
+    }
+    return Promise.any(urls.map(urls => {
+        return new Promise((resolve, reject) => {
+            fetch(urls, {
+                signal: controller.signal
+            })
+                .then(PauseProgress)
+                .then(res => {
+                    if (res.status == 200) {
+                        controller.abort();
+                        resolve(res)
+                    } else {
+                        reject(res)
+                    }
+                })
         })
-          .then(PauseProgress)
-          .then((res) => {
-            if (res.status == 200) {
-              controller.abort();
-              resolve(res);
-            } else {
-              reject(res);
-            }
-          });
-      });
-    })
-  );
-};
+    }))
+}
