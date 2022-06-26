@@ -23,9 +23,6 @@ const handleerr = async (req, msg) => {
 }
 let cdn = {//镜像列表
     "gh": {
-        jsdelivr: {
-            "url": "https://cdn.jsdelivr.net/gh"
-        },
         jsdelivr_fastly: {
             "url": "https://fastly.jsdelivr.net/gh"
         },
@@ -34,9 +31,6 @@ let cdn = {//镜像列表
         }
     },
     "combine": {
-        jsdelivr: {
-            "url": "https://cdn.jsdelivr.net/combine"
-        },
         jsdelivr_fastly: {
             "url": "https://fastly.jsdelivr.net/combine"
         },
@@ -47,9 +41,6 @@ let cdn = {//镜像列表
     "npm": {
         eleme: {
             "url": "https://npm.elemecdn.com"
-        },
-        jsdelivr: {
-            "url": "https://cdn.jsdelivr.net/npm"
         },
         zhimg: {
             "url": "https://unpkg.zhimg.com"
@@ -158,7 +149,7 @@ const handle = async function (req) {
     const urlPath = urlObj.pathname;
     const domain = urlObj.hostname;
     if(domain === "blog.redish101.top"){//这里写你需要拦截的域名
-      return lfetch(generate_blog_urls('redish101-blog',await db.read('blog_version') || '1.1.655986384',fullpath(urlPath)))
+      return lfetch(generate_blog_urls('redish101-blog',await db.read('blog_version') || '1.1.656121141',fullpath(urlPath)))
       .then(res=>res.arrayBuffer())//arrayBuffer最科学也是最快的返回
       .then(buffer=>new Response(buffer,{headers:{"Content-Type":"text/html;charset=utf-8"}}))//重新定义header
     }
