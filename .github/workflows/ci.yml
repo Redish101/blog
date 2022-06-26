@@ -12,8 +12,8 @@ jobs:
           node-version: 16.x
       - run: npm install
       - run: python3 ./kits/gen_new_version.py
-      - run: npm run build
-      
+      - run: hexo cl
+      - run: hexo g
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         with:
