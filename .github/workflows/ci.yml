@@ -12,6 +12,7 @@ jobs:
           node-version: 16.x
       - run: npm install
       - run: python3 ./kits/gen_new_version.py
+      - run: npm install hexo-cli
       - run: hexo cl
       - run: hexo g
       - name: Deploy to GitHub Pages
