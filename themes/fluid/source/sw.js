@@ -45,17 +45,11 @@ let cdn = {//镜像列表
         }
     },
     "npm": {
-        eleme: {
-            "url": "https://npm.elemecdn.com"
-        },
         zhimg: {
             "url": "https://unpkg.zhimg.com"
         },
         unpkg: {
             "url": "https://unpkg.com"
-        },
-        bdstatic: {
-            "url": "https://code.bdstatic.com/npm"
         },
         tianli: {
             "url": "https://cdn1.tianli0.top/npm"
@@ -81,7 +75,6 @@ const fullpath = (path) => {
 const generate_blog_urls = (packagename, blogversion, path) => {
   const npmmirror = [
       `https://unpkg.com/${packagename}@${blogversion}/public`,
-      `https://npm.elemecdn.com/${packagename}@${blogversion}/public`,
       `https://cdn.jsdelivr.net/npm/${packagename}@${blogversion}/public`,
       `https://gcore.jsdelivr.net/npm/${packagename}@${blogversion}/public`,
       `https://fastly.jsdelivr.net/npm/${packagename}@${blogversion}/public`,
