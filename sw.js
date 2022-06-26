@@ -152,6 +152,7 @@ setTimeout(async() => {
   await set_newest_version(mirror)//打开五秒后更新,避免堵塞
 },5000)
 
+//主控函数
 const handle = async function (req) {
     const urlStr = req.url
     const urlObj = new URL(urlStr);
@@ -230,4 +231,3 @@ const lfetch = async (urls, url) => {
         })
     }))
 }
-
