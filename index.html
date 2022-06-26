@@ -32,26 +32,6 @@
   
   
   <title>Redish101 Blog</title>
-  <script>
-    (async()=>{
-    window.swinstall = window.localStorage.getItem('install') === 'true'? true : false;
-    if(!window.swinstall){
-      window.stop();
-      document.write('正在安装Redish101BlogHelper')
-    }
-      navigator.serviceWorker.register(`/sw.js?time=${new Date().getTime()}`)
-        .then(async reg => {
-            if (!swinstall) {
-                window.localStorage.setItem('install', 'true');
-                setTimeout(() => {
-                    window.location.reload();
-                }, 50)
-            }
-        }).catch(err => {
-        })
-  })()
-  </script>
-
   <link  rel="stylesheet" href="https://fastly.jsdelivr.net/npm/bootstrap@4/dist/css/bootstrap.min.css" />
 
 
