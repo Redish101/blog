@@ -12,9 +12,7 @@ jobs:
           node-version: 16.x
       - run: npm install
       - run: python3 ./kits/gen_new_version.py
-      - run: npm install hexo-cli
-      - run: hexo cl
-      - run: hexo g
+      - run: npm run build
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         with:
