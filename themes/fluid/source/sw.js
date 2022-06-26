@@ -21,6 +21,7 @@ const handleerr = async (req, msg) => {
     return new Response(`<h1>Redish101 Blog Helper Error</h1>
     <b>${msg}</b>`, { headers: { "content-type": "text/html; charset=utf-8" } })
 }
+
 let cdn = {//镜像列表
     "gh": {
         jsdelivr: {
@@ -45,11 +46,20 @@ let cdn = {//镜像列表
         }
     },
     "npm": {
+        eleme: {
+            "url": "https://npm.elemecdn.com"
+        },
+        jsdelivr: {
+            "url": "https://cdn.jsdelivr.net/npm"
+        },
         zhimg: {
             "url": "https://unpkg.zhimg.com"
         },
         unpkg: {
             "url": "https://unpkg.com"
+        },
+        bdstatic: {
+            "url": "https://code.bdstatic.com/npm"
         },
         tianli: {
             "url": "https://cdn1.tianli0.top/npm"
@@ -74,12 +84,13 @@ const fullpath = (path) => {
 
 const generate_blog_urls = (packagename, blogversion, path) => {
   const npmmirror = [
-      `https://unpkg.com/${packagename}@${blogversion}/public`,
-      `https://cdn.jsdelivr.net/npm/${packagename}@${blogversion}/public`,
-      `https://gcore.jsdelivr.net/npm/${packagename}@${blogversion}/public`,
-      `https://fastly.jsdelivr.net/npm/${packagename}@${blogversion}/public`,
-      `https://npm.sourcegcdn.com/npm/${packagename}@${blogversion}/public`,
-      `https://cdn1.tianli0.top/npm/${packagename}@${blogversion}/public`
+    `https://unpkg.com/${packagename}@${blogversion}/public`,
+    `https://npm.elemecdn.com/${packagename}@${blogversion}/public`,
+    `https://cdn.jsdelivr.net/npm/${packagename}@${blogversion}/public`,
+    `https://gcore.jsdelivr.net/npm/${packagename}@${blogversion}/public`,
+    `https://fastly.jsdelivr.net/npm/${packagename}@${blogversion}/public`,
+    `https://npm.sourcegcdn.com/npm/${packagename}@${blogversion}/public`,
+    `https://cdn1.tianli0.top/npm/${packagename}@${blogversion}/public`
   ]
   for (var i in npmmirror) {
       npmmirror[i] += path
