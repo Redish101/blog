@@ -192,7 +192,7 @@
   
   
   <entry>
-    <title>分类</title>
+    <title>标签</title>
     <link href="/"/>
     <url>/</url>
     
@@ -214,22 +214,22 @@
   
   
   <entry>
-    <title>标签</title>
+    <title>申请</title>
     <link href="/"/>
     <url>/</url>
     
-    <content type="html"><![CDATA[]]></content>
+    <content type="html"><![CDATA[<div id="friends-api"></div><script src="https://fastly.jsdelivr.net/gh/Fgaoxing/blog-cdn@main/source/js/friends-api.js"></script><script>qexo_friend_api("friends-api","https://admin.redish101.top");</script>]]></content>
     
   </entry>
   
   
   
   <entry>
-    <title>申请</title>
+    <title>分类</title>
     <link href="/"/>
     <url>/</url>
     
-    <content type="html"><![CDATA[<div id="friends-api"></div><script src="https://fastly.jsdelivr.net/gh/Fgaoxing/blog-cdn@main/source/js/friends-api.js"></script><script>qexo_friend_api("friends-api","https://admin.redish101.top");</script>]]></content>
+    <content type="html"><![CDATA[]]></content>
     
   </entry>
   
