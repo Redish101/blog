@@ -328,6 +328,8 @@ navbar:
     - { key: "links", link: "/links/", icon: "iconfont icon-link-fill" }
     - { key: "管理", link: "https://admin.redish101.top", icon: "iconfont icon-setting-fill" }
     - { key: "开往", link: "https://travellings.link/", icon: "iconfont icon-subway" }
+    - { key: "RSS", link: "/atom.xml", icon: "iconfont icon-rss" }
+
 
 
 # 搜索功能，基于 hexo-generator-search 插件，若已安装其他搜索插件请关闭此功能，以避免生成多余的索引文件
