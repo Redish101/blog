@@ -38,4 +38,15 @@ cd redish101-pic # 进入上一步创建的文件夹
 npm init # 将文件夹初始化为npm包
 ```
 
-之后，我们可以在这个目录中存入图片
+之后，我们可以在这个目录中存入图片。将需要的图片存入到目录之后发布到npm：
+
+```bash
+npm login # 登录到npm
+npm publish # 上传到npm
+```
+
+可以看到，第一次上传没有出现任何问题，但如果再试一次，会出现以下报错：
+
+![](https://cdn1.tianli0.top/gh/Redish101/cdn@src/img/20220703211438.png)
+
+这是因为npm不允许发布重复的版本，我们需要手动更新`package.json`中的`version`字段更改版本，版本号需要符合[语义化版本](https://semver.org/lang/zh-CN/)。
