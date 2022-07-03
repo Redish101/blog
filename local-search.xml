@@ -203,22 +203,22 @@
   
   
   <entry>
-    <title>标签</title>
+    <title>友情链接</title>
     <link href="/"/>
     <url>/</url>
     
-    <content type="html"><![CDATA[]]></content>
+    <content type="html"><![CDATA[<div id="qexo-friends"></div><link rel="stylesheet" href="https://cdn1.tianli0.top/npm/qexo-static@1.1.3/hexo/friends/friends.css"/><script src="https://cdn1.tianli0.top/npm/qexo-static@1.1.3/hexo/friends/friends.js"></script><script>loadQexoFriends("qexo-friends", "https://admin.redish101.top")</script><center><a href="./join" id="commentbutton" class="ui-box bottom-rightStart-burst" style="background-color:var(--link-hover-bg-color);font-size:20px">申请加入友链</a></center>]]></content>
     
   </entry>
   
   
   
   <entry>
-    <title>友情链接</title>
+    <title>标签</title>
     <link href="/"/>
     <url>/</url>
     
-    <content type="html"><![CDATA[<div id="qexo-friends"></div><link rel="stylesheet" href="https://cdn1.tianli0.top/npm/qexo-static@1.1.3/hexo/friends/friends.css"/><script src="https://cdn1.tianli0.top/npm/qexo-static@1.1.3/hexo/friends/friends.js"></script><script>loadQexoFriends("qexo-friends", "https://admin.redish101.top")</script><center><a href="./join" id="commentbutton" class="ui-box bottom-rightStart-burst" style="background-color:var(--link-hover-bg-color);font-size:20px">申请加入友链</a></center>]]></content>
+    <content type="html"><![CDATA[]]></content>
     
   </entry>
   
