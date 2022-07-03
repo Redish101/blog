@@ -6,7 +6,7 @@
   <link href="https://blog.redish101.top/atom.xml" rel="self"/>
   
   <link href="https://blog.redish101.top/"/>
-  <updated>2022-07-03T04:50:18.784Z</updated>
+  <updated>2022-07-03T13:05:12.402Z</updated>
   <id>https://blog.redish101.top/</id>
   
   <author>
@@ -21,7 +21,7 @@
     <link href="https://blog.redish101.top/p/36200.html"/>
     <id>https://blog.redish101.top/p/36200.html</id>
     <published>2022-06-10T10:52:04.000Z</published>
-    <updated>2022-07-03T04:50:18.784Z</updated>
+    <updated>2022-07-03T13:05:12.402Z</updated>
     
     <content type="html"><![CDATA[<h1 id="这是什么"><a href="#这是什么" class="headerlink" title="这是什么"></a>这是什么</h1><p>在去年，GitHub上线了一个十分酷炫的新功能：<code>Codespaces</code>，使用Codespaces可以随时随地在浏览器里编辑、调试、运行托管在GitHub的代码，但这个功能一直在内测，只有企业才能申请使用。</p><p>但就在前几天，GitHub将此功能开放公测，任何用户都能申请使用，101早早的就收到了来自GitHub的邮件，于是便满心欢喜的来到了GitHub，美滋滋的体验了一番，于是就有了这篇文章。</p><p><img src="https://cdn1.tianli0.top/gh/Redish101/cdn@src/img/20220610210634.png" alt="101收到的邮件"></p><h1 id="性能"><a href="#性能" class="headerlink" title="性能"></a>性能</h1><h2 id="硬件配置"><a href="#硬件配置" class="headerlink" title="硬件配置"></a>硬件配置</h2><p>先说性能，GitHub面对个人项目提供了一台4Cores 8RAM的机子，这性能对于普通的开发那是绰绰有余，话不多说，上bench截图：</p><p><img src="https://cdn1.tianli0.top/gh/Redish101/cdn@src/img/20220610211120.png" alt="bench测试结果"></p><h2 id="网络"><a href="#网络" class="headerlink" title="网络"></a>网络</h2><p>配置虽好值得夸赞，但这网络之遭也十分的影响使用，在笔者试用的时候，2个小时中断线了将近十次。虽然大部分时间下编辑器的使用没有发现明显卡顿，但终端在使用时的卡顿是真的让人无法忍受。</p><h2 id="终端相关"><a href="#终端相关" class="headerlink" title="终端相关"></a>终端相关</h2><p>Github Codespaces的终端是可以通过<code>sudo su</code>进入root用户的，也可以直接通过<code>sudo</code>命令来运行需要root权限的服务。</p><h2 id="自动休眠"><a href="#自动休眠" class="headerlink" title="自动休眠"></a>自动休眠</h2><p>这是非常重要的一个点，是我们白嫖之路的最大绊脚石，在一段时间（暂未明确结果）内如果编辑器没有活跃，codespace就会自动关闭，这导致一切</p><h1 id="写代码"><a href="#写代码" class="headerlink" title="写代码"></a>写代码</h1><p>Codespaces使用了web版本的VS Code，所以说编辑体验是与直接在本地使用Code编辑并无不同，经过测试，也能完美的适配各种插件。运行时方面也无需担心，已经自动预装了docker、python、node、c&#x2F;cpp等大部分语言的开发环境。</p><p>同时，如果在终端里启动程序的开发服务器时编辑器会自动发现开放的端口并映射到公网，默认是私有的，只有codespace的所有者才能访问，但是可以在图中的这个位置中更改穿透为对外公开，但是101奉劝各位早点死了用这个搭建什么服务的心吧，同GitHub一样，几乎是无法访问，在速度这方面，甚至比不上GitHub Pages。</p><h1 id="奇怪的技巧"><a href="#奇怪的技巧" class="headerlink" title="奇怪的技巧"></a>奇怪的技巧</h1><p>前面说了，直接使用自带的内网穿透速度很慢，几乎无法使用，不能搭建服务。</p><p>但是，别忘了我们还有很多第三方的内网穿透，只要选择合适的提供商，还是能确保不错的访问速度的。这里我推荐Cloudflare的<code>Argo Tunnel</code>，速度相当的不错。</p><h2 id="跑面板"><a href="#跑面板" class="headerlink" title="跑面板"></a>跑面板</h2><p>这里没有什么可以说的，直接跑appnode就行了。</p><h2 id="跑MacOS"><a href="#跑MacOS" class="headerlink" title="跑MacOS"></a>跑MacOS</h2><p>这个技巧就有点离谱了，其原理为通过docker跑macos之后使用vnc直接连接就好了，但是体验极差，不推荐。</p><h1 id="定价问题"><a href="#定价问题" class="headerlink" title="定价问题"></a>定价问题</h1><p>虽说现在Codespaces处在Beta阶段，不会收取任何一份费用，但是101没有得到任何确切的消息说Codespaces会免费。(其实很好理解，用脚趾头都能想出来，Github会这么大方，免费送给你4c8g的服务器？)</p>]]></content>
     
@@ -45,7 +45,7 @@
     <link href="https://blog.redish101.top/p/49350.html"/>
     <id>https://blog.redish101.top/p/49350.html</id>
     <published>2022-05-09T13:31:14.000Z</published>
-    <updated>2022-07-03T04:50:18.784Z</updated>
+    <updated>2022-07-03T13:05:12.398Z</updated>
     
     <content type="html"><![CDATA[<blockquote><p>施工中</p></blockquote>]]></content>
     
@@ -76,7 +76,7 @@
     <link href="https://blog.redish101.top/p/33392.html"/>
     <id>https://blog.redish101.top/p/33392.html</id>
     <published>2022-03-14T12:58:15.000Z</published>
-    <updated>2022-07-03T04:50:18.784Z</updated>
+    <updated>2022-07-03T13:05:12.398Z</updated>
     
     <content type="html"><![CDATA[<blockquote><p>这篇文章依旧有彩蛋（以后的文章也会有彩蛋）</p></blockquote><p>相信很多新晋站长应在这广袤无垠的互联网世界撑起了自己的小帐篷，但却十分迷茫，我建站完了之后该干啥呢？🤔️</p><p>今天我们就来解决这个问题。</p><h2 id="数据统计"><a href="#数据统计" class="headerlink" title="数据统计"></a>数据统计</h2><p>首先，作为站长，当然要知道自己的网站数据，市面上的数据统计工具有很多，但是有的不易接入，有的难于分析，所以，这里我推荐<a href="https://www.umeng.com/web">友盟+网站统计 | 即安即用，实时统计网站流量数据 (umeng.com)</a>这个东西那可谓是大有来历，它是原来的<strong>CNZZ</strong>，各种功能一应俱全，很多网站都在使用。</p><h3 id="CNZZ"><a href="#CNZZ" class="headerlink" title="CNZZ"></a>CNZZ</h3><h4 id="网站接入"><a href="#网站接入" class="headerlink" title="网站接入"></a>网站接入</h4><p>首先，打开CNZZ的官网<a href="https://www.umeng.com/web">友盟+网站统计 | 即安即用，实时统计网站流量数据 (umeng.com)</a>，点击进入控制台，选择添加站点</p><p>不讲了，具体原因大家自己看：</p><p><img src="https://cdn1.tianli0.top/gh/Redish101/cdn@src/img/20220315210032.png" alt="友盟官方的公告"></p><h3 id="百度统计"><a href="#百度统计" class="headerlink" title="百度统计"></a>百度统计</h3><p>首先我们打开官网：<a href="https://tongji.baidu.com/">官网</a></p><p>恭喜你，找到了<a href="https://redish101.github.io/jspvz">彩蛋</a></p><p>之后的事情按着教程来就可以了。</p><p>我才不会告诉你我是不想写。</p><h2 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h2><ol><li>(2022, February 18). 关于友盟+ U-Web 统计分析产品调整的公告. Info. <a href="https://info.umeng.com/detail?id=550&amp;cateId=1">https://info.umeng.com/detail?id=550&amp;cateId=1</a></li></ol>]]></content>
     
@@ -105,7 +105,7 @@
     <link href="https://blog.redish101.top/p/39585.html"/>
     <id>https://blog.redish101.top/p/39585.html</id>
     <published>2022-03-12T04:03:00.000Z</published>
-    <updated>2022-07-03T04:50:18.784Z</updated>
+    <updated>2022-07-03T13:05:12.402Z</updated>
     
     <content type="html"><![CDATA[<script src="https://gist.github.com/Redish101/06f7befeea0959a7580b7df37d8babbe.js"></script>]]></content>
     
@@ -134,7 +134,7 @@
     <link href="https://blog.redish101.top/p/15511.html"/>
     <id>https://blog.redish101.top/p/15511.html</id>
     <published>2022-03-07T16:00:00.000Z</published>
-    <updated>2022-07-03T04:50:18.784Z</updated>
+    <updated>2022-07-03T13:05:12.402Z</updated>
     
     <content type="html"><![CDATA[<p>有时候，烦人的甲方会要求我们把py程序编译为可执行文件，这时候要怎么办呢，用<strong>pyinstaller</strong></p><h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">pip3 install pyinstaller<br></code></pre></td></tr></table></figure><h2 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">pyinstaller 你的文件.py<br></code></pre></td></tr></table></figure>]]></content>
     
@@ -159,7 +159,7 @@
     <link href="https://blog.redish101.top/p/45082.html"/>
     <id>https://blog.redish101.top/p/45082.html</id>
     <published>2022-03-04T16:00:00.000Z</published>
-    <updated>2022-07-03T04:50:18.784Z</updated>
+    <updated>2022-07-03T13:05:12.398Z</updated>
     
     <content type="html"><![CDATA[<blockquote><p>我的同学<strong>宋紫睿</strong>为这篇文章作出了不可磨灭的贡献。<br>阅读之前，告诉大家一个消息:<strong>本文有彩蛋</strong>。</p></blockquote><h2 id="docsify好在哪里"><a href="#docsify好在哪里" class="headerlink" title="docsify好在哪里"></a>docsify好在哪里</h2><p>开源项目的文档往往是一个很大的问题，许多静态站点生成器并不能兼顾<strong>强大</strong>与<strong>简单</strong>。</p><span id="more"></span><h3 id="对比"><a href="#对比" class="headerlink" title="对比"></a>对比</h3><h4 id="Sphinx"><a href="#Sphinx" class="headerlink" title="Sphinx"></a>Sphinx</h4><p>先拿Sphinx来说吧，Sphinx因背后有python的驱动，功能十分强大，但是<code>reStructuredText</code>的复杂也劝退了许多人。</p><h4 id="Vuepress"><a href="#Vuepress" class="headerlink" title="Vuepress"></a>Vuepress</h4><p>相比之下，vuepress在文档的编写上就没有那么复杂了，毕竟<code>markdown</code>还是很简单的。<br>But，vuepress的配置实在是太复杂了，而且构建速度及其缓慢，最重要的是需要<code>JavaScript</code>的基础。</p><h4 id="mkdocs"><a href="#mkdocs" class="headerlink" title="mkdocs"></a>mkdocs</h4><p>mkdocs可以说是能和docsify抗衡了，但是，mkdocs需要构建</p><h2 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h2><p>经过上面的的对比，docsify的优点已经很明显了，下面我们就来安装docsify</p><h3 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h3><p>全局安装Docsify-cli:</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs bash">yarn global add docsify-cli<br><span class="hljs-comment"># 或者使用npm</span><br></code></pre></td></tr></table></figure><h3 id="开始一个项目"><a href="#开始一个项目" class="headerlink" title="开始一个项目"></a>开始一个项目</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">docsify init &lt;项目路径&gt;<br></code></pre></td></tr></table></figure><h3 id="配置"><a href="#配置" class="headerlink" title="配置"></a>配置</h3><p>配置也很简单，可以参考<a href="https://docsify.js.org/#/zh-cn/configuration">配置项 (docsify.js.org)</a></p><h3 id="写作"><a href="#写作" class="headerlink" title="写作"></a>写作</h3><p>这个更简单，只需要在<code>docs</code>文件夹里新建<code>markdown</code>文件即可。<br>(别说你不会，送你个指南<a href="https://markdown.com.cn/">Markdown 官方教程</a>)</p><h4 id="路径问题"><a href="#路径问题" class="headerlink" title="路径问题"></a>路径问题</h4><p>这里要注意一下路径：</p><p>假设你的目录结构如下：</p><figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs text">.<br>└── docs<br>├── README.md<br>├── guide.md<br>└── zh-cn<br>├── README.md<br>└── guide.md<br></code></pre></td></tr></table></figure><p>那么渲染后的路径就是：</p><figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs text">docs/README.md        =&gt; http://domain.com<br>docs/guide.md         =&gt; http://domain.com/guide<br>docs/zh-cn/README.md  =&gt; http://domain.com/zh-cn/<br>docs/zh-cn/guide.md   =&gt; http://domain.com/zh-cn/guide<br></code></pre></td></tr></table></figure><h2 id="部署"><a href="#部署" class="headerlink" title="部署"></a>部署</h2><h3 id="Github-Pages"><a href="#Github-Pages" class="headerlink" title="Github Pages"></a>Github Pages</h3><p>将Github Pages的工作目录设置到docsify所在目录。</p><h3 id="Vercel"><a href="#Vercel" class="headerlink" title="Vercel"></a>Vercel</h3><p>选中docsify所在仓库，点击下面的deploy</p><h3 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h3><p>具体我也不会用，只需要记住两点：</p><ul><li>无需构建</li><li>工作目录在根目录</li></ul><h2 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h2><ol><li><a href="https://docsify.js.org/#/zh-cn/">docsify中文文档</a></li><li><a href="https://vercel.com/docs">Introduction to Vercel – Vercel Docs</a></li><li><a href="https://segmentfault.com/a/1190000040063325?utm_source=tag-newest">Vercel 上自动部署你的个人博客 Hugo - SegmentFault 思否</a></li></ol><p>感谢阅读<br>彩蛋：🥚呵呵呵，答应你们的蛋。</p>]]></content>
     
@@ -185,7 +185,7 @@
     <link href="https://blog.redish101.top/p/8071.html"/>
     <id>https://blog.redish101.top/p/8071.html</id>
     <published>2022-03-01T03:23:00.000Z</published>
-    <updated>2022-07-03T04:50:18.784Z</updated>
+    <updated>2022-07-03T13:05:12.402Z</updated>
     
     <content type="html"><![CDATA[<p>啊啊啊啊啊，我终于升级完了，和wp的臃肿相比，Hexo显得十分简洁。<br>大家都说hexo写作困难，那是在没有HexoPlusPlus的情况下，部署后，写作体验比Typecho还要nice。  </p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-built_in">print</span>(<span class="hljs-string">&quot;Hello world&quot;</span>)<br></code></pre></td></tr></table></figure>]]></content>
     
