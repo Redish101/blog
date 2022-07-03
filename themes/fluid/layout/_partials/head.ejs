@@ -35,6 +35,7 @@ var ogConfig = Object.assign({ image: ogImage && url_for(ogImage) }, theme.open_
     <%- theme.custom_head %>
   <% } %>
   <title><%= title %></title>
+  <!-- Cloudflare Web Analytics --><script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "4ddcb2b499b04ac2a9d0d05e4d3e3e40"}'></script><!-- End Cloudflare Web Analytics -->
   <%- partial('_partials/css.ejs') %>
   <%- export_config() %>
   <%- js_ex(theme.static_prefix.internal_js, 'utils.js') %>

@@ -201,14 +201,14 @@ font:
 # 指定自定义 .js 文件路径，支持列表；路径是相对 source 目录，如 /js/custom.js 对应存放目录 source/js/custom.js
 # Specify the path of your custom js file, support list. The path is relative to the source directory, such as `/js/custom.js` corresponding to the directory `source/js/custom.js`
 custom_js: 
-  - //fastly.jsdelivr.net/npm/aplayer/dist/APlayer.min.js  #/APlayer#/APlayer依赖
-  - //fastly.jsdelivr.net/gh/metowolf/MetingJS@1.2/dist/Meting.min.js  #/APlayer依赖
+  - //cdn1.tianli0.top/npm/aplayer/dist/APlayer.min.js  #/APlayer#/APlayer依赖
+  - //cdn1.tianli0.top/gh/metowolf/MetingJS@1.2/dist/Meting.min.js  #/APlayer依赖
 
 # 指定自定义 .css 文件路径，用法和 custom_js 相同
 # The usage is the same as custom_js
 custom_css: 
   - //at.alicdn.com/t/font_3222048_uzvdhxu46sr.css
-  - //fastly.jsdelivr.net/npm/aplayer/dist/APlayer.min.css
+  - //cdn1.tianli0.top/npm/aplayer/dist/APlayer.min.css
 
 # 自定义 <head> 节点中的 HTML 内容
 # Customize <head> HTML content
@@ -404,7 +404,7 @@ footer:
   # 页脚第一行文字的 HTML，建议保留 Fluid 的链接，用于向更多人推广本主题
   # HTML of the first line of the footer, it is recommended to keep the Fluid link to promote this theme to more people
   content: '
-    ©️Copyright Redish101 2022 | 部署在Redish101 Blog Helper | 基于Hexo与Fluid主题 | 使用Wexagonal管理
+    ©️Copyright Redish101 2022 | 部署在Cloudflare | 基于Hexo与Fluid主题 | 使用Qexo管理 | JSD加速由Tianli提供
   '
 
   # 展示网站的 PV、UV 统计数
@@ -750,7 +750,7 @@ waline:
   meta: ['nick', 'mail', 'link']
   requiredMeta: []
   lang: 'zh-CN'
-  emoji: ['https://fastly.jsdelivr.net/gh/walinejs/emojis@1.0.1/qq/']
+  emoji: ['https://cdn1.tianli0.top/gh/walinejs/emojis@1.0.1/qq/']
   dark: 'html[data-user-color-scheme="dark"]'
   avatar: ''
   avatarCDN: ''
@@ -925,7 +925,7 @@ links:
         title: 'Kosmor',
         intro: '一个B站up',
         link: 'https://space.bilibili.com/360214564',
-        avatar: 'https://fastly.jsdelivr.net/gh/Redish101/cdn@src/img/kosmor.jpg'
+        avatar: 'https://cdn1.tianli0.top/gh/Redish101/cdn@src/img/kosmor.jpg'
       }
     - {
         title: '致远博客',
@@ -937,7 +937,7 @@ links:
         title: '幼稚园园长',
         intro: '学无止境 知行合一',
         link: 'https://yzyyz.top',
-        avatar: 'https://fastly.jsdelivr.net/gh/yzyyz1387/blogimages/img/bloger.jpeg'
+        avatar: 'https://cdn1.tianli0.top/gh/yzyyz1387/blogimages/img/bloger.jpeg'
     }
     - {
         title: '陈YF的博客',
@@ -976,47 +976,47 @@ static_prefix:
   internal_css: /css
   internal_img: /img
 
-  anchor: https://fastly.jsdelivr.net/npm/anchor-js@4/
+  anchor: https://cdn1.tianli0.top/npm/anchor-js@4/
 
-  github_markdown: https://fastly.jsdelivr.net/npm/github-markdown-css@4/
+  github_markdown: https://cdn1.tianli0.top/npm/github-markdown-css@4/
 
-  jquery: https://fastly.jsdelivr.net/npm/jquery@3/dist/
+  jquery: https://cdn1.tianli0.top/npm/jquery@3/dist/
 
-  bootstrap: https://fastly.jsdelivr.net/npm/bootstrap@4/dist/
+  bootstrap: https://cdn1.tianli0.top/npm/bootstrap@4/dist/
 
-  highlightjs: https://fastly.jsdelivr.net/npm/highlight.js@10/
+  highlightjs: https://cdn1.tianli0.top/npm/highlight.js@10/
 
-  prismjs: https://fastly.jsdelivr.net/npm/prismjs@1/
+  prismjs: https://cdn1.tianli0.top/npm/prismjs@1/
 
-  tocbot: https://fastly.jsdelivr.net/npm/tocbot@4/dist/
+  tocbot: https://cdn1.tianli0.top/npm/tocbot@4/dist/
 
-  typed: https://fastly.jsdelivr.net/npm/typed.js@2/lib/
+  typed: https://cdn1.tianli0.top/npm/typed.js@2/lib/
 
-  fancybox: https://fastly.jsdelivr.net/npm/@fancyapps/fancybox@3/dist/
+  fancybox: https://cdn1.tianli0.top/npm/@fancyapps/fancybox@3/dist/
 
-  nprogress: https://fastly.jsdelivr.net/npm/nprogress@0/
+  nprogress: https://cdn1.tianli0.top/npm/nprogress@0/
 
-  mathjax: https://fastly.jsdelivr.net/npm/mathjax@3/es5/
+  mathjax: https://cdn1.tianli0.top/npm/mathjax@3/es5/
 
-  katex: https://fastly.jsdelivr.net/npm/katex@0/dist/
+  katex: https://cdn1.tianli0.top/npm/katex@0/dist/
 
   busuanzi: https://busuanzi.ibruce.info/busuanzi/2.3/
 
-  clipboard: https://fastly.jsdelivr.net/npm/clipboard@2/dist/
+  clipboard: https://cdn1.tianli0.top/npm/clipboard@2/dist/
 
-  mermaid: https://fastly.jsdelivr.net/npm/mermaid@8/dist/
+  mermaid: https://cdn1.tianli0.top/npm/mermaid@8/dist/
 
-  valine: https://fastly.jsdelivr.net/npm/valine@1/dist/
+  valine: https://cdn1.tianli0.top/npm/valine@1/dist/
 
-  waline: https://fastly.jsdelivr.net/npm/@waline/client@1/dist/
+  waline: https://cdn1.tianli0.top/npm/@waline/client@1/dist/
 
-  gitalk: https://fastly.jsdelivr.net/npm/gitalk@1/dist/
+  gitalk: https://cdn1.tianli0.top/npm/gitalk@1/dist/
 
-  disqusjs: https://fastly.jsdelivr.net/npm/disqusjs@1/dist/
+  disqusjs: https://cdn1.tianli0.top/npm/disqusjs@1/dist/
 
-  twikoo: https://fastly.jsdelivr.net/npm/twikoo@1/dist/
+  twikoo: https://cdn1.tianli0.top/npm/twikoo@1/dist/
 
-  hint: https://fastly.jsdelivr.net/npm/hint.css@2/
+  hint: https://cdn1.tianli0.top/npm/hint.css@2/
 
 comment:
   artalk:

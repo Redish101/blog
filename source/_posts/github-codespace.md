@@ -14,7 +14,7 @@ date: 2022-06-10 18:52:04
 
 但就在前几天，GitHub将此功能开放公测，任何用户都能申请使用，101早早的就收到了来自GitHub的邮件，于是便满心欢喜的来到了GitHub，美滋滋的体验了一番，于是就有了这篇文章。
 
-![101收到的邮件](https://fastly.jsdelivr.net/gh/Redish101/cdn@src/img/20220610210634.png)
+![101收到的邮件](https://cdn1.tianli0.top/gh/Redish101/cdn@src/img/20220610210634.png)
 
 # 性能
 
@@ -22,7 +22,7 @@ date: 2022-06-10 18:52:04
 
 先说性能，GitHub面对个人项目提供了一台4Cores 8RAM的机子，这性能对于普通的开发那是绰绰有余，话不多说，上bench截图：
 
-![bench测试结果](https://fastly.jsdelivr.net/gh/Redish101/cdn@src/img/20220610211120.png)
+![bench测试结果](https://cdn1.tianli0.top/gh/Redish101/cdn@src/img/20220610211120.png)
 
 ## 网络
 

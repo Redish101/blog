@@ -28,7 +28,7 @@ date: 2022-03-14 20:58:15
 
 不讲了，具体原因大家自己看：
 
-![友盟官方的公告](https://fastly.jsdelivr.net/gh/Redish101/cdn@src/img/20220315210032.png)
+![友盟官方的公告](https://cdn1.tianli0.top/gh/Redish101/cdn@src/img/20220315210032.png)
 
 ### 百度统计
 

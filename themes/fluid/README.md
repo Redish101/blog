@@ -5,7 +5,7 @@
 <p align="center">一款 Material Design 风格的主题</p>
 <p align="center">An elegant Material-Design theme for Hexo</p>
 
-![ScreenShot](https://fastly.jsdelivr.net/gh/fluid-dev/static@master/hexo-theme-fluid/screenshots/index.png)
+![ScreenShot](https://cdn1.tianli0.top/gh/fluid-dev/static@master/hexo-theme-fluid/screenshots/index.png)
 
 <p align="center">
   <a title="Hexo Version" target="_blank" href="https://hexo.io/zh-cn/"><img alt="Hexo Version" src="https://img.shields.io/badge/Hexo-%3E%3D%205.0-orange?style=flat"></a>

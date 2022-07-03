@@ -28,7 +28,7 @@ let cdn = {//镜像列表
             "url": "https://cdn.jsdelivr.net/gh"
         },
         jsdelivr_fastly: {
-            "url": "https://fastly.jsdelivr.net/gh"
+            "url": "https://cdn1.tianli0.top/gh"
         },
         jsdelivr_gcore: {
             "url": "https://gcore.jsdelivr.net/gh"
@@ -39,7 +39,7 @@ let cdn = {//镜像列表
             "url": "https://cdn.jsdelivr.net/combine"
         },
         jsdelivr_fastly: {
-            "url": "https://fastly.jsdelivr.net/combine"
+            "url": "https://cdn1.tianli0.top/combine"
         },
         jsdelivr_gcore: {
             "url": "https://gcore.jsdelivr.net/combine"
@@ -88,7 +88,7 @@ const generate_blog_urls = (packagename, blogversion, path) => {
     `https://npm.elemecdn.com/${packagename}@${blogversion}/public`,
     `https://cdn.jsdelivr.net/npm/${packagename}@${blogversion}/public`,
     `https://gcore.jsdelivr.net/npm/${packagename}@${blogversion}/public`,
-    `https://fastly.jsdelivr.net/npm/${packagename}@${blogversion}/public`,
+    `https://cdn1.tianli0.top/npm/${packagename}@${blogversion}/public`,
     `https://npm.sourcegcdn.com/npm/${packagename}@${blogversion}/public`,
     `https://cdn1.tianli0.top/npm/${packagename}@${blogversion}/public`
   ]
