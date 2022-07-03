@@ -1,6 +1,6 @@
 ---
 title: Picgo + GitHub Action + npm 搭建超爽图床
-date: 2022-06-30 17:50:53
+date: 2022-07-02 17:50:53
 tags:
  - Picgo
  - 图床
@@ -12,7 +12,7 @@ categories:
 
 ## Step.1 搭建npm图床
 
-市面上有非常多的npm cdn，通过这些cdn，我们可以引用发布到npm的文件，例如本站的npm包是`redish101-blog`，最新版本为`1.3.656820088`，需要获取`/public/index.html`，通过Jsdelivr Fastly引用，直接链接就是这样的:
+市面上有非常多的npm cdn，通过这些cdn，我们可以引用发布到npm的文件，例如本站的npm包是 `redish101-blog`，最新版本为 `1.3.656820088`，需要获取 `/public/index.html`，通过Jsdelivr Fastly引用，直接链接就是这样的:
 
 ```plaintext
 https://fastly.jsdelivr.net/npm/redish101-blog@1.3.656820088/public/index.html
@@ -49,4 +49,18 @@ npm publish # 上传到npm
 
 ![](https://cdn1.tianli0.top/gh/Redish101/cdn@src/img/20220703211438.png)
 
-这是因为npm不允许发布重复的版本，我们需要手动更新`package.json`中的`version`字段更改版本，版本号需要符合[语义化版本](https://semver.org/lang/zh-CN/)。
+这是因为npm不允许发布重复的版本，我们需要手动更新 `package.json`中的 `version`字段更改版本，版本号需要符合[语义化版本](https://semver.org/lang/zh-CN/)。
+
+上传之后，我们就可以获取图片的直接链接了，格式一般为这样：
+
+```plaintext
+https://你的cdn地址/包名@版本号/图片的相对路径
+```
+
+但jsd是个例外：
+
+```plaintext
+https://fastly.jsdelivr.net/npm/包名@版本号/相对路径
+```
+
+至于哪里有npm cdn可以用，请自行谷歌，101推荐eleme。
