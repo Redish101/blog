@@ -23,3 +23,19 @@ https://fastly.jsdelivr.net/npm/redish101-blog@1.3.656820088/public/index.html
 > 最近,Jsd的主域名被dns污染了，Fastly是亚洲节点，所以没有受到影响，但电信访问Fastly绝对能急死人，所以，在目前情况下来看，在生产环境下使用jsd作为cdn是非常愚蠢的行为，这将大幅度拖慢网页加载速度。
 
 > 20220702更新: 一个不幸的消息，Fastly也炸了🙁
+
+同理，也可以获取发布到npm的图片。
+
+### 具体操作
+
+> 在搭建npm图床之前，需要安装npm
+
+首先，我们在本地创建一个npm包：
+
+```bash
+mkdir redish101-pic # 新建文件夹以初始化npm包
+cd redish101-pic # 进入上一步创建的文件夹
+npm init # 将文件夹初始化为npm包
+```
+
+之后，我们可以在这个目录中存入图片
