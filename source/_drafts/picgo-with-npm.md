@@ -64,3 +64,7 @@ https://fastly.jsdelivr.net/npm/包名@版本号/相对路径
 ```
 
 至于哪里有npm cdn可以用，请自行谷歌，101推荐eleme。
+
+## Step.2 集成到Github
+
+像上面这样在本地操作图片未免有些太麻烦了，要是换了个设备就需要重装了
