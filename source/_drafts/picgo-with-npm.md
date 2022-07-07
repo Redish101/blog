@@ -119,7 +119,7 @@ import time;
 with open("package.json",'r',encoding='utf-8') as f:
     jspack = json.load(f)
 
-new_version = '1.3.'+str(int(time.time()))[1:11:1]
+new_version = '1.1.'+str(int(time.time()))[1:11:1]
 jspack['version']=new_version
 with open("package.json",'w',encoding='utf-8') as f:
     json.dump(jspack, f,ensure_ascii=False)
@@ -147,4 +147,10 @@ jobs:
 
 ```
 
-到这里就完成搭建
+到这里就完成搭建了。
+
+## Step.3 集成到Picgo
+
+Picgo是一个图床客户端，支持Github图床，可以更加方便的上传图片。
+
+首先，我们去到[Picgo的仓库]
