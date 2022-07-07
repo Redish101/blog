@@ -9,7 +9,7 @@ tags:
 - npm
 - cdn
 title: Picgo + GitHub Action + npm 搭建超爽图床
-updated: '2022-07-07 11:28:01'
+updated: '2022-07-07 11:37:04'
 ---
 图床，用于将本地的图片上传到互联网并生成唯一的直接链接，常常用于在网站中插入图片。目前市面上有许多的公用图床，体验也都还可以，但自己的图片放在别人的服务器多少有点不放心，要是跑路了更是直接玩完。此时有杠精要说了：“101，101，不是还有各大厂的对象储存吗”，您要是口袋比较充裕的话您就用，一个G的流量就0.5CNY，101是真的用不起。
 
@@ -74,4 +74,77 @@ https://fastly.jsdelivr.net/npm/包名@版本号/相对路径
 
 ### 具体操作
 
-首先，我们在Github新建一个仓库
+首先，我们在Github新建一个仓库，仓库名随意，然后把所有图片存到这个仓库里。然后前往[npm官网](https://www.npmjs.com/)，生成一个`Access Tokens`，保留备用。
+
+![](https://cdn1.tianli0.top/gh/Redish101/cdn@src/img/20220707114628.png)
+
+![](https://cdn1.tianli0.top/gh/Redish101/cdn@src/img/20220707114742.png)
+
+![](https://cdn1.tianli0.top/gh/Redish101/cdn@src/img/20220707114931.png)
+
+![](https://cdn1.tianli0.top/gh/Redish101/cdn@src/img/20220707115044.png)
+
+回到Github，打开仓库设置=>secrets=>Action，新建一个Secret，名字为`NPM_TOKEN`，内容为刚才生成的Access Token，保存。
+
+之后，写一个ci用于自动发布npm包，在仓库`.github/workflows`目录新建一个yml文件作为ci配置文件，名称随意，粘贴下面的内容：
+
+```yaml
+name: Deploy to NPM CDN
+'on':
+  - workflow_dispatch
+  - push
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v1
+        with:
+          node-version: 16.x
+      - uses: JS-DevTools/npm-publish@v1
+        with:
+          token: ${{ secrets.NPM_TOKEN }}
+```
+
+试试上传一张图片，等待一会，图片就自动上传到了npm，但我们再上传一遍，会出现之前版本号重复的问题，如果你不想每次上传都更改`packages.json`，可以像我一样写一个小小的脚本，并在ci中运行，下面是参考：
+
+脚本：
+
+```python
+# new_version.py
+
+import json;
+import time;
+
+with open("package.json",'r',encoding='utf-8') as f:
+    jspack = json.load(f)
+
+new_version = '1.3.'+str(int(time.time()))[1:11:1]
+jspack['version']=new_version
+with open("package.json",'w',encoding='utf-8') as f:
+    json.dump(jspack, f,ensure_ascii=False)
+```
+
+ci配置：
+
+```yaml
+name: Deploy to NPM CDN
+'on':
+  - workflow_dispatch
+  - push
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v1
+        with:
+          node-version: 16.x
+      - run: python3 new_version.py
+      - uses: JS-DevTools/npm-publish@v1
+        with:
+          token: ${{ secrets.NPM_TOKEN }}
+
+```
+
+到这里就完成搭建
