@@ -16,25 +16,35 @@
     <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
   
   <meta name="theme-color" content="#2f4154">
-  <meta name="author" content="Redish101,宋紫睿">
+  <meta name="author" content="Redish101">
   <meta name="keywords" content="Redish101">
   
-    <meta name="description" content="我的同学宋紫睿为这篇文章作出了不可磨灭的贡献。阅读之前，告诉大家一个消息:本文有彩蛋。  docsify好在哪里开源项目的文档往往是一个很大的问题，许多静态站点生成器并不能兼顾强大与简单。">
+    <meta name="description" content="图床，用于将本地的图片上传到互联网并生成唯一的直接链接，常常用于在网站中插入图片。目前市面上有许多的公用图床，体验也都还可以，但自己的图片放在别人的服务器多少有点不放心，要是跑路了更是直接玩完。此时有杠精要说了：“101，101，不是还有各大厂的对象储存吗”，您要是口袋比较充裕的话您就用，一个G的流量就0.5CNY，101是真的用不起。 Step.1 搭建npm图床市面上有非常多的npm cdn，">
 <meta property="og:type" content="article">
-<meta property="og:title" content="docsify - 一个优雅的静态文档生成器">
-<meta property="og:url" content="https://blog.redish101.top/p/45082.html">
+<meta property="og:title" content="Picgo + GitHub Action + npm 搭建超爽图床">
+<meta property="og:url" content="https://blog.redish101.top/p/5408.html">
 <meta property="og:site_name" content="Redish101 Blog">
-<meta property="og:description" content="我的同学宋紫睿为这篇文章作出了不可磨灭的贡献。阅读之前，告诉大家一个消息:本文有彩蛋。  docsify好在哪里开源项目的文档往往是一个很大的问题，许多静态站点生成器并不能兼顾强大与简单。">
+<meta property="og:description" content="图床，用于将本地的图片上传到互联网并生成唯一的直接链接，常常用于在网站中插入图片。目前市面上有许多的公用图床，体验也都还可以，但自己的图片放在别人的服务器多少有点不放心，要是跑路了更是直接玩完。此时有杠精要说了：“101，101，不是还有各大厂的对象储存吗”，您要是口袋比较充裕的话您就用，一个G的流量就0.5CNY，101是真的用不起。 Step.1 搭建npm图床市面上有非常多的npm cdn，">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2022-03-04T16:00:00.000Z">
-<meta property="article:modified_time" content="2022-07-08T13:16:45.648Z">
+<meta property="og:image" content="https://cdn1.tianli0.top/gh/Redish101/cdn@src/img/20220703211438.png">
+<meta property="og:image" content="https://cdn1.tianli0.top/gh/Redish101/cdn@src/img/20220707114628.png">
+<meta property="og:image" content="https://cdn1.tianli0.top/gh/Redish101/cdn@src/img/20220707114742.png">
+<meta property="og:image" content="https://cdn1.tianli0.top/gh/Redish101/cdn@src/img/20220707114931.png">
+<meta property="og:image" content="https://cdn1.tianli0.top/gh/Redish101/cdn@src/img/20220707115044.png">
+<meta property="og:image" content="https://cdn1.tianli0.top/gh/Redish101/cdn@src/img/20220708210252.png">
+<meta property="article:published_time" content="2022-07-02T09:50:53.000Z">
+<meta property="article:modified_time" content="2022-07-08T11:17:37.000Z">
 <meta property="article:author" content="Redish101">
-<meta property="article:tag" content="docsify">
-<meta property="article:tag" content="静态站点">
+<meta property="article:tag" content="Picgo">
+<meta property="article:tag" content="图床">
+<meta property="article:tag" content="Github Action">
+<meta property="article:tag" content="npm">
+<meta property="article:tag" content="cdn">
 <meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://cdn1.tianli0.top/gh/Redish101/cdn@src/img/20220703211438.png">
   
   
-  <title>docsify - 一个优雅的静态文档生成器 - Redish101 Blog</title>
+  <title>Picgo + GitHub Action + npm 搭建超爽图床 - Redish101 Blog</title>
   <!-- Cloudflare Web Analytics --><script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "4ddcb2b499b04ac2a9d0d05e4d3e3e40"}'></script><!-- End Cloudflare Web Analytics -->
   <link  rel="stylesheet" href="https://cdn1.tianli0.top/npm/bootstrap@4/dist/css/bootstrap.min.css" />
 
@@ -233,7 +243,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="docsify - 一个优雅的静态文档生成器"></span>
+            <span id="subtitle" data-typed-text="Picgo + GitHub Action + npm 搭建超爽图床"></span>
           
         </div>
 
@@ -243,14 +253,14 @@
     
       <span class="post-meta mr-2">
         <i class="iconfont icon-author" aria-hidden="true"></i>
-        Redish101,宋紫睿
+        Redish101
       </span>
     
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2022-03-05 00:00" pubdate>
-          2022年3月5日 凌晨
+        <time datetime="2022-07-02 17:50" pubdate>
+          2022年7月2日 下午
         </time>
       </span>
     
@@ -262,7 +272,7 @@
         <i class="iconfont icon-chart"></i>
         
           <!-- compatible with older versions-->
-          1k 字
+          2.8k 字
         
       </span>
     
@@ -274,7 +284,7 @@
         
         
           <!-- compatible with older versions-->
-          9 分钟
+          24 分钟
         
       </span>
     
@@ -321,47 +331,70 @@
         <div id="board">
           <article class="post-content mx-auto">
             <!-- SEO header -->
-            <h1 style="display: none">docsify - 一个优雅的静态文档生成器</h1>
+            <h1 style="display: none">Picgo + GitHub Action + npm 搭建超爽图床</h1>
             
             <div class="markdown-body">
               
-              <blockquote>
-<p>我的同学<strong>宋紫睿</strong>为这篇文章作出了不可磨灭的贡献。<br>阅读之前，告诉大家一个消息:<strong>本文有彩蛋</strong>。</p>
+              <p>图床，用于将本地的图片上传到互联网并生成唯一的直接链接，常常用于在网站中插入图片。目前市面上有许多的公用图床，体验也都还可以，但自己的图片放在别人的服务器多少有点不放心，要是跑路了更是直接玩完。此时有杠精要说了：“101，101，不是还有各大厂的对象储存吗”，您要是口袋比较充裕的话您就用，一个G的流量就0.5CNY，101是真的用不起。</p>
+<h2 id="Step-1-搭建npm图床"><a href="#Step-1-搭建npm图床" class="headerlink" title="Step.1 搭建npm图床"></a>Step.1 搭建npm图床</h2><p>市面上有非常多的npm cdn，通过这些cdn，我们可以引用发布到npm的文件，例如本站的npm包是 <code>redish101-blog</code>，最新版本为 <code>1.3.656820088</code>，需要获取 <code>/public/index.html</code>，通过Jsdelivr Fastly引用，直接链接就是这样的:</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">https://fastly.jsdelivr.net/npm/redish101-blog@1.3.656820088/public/index.html<br></code></pre></td></tr></table></figure>
+
+<blockquote>
+<p>这里为什么使用Fastly而非主域名(cdn.jsdelivr.net)：</p>
+<p>最近,Jsd的主域名被dns污染了，Fastly是亚洲节点，所以没有受到影响，但电信访问Fastly绝对能急死人，所以，在目前情况下来看，在生产环境下使用jsd作为cdn是非常愚蠢的行为，这将大幅度拖慢网页加载速度。</p>
 </blockquote>
-<h2 id="docsify好在哪里"><a href="#docsify好在哪里" class="headerlink" title="docsify好在哪里"></a>docsify好在哪里</h2><p>开源项目的文档往往是一个很大的问题，许多静态站点生成器并不能兼顾<strong>强大</strong>与<strong>简单</strong>。</p>
-<span id="more"></span>
+<blockquote>
+<p>20220702更新: 一个不幸的消息，Fastly也炸了🙁</p>
+</blockquote>
+<p>同理，也可以获取发布到npm的图片。</p>
+<h3 id="具体操作"><a href="#具体操作" class="headerlink" title="具体操作"></a>具体操作</h3><blockquote>
+<p>在搭建npm图床之前，需要安装npm</p>
+</blockquote>
+<p>首先，我们在本地创建一个npm包：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-built_in">mkdir</span> redish101-pic <span class="hljs-comment"># 新建文件夹以初始化npm包</span><br><span class="hljs-built_in">cd</span> redish101-pic <span class="hljs-comment"># 进入上一步创建的文件夹</span><br>npm init <span class="hljs-comment"># 将文件夹初始化为npm包</span><br></code></pre></td></tr></table></figure>
 
-<h3 id="对比"><a href="#对比" class="headerlink" title="对比"></a>对比</h3><h4 id="Sphinx"><a href="#Sphinx" class="headerlink" title="Sphinx"></a>Sphinx</h4><p>先拿Sphinx来说吧，Sphinx因背后有python的驱动，功能十分强大，但是<code>reStructuredText</code>的复杂也劝退了许多人。</p>
-<h4 id="Vuepress"><a href="#Vuepress" class="headerlink" title="Vuepress"></a>Vuepress</h4><p>相比之下，vuepress在文档的编写上就没有那么复杂了，毕竟<code>markdown</code>还是很简单的。<br>But，vuepress的配置实在是太复杂了，而且构建速度及其缓慢，最重要的是需要<code>JavaScript</code>的基础。</p>
-<h4 id="mkdocs"><a href="#mkdocs" class="headerlink" title="mkdocs"></a>mkdocs</h4><p>mkdocs可以说是能和docsify抗衡了，但是，mkdocs需要构建</p>
-<h2 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h2><p>经过上面的的对比，docsify的优点已经很明显了，下面我们就来安装docsify</p>
-<h3 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h3><p>全局安装Docsify-cli:</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs bash">yarn global add docsify-cli<br><span class="hljs-comment"># 或者使用npm</span><br></code></pre></td></tr></table></figure>
+<p>之后，我们可以在这个目录中存入图片。将需要的图片存入到目录之后发布到npm：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs bash">npm login <span class="hljs-comment"># 登录到npm</span><br>npm publish <span class="hljs-comment"># 上传到npm</span><br></code></pre></td></tr></table></figure>
 
-<h3 id="开始一个项目"><a href="#开始一个项目" class="headerlink" title="开始一个项目"></a>开始一个项目</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">docsify init &lt;项目路径&gt;<br></code></pre></td></tr></table></figure>
+<p>可以看到，第一次上传没有出现任何问题，但如果再试一次，会出现以下报错：</p>
+<p><img src="https://cdn1.tianli0.top/gh/Redish101/cdn@src/img/20220703211438.png" srcset="/img/loading.gif" lazyload></p>
+<p>这是因为npm不允许发布重复的版本，我们需要手动更新 <code>package.json</code>中的 <code>version</code>字段更改版本，版本号需要符合<a target="_blank" rel="noopener" href="https://semver.org/lang/zh-CN/">语义化版本</a>。</p>
+<p>上传之后，我们就可以获取图片的直接链接了，格式一般为这样：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">https://你的cdn地址/包名@版本号/图片的相对路径<br></code></pre></td></tr></table></figure>
 
-<h3 id="配置"><a href="#配置" class="headerlink" title="配置"></a>配置</h3><p>配置也很简单，可以参考<a target="_blank" rel="noopener" href="https://docsify.js.org/#/zh-cn/configuration">配置项 (docsify.js.org)</a></p>
-<h3 id="写作"><a href="#写作" class="headerlink" title="写作"></a>写作</h3><p>这个更简单，只需要在<code>docs</code>文件夹里新建<code>markdown</code>文件即可。<br>(别说你不会，送你个指南<a target="_blank" rel="noopener" href="https://markdown.com.cn/">Markdown 官方教程</a>)</p>
-<h4 id="路径问题"><a href="#路径问题" class="headerlink" title="路径问题"></a>路径问题</h4><p>这里要注意一下路径：</p>
-<p>假设你的目录结构如下：</p>
-<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs text">.<br>└── docs<br>├── README.md<br>├── guide.md<br>└── zh-cn<br>├── README.md<br>└── guide.md<br></code></pre></td></tr></table></figure>
+<p>但jsd是个例外：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">https://fastly.jsdelivr.net/npm/包名@版本号/相对路径<br></code></pre></td></tr></table></figure>
 
-<p>那么渲染后的路径就是：</p>
-<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs text">docs/README.md        =&gt; http://domain.com<br>docs/guide.md         =&gt; http://domain.com/guide<br>docs/zh-cn/README.md  =&gt; http://domain.com/zh-cn/<br>docs/zh-cn/guide.md   =&gt; http://domain.com/zh-cn/guide<br></code></pre></td></tr></table></figure>
+<p>至于哪里有npm cdn可以用，请自行谷歌，101推荐eleme。</p>
+<h2 id="Step-2-集成到Github"><a href="#Step-2-集成到Github" class="headerlink" title="Step.2 集成到Github"></a>Step.2 集成到Github</h2><p>像上面这样在本地操作图片未免有些太麻烦了，要是换了个设备就需要重装了，那么，就让我们把图片放到Github。</p>
+<h3 id="具体操作-1"><a href="#具体操作-1" class="headerlink" title="具体操作"></a>具体操作</h3><p>首先，我们在Github新建一个仓库，仓库名随意，然后把所有图片存到这个仓库里。然后前往<a target="_blank" rel="noopener" href="https://www.npmjs.com/">npm官网</a>，生成一个<code>Access Tokens</code>，保留备用。</p>
+<p><img src="https://cdn1.tianli0.top/gh/Redish101/cdn@src/img/20220707114628.png" srcset="/img/loading.gif" lazyload></p>
+<p><img src="https://cdn1.tianli0.top/gh/Redish101/cdn@src/img/20220707114742.png" srcset="/img/loading.gif" lazyload></p>
+<p><img src="https://cdn1.tianli0.top/gh/Redish101/cdn@src/img/20220707114931.png" srcset="/img/loading.gif" lazyload></p>
+<p><img src="https://cdn1.tianli0.top/gh/Redish101/cdn@src/img/20220707115044.png" srcset="/img/loading.gif" lazyload></p>
+<p>回到Github，打开仓库设置&#x3D;&gt;secrets&#x3D;&gt;Action，新建一个Secret，名字为<code>NPM_TOKEN</code>，内容为刚才生成的Access Token，保存。</p>
+<p>之后，写一个ci用于自动发布npm包，在仓库<code>.github/workflows</code>目录新建一个yml文件作为ci配置文件，名称随意，粘贴下面的内容：</p>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><code class="hljs yaml"><span class="hljs-attr">name:</span> <span class="hljs-string">Deploy</span> <span class="hljs-string">to</span> <span class="hljs-string">NPM</span> <span class="hljs-string">CDN</span><br><span class="hljs-attr">&#x27;on&#x27;:</span><br>  <span class="hljs-bullet">-</span> <span class="hljs-string">workflow_dispatch</span><br>  <span class="hljs-bullet">-</span> <span class="hljs-string">push</span><br><span class="hljs-attr">jobs:</span><br>  <span class="hljs-attr">deploy:</span><br>    <span class="hljs-attr">runs-on:</span> <span class="hljs-string">ubuntu-latest</span><br>    <span class="hljs-attr">steps:</span><br>      <span class="hljs-bullet">-</span> <span class="hljs-attr">uses:</span> <span class="hljs-string">actions/checkout@v2</span><br>      <span class="hljs-bullet">-</span> <span class="hljs-attr">uses:</span> <span class="hljs-string">actions/setup-node@v1</span><br>        <span class="hljs-attr">with:</span><br>          <span class="hljs-attr">node-version:</span> <span class="hljs-number">16.</span><span class="hljs-string">x</span><br>      <span class="hljs-bullet">-</span> <span class="hljs-attr">uses:</span> <span class="hljs-string">JS-DevTools/npm-publish@v1</span><br>        <span class="hljs-attr">with:</span><br>          <span class="hljs-attr">token:</span> <span class="hljs-string">$&#123;&#123;</span> <span class="hljs-string">secrets.NPM_TOKEN</span> <span class="hljs-string">&#125;&#125;</span><br></code></pre></td></tr></table></figure>
 
-<h2 id="部署"><a href="#部署" class="headerlink" title="部署"></a>部署</h2><h3 id="Github-Pages"><a href="#Github-Pages" class="headerlink" title="Github Pages"></a>Github Pages</h3><p>将Github Pages的工作目录设置到docsify所在目录。</p>
-<h3 id="Vercel"><a href="#Vercel" class="headerlink" title="Vercel"></a>Vercel</h3><p>选中docsify所在仓库，点击下面的deploy</p>
-<h3 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h3><p>具体我也不会用，只需要记住两点：</p>
+<p>试试上传一张图片，等待一会，图片就自动上传到了npm，但我们再上传一遍，会出现之前版本号重复的问题，如果你不想每次上传都更改<code>packages.json</code>，可以像我一样写一个小小的脚本，并在ci中运行，下面是参考：</p>
+<p>脚本：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-comment"># new_version.py</span><br><br><span class="hljs-keyword">import</span> json;<br><span class="hljs-keyword">import</span> time;<br><br><span class="hljs-keyword">with</span> <span class="hljs-built_in">open</span>(<span class="hljs-string">&quot;package.json&quot;</span>,<span class="hljs-string">&#x27;r&#x27;</span>,encoding=<span class="hljs-string">&#x27;utf-8&#x27;</span>) <span class="hljs-keyword">as</span> f:<br>    jspack = json.load(f)<br><br>new_version = <span class="hljs-string">&#x27;1.1.&#x27;</span>+<span class="hljs-built_in">str</span>(<span class="hljs-built_in">int</span>(time.time()))[<span class="hljs-number">1</span>:<span class="hljs-number">11</span>:<span class="hljs-number">1</span>]<br>jspack[<span class="hljs-string">&#x27;version&#x27;</span>]=new_version<br><span class="hljs-keyword">with</span> <span class="hljs-built_in">open</span>(<span class="hljs-string">&quot;package.json&quot;</span>,<span class="hljs-string">&#x27;w&#x27;</span>,encoding=<span class="hljs-string">&#x27;utf-8&#x27;</span>) <span class="hljs-keyword">as</span> f:<br>    json.dump(jspack, f,ensure_ascii=<span class="hljs-literal">False</span>)<br></code></pre></td></tr></table></figure>
+
+<p>ci配置：</p>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><code class="hljs yaml"><span class="hljs-attr">name:</span> <span class="hljs-string">Deploy</span> <span class="hljs-string">to</span> <span class="hljs-string">NPM</span> <span class="hljs-string">CDN</span><br><span class="hljs-attr">&#x27;on&#x27;:</span><br>  <span class="hljs-bullet">-</span> <span class="hljs-string">workflow_dispatch</span><br>  <span class="hljs-bullet">-</span> <span class="hljs-string">push</span><br><span class="hljs-attr">jobs:</span><br>  <span class="hljs-attr">deploy:</span><br>    <span class="hljs-attr">runs-on:</span> <span class="hljs-string">ubuntu-latest</span><br>    <span class="hljs-attr">steps:</span><br>      <span class="hljs-bullet">-</span> <span class="hljs-attr">uses:</span> <span class="hljs-string">actions/checkout@v2</span><br>      <span class="hljs-bullet">-</span> <span class="hljs-attr">uses:</span> <span class="hljs-string">actions/setup-node@v1</span><br>        <span class="hljs-attr">with:</span><br>          <span class="hljs-attr">node-version:</span> <span class="hljs-number">16.</span><span class="hljs-string">x</span><br>      <span class="hljs-bullet">-</span> <span class="hljs-attr">run:</span> <span class="hljs-string">python3</span> <span class="hljs-string">new_version.py</span><br>      <span class="hljs-bullet">-</span> <span class="hljs-attr">uses:</span> <span class="hljs-string">JS-DevTools/npm-publish@v1</span><br>        <span class="hljs-attr">with:</span><br>          <span class="hljs-attr">token:</span> <span class="hljs-string">$&#123;&#123;</span> <span class="hljs-string">secrets.NPM_TOKEN</span> <span class="hljs-string">&#125;&#125;</span><br><br></code></pre></td></tr></table></figure>
+
+<p>到这里就完成搭建了。</p>
+<h2 id="Step-3-集成到Picgo"><a href="#Step-3-集成到Picgo" class="headerlink" title="Step.3 集成到Picgo"></a>Step.3 集成到Picgo</h2><p>Picgo是一个图床客户端，支持Github图床，可以更加方便的上传图片。</p>
+<p>首先，我们去到<a target="_blank" rel="noopener" href="https://github.com/Molunerfinn/PicGo">Picgo的仓库</a>，进入releases，随意选择一个版本，打开附件列表，下载对应系统的安装包，安装，并且打开Picgo，进入图床设置&#x3D;》GitHub图床，进行配置：</p>
 <ul>
-<li>无需构建</li>
-<li>工作目录在根目录</li>
+<li><strong>仓库名</strong>：储存图片的GitHub仓库，格式为<code>用户名/仓库名</code></li>
+<li><strong>分支名</strong>：储存图片的仓库分支</li>
+<li><strong>Token</strong>：你的GitHub密钥，在<a target="_blank" rel="noopener" href="https://github.com/settings/tokens/new">这里</a>生成，按这张图片填写信息<img src="https://cdn1.tianli0.top/gh/Redish101/cdn@src/img/20220708210252.png" srcset="/img/loading.gif" lazyload></li>
+<li><strong>图片路径</strong>：不用管</li>
+<li><strong>自定义域名</strong>：你的npm包在npm的路径，版本选择latest，这里以jsd为例：<code>https://fastly.jsdelivr.net/npm/包名@latest/图片路径</code></li>
 </ul>
-<h2 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h2><ol>
-<li><a target="_blank" rel="noopener" href="https://docsify.js.org/#/zh-cn/">docsify中文文档</a></li>
-<li><a target="_blank" rel="noopener" href="https://vercel.com/docs">Introduction to Vercel – Vercel Docs</a></li>
-<li><a target="_blank" rel="noopener" href="https://segmentfault.com/a/1190000040063325?utm_source=tag-newest">Vercel 上自动部署你的个人博客 Hugo - SegmentFault 思否</a></li>
-</ol>
-<p>感谢阅读<br>彩蛋：🥚呵呵呵，答应你们的蛋。</p>
+<p>保存配置并设置为默认图床。</p>
+<h2 id="编者的话"><a href="#编者的话" class="headerlink" title="编者的话"></a>编者的话</h2><p>终于把这篇文章写出来了，最近还搞好了新的评论系统——Artalk，大家有什么问题可以在下面评论，也可以闲聊，毕竟网站最近活跃不高，emm。</p>
 
               
             </div>
@@ -379,7 +412,7 @@
     
       <span class="category-chain">
         
-  <a href="/categories/%E6%95%99%E7%A8%8B/" class="category-chain-item">教程</a>
+  <a href="/categories/%E7%99%BD%E5%AB%96%E4%B9%8B%E9%81%93/" class="category-chain-item">白嫖之道</a>
   
   
 
@@ -394,9 +427,15 @@
     <div class="post-meta">
       <i class="iconfont icon-tags"></i>
       
-        <a href="/tags/docsify/">#docsify</a>
+        <a href="/tags/Picgo/">#Picgo</a>
       
-        <a href="/tags/%E9%9D%99%E6%80%81%E7%AB%99%E7%82%B9/">#静态站点</a>
+        <a href="/tags/%E5%9B%BE%E5%BA%8A/">#图床</a>
+      
+        <a href="/tags/Github-Action/">#Github Action</a>
+      
+        <a href="/tags/npm/">#npm</a>
+      
+        <a href="/tags/cdn/">#cdn</a>
       
     </div>
   
@@ -408,20 +447,20 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>docsify - 一个优雅的静态文档生成器</div>
-      <div>https://blog.redish101.top/p/45082.html</div>
+      <div>Picgo + GitHub Action + npm 搭建超爽图床</div>
+      <div>https://blog.redish101.top/p/5408.html</div>
     </div>
     <div class="license-meta">
       
         <div class="license-meta-item">
           <div>作者</div>
-          <div>Redish101,宋紫睿</div>
+          <div>Redish101</div>
         </div>
       
       
         <div class="license-meta-item license-meta-date">
           <div>发布于</div>
-          <div>2022年3月5日</div>
+          <div>2022年7月2日</div>
         </div>
       
       
@@ -463,18 +502,12 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/p/15511.html" title="如何才能把py文件编译为可执行文件？">
-                        <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">如何才能把py文件编译为可执行文件？</span>
-                        <span class="visible-mobile">上一篇</span>
-                      </a>
-                    
                   </article>
                   <article class="post-next col-6">
                     
                     
-                      <a href="/p/8071.html" title="你好Hexo">
-                        <span class="hidden-mobile">你好Hexo</span>
+                      <a href="/p/36200.html" title="Github Codespaces初体验">
+                        <span class="hidden-mobile">Github Codespaces初体验</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
@@ -493,8 +526,8 @@
 <script>
   var artalk = new Artalk({
     el: '#Comments',
-    pageKey: 'https://blog.redish101.top/p/45082.html',
-    pageTitle: 'docsify - 一个优雅的静态文档生成器',
+    pageKey: 'https://blog.redish101.top/p/5408.html',
+    pageTitle: 'Picgo + GitHub Action + npm 搭建超爽图床',
     server: 'https://artalk.redish101.top',
     site: 'Redish101 Blog',
   })
