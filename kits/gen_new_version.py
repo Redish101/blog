@@ -1,5 +1,6 @@
 import json;
 import time;
+import yaml;
 
 with open("package.json",'r',encoding='utf-8') as f:
     jspack = json.load(f)
@@ -9,3 +10,11 @@ print('博客新版本为：'+ str(new_version))
 jspack['version']=new_version
 with open("package.json",'w',encoding='utf-8') as f:
     json.dump(jspack, f,ensure_ascii=False)
+
+with open(r"cw/config.yaml",'r',encoding='utf-8') as y:
+    cw = yaml.safe_load(y)
+
+cw['version'] = '\'&\''+new_version
+
+with open(r"cw/config.yaml",'w',encoding='utf-8') as y:
+    yaml.safe_dump(cw, y)

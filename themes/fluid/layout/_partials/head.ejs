@@ -40,7 +40,6 @@ var ogConfig = Object.assign({ image: ogImage && url_for(ogImage) }, theme.open_
   <%- export_config() %>
   <%- js_ex(theme.static_prefix.internal_js, 'utils.js') %>
   <%- js_ex(theme.static_prefix.internal_js, 'color-schema.js') %>
-
   <%- inject_point('head') %>
   <!-- 注意每个站点的验证标签都不一样，请勿复制！ -->
 </head>
