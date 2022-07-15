@@ -18,7 +18,7 @@ catch_rules:
     search: \/([^\/.]+)$
   - replace: $1/index.html
     search: ([^\/.]+)\/$
-  - replace: blogcdn/redish101-blog@1.3.657859534/public
+  - replace: blogcdn/redish101-blog@1.3.657859845/public
     search: _
   - action: fetch
     fetch:
