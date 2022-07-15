@@ -4,6 +4,10 @@ catch_rules:
   - replace: ''
     search: \#.*
     searchin: url
+  - search: _
+  action: fetch
+  fetch:
+    delay: 200
   - replace: ''
     search: \?.*
   - action: redirect
