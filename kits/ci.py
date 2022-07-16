@@ -12,18 +12,6 @@ jspack['version']=new_version
 with open("package.json",'w',encoding='utf-8') as f:
     json.dump(jspack, f,ensure_ascii=False)
 
-with open(r"cw/config.yaml",'r',encoding='utf-8') as y:
-    cw = yaml.safe_load(y)
-
-a = cw['catch_rules']
-b = a[0]
-c = b['transform_rules']
-d = c[5]
-d['replace'] = 'blogcdn/redish101-blog@'+new_version+'/public'
-
-with open(r"cw/config.yaml",'w',encoding='utf-8') as y:
-    yaml.safe_dump(cw, y)
-
 os.system('npm run clean')
 os.system('npm run build')
 os.system('cp cw/* public')
