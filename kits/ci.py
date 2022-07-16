@@ -1,6 +1,7 @@
 import json;
 import time;
 import yaml;
+import os;
 
 with open("package.json",'r',encoding='utf-8') as f:
     jspack = json.load(f)
@@ -22,3 +23,7 @@ d['replace'] = 'blogcdn/redish101-blog@'+new_version+'/public'
 
 with open(r"cw/config.yaml",'w',encoding='utf-8') as y:
     yaml.safe_dump(cw, y)
+
+os.system('npm run clean')
+os.system('npm run build')
+os.system('cp cw/* public')

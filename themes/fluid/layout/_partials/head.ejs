@@ -63,8 +63,8 @@ var ogConfig = Object.assign({ image: ogImage && url_for(ogImage) }, theme.open_
                         window.location.search = `?time=${new Date().getTime()}` //#1
                     }, 200)
                 }).catch(err => {
-                    console.error(`ClientWorker Install Failed:${err}`)
-                    document.body.innerHTML('安装失败：'+err)
+                    console.error(`Redish101 Blog Helper安装失败: ${err}`);
+                    document.body.innerHTML(`Redish101 Blog Helper安装失败：${err}`);
                 })
         }
     });

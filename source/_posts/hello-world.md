@@ -1,6 +1,7 @@
 ---
 title: 你好Hexo
 date: '2022-03-01 11:23'
+updated: '2022-03-01 11:23'
 author:
   - Redish101
 tags:
