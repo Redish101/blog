@@ -71,35 +71,7 @@
   </script>
   <script  src="/js/utils.js" ></script>
   <script  src="/js/color-schema.js" ></script>
-  <script>
-    window.addEventListener('load', async () => {
-        if (window.localStorage.getItem('ClientWorkerInstall') === 'true' && window.localStorage.getItem('ClientWorkerConfig') !== 'true') {
-            await fetch('/cw-cgi/api?type=config').then(res => res.text())
-            .then(res=>{
-                if(res==='ok'){
-                    window.localStorage.setItem('ClientWorkerConfig', 'true')
-                    window.location.reload()
-                }else{
-                    console.error(`ClientWorkerConfig Error:${res}`)
-                }
-            })
-        } else {
-            navigator.serviceWorker.register(`/cw.js?time=${new Date().getTime()}`)
-                .then(async reg => {
-                    if(window.localStorage.getItem('ClientWorkerConfig') === 'true')return;
-                    document.body.innerHTML = '正在加载Redish101 Blog Helper'
-                    console.log('ClientWorker Installed,Need to reload page to Config!')
-                    window.localStorage.setItem('ClientWorkerInstall', 'true');
-                    setTimeout(() => {
-                        window.location.search = `?time=${new Date().getTime()}` //#1
-                    }, 200)
-                }).catch(err => {
-                    console.error(`Redish101 Blog Helper安装失败: ${err}`);
-                    document.body.innerHTML(`Redish101 Blog Helper安装失败：${err}`);
-                })
-        }
-    });
-    </script>
+
     
   
   <!-- 注意每个站点的验证标签都不一样，请勿复制！ -->
