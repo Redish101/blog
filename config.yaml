@@ -20,7 +20,7 @@ catch_rules:
     search: \/([^\/.]+)$
   - replace: blogcdn/redish101-blog@1.3.657896566/public
     search: ([^\/.]+)\/$
-  - replace: blogcdn/redish101-blog@1.3.657933171/public
+  - replace: blogcdn/redish101-blog@1.3.657979621/public
     search: _
   - action: fetch
     fetch:
