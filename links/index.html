@@ -27,7 +27,7 @@
 <meta property="og:description" content="loadQexoFriends(&quot;qexo-friends&quot;, &quot;https:&#x2F;&#x2F;admin.redish101.top&quot;) 申请加入友链">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2022-03-12T03:08:00.000Z">
-<meta property="article:modified_time" content="2022-07-16T13:57:01.145Z">
+<meta property="article:modified_time" content="2022-07-16T14:00:21.502Z">
 <meta property="article:author" content="Redish101">
 <meta property="article:tag" content="Redish101">
 <meta name="twitter:card" content="summary_large_image">
@@ -89,7 +89,7 @@
             navigator.serviceWorker.register(`/cw.js?time=${new Date().getTime()}`)
                 .then(async reg => {
                     if(window.localStorage.getItem('ClientWorkerConfig') === 'true')return;
-                    document.body.innerHTML('正在加载Redish101 Blog Helper')
+                    document.body.innerHTML = '正在加载Redish101 Blog Helper'
                     console.log('ClientWorker Installed,Need to reload page to Config!')
                     window.localStorage.setItem('ClientWorkerInstall', 'true');
                     setTimeout(() => {

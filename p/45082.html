@@ -96,7 +96,7 @@
             navigator.serviceWorker.register(`/cw.js?time=${new Date().getTime()}`)
                 .then(async reg => {
                     if(window.localStorage.getItem('ClientWorkerConfig') === 'true')return;
-                    document.body.innerHTML('正在加载Redish101 Blog Helper')
+                    document.body.innerHTML = '正在加载Redish101 Blog Helper'
                     console.log('ClientWorker Installed,Need to reload page to Config!')
                     window.localStorage.setItem('ClientWorkerInstall', 'true');
                     setTimeout(() => {
