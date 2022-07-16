@@ -38,7 +38,7 @@
   </url>
   
   <url>
-    <loc>https://blog.redish101.top/p/57158.html</loc>
+    <loc>https://blog.redish101.top/p/4138.html</loc>
     
     <lastmod>2022-07-16</lastmod>
     
@@ -117,13 +117,6 @@
   </url>
   
   <url>
-    <loc>https://blog.redish101.top/tags/Github/</loc>
-    <lastmod>2022-07-16</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
     <loc>https://blog.redish101.top/tags/docsify/</loc>
     <lastmod>2022-07-16</lastmod>
     <changefreq>weekly</changefreq>
@@ -132,6 +125,13 @@
   
   <url>
     <loc>https://blog.redish101.top/tags/%E9%9D%99%E6%80%81%E7%AB%99%E7%82%B9/</loc>
+    <lastmod>2022-07-16</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.redish101.top/tags/Github/</loc>
     <lastmod>2022-07-16</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
