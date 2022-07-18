@@ -13,5 +13,4 @@ with open("package.json",'w',encoding='utf-8') as f:
     json.dump(jspack, f,ensure_ascii=False)
 
 os.system('npm run clean')
-os.system('npm run build')
-os.system('cp cw/* public')
+os.system('hexo g')
