@@ -10,6 +10,7 @@ tags:
 categories:
   - Hexo教程
 abbrlink: 8071
+cover: https://cdn1.tianli0.top/gh/Redish101/cdn@src/img/20220719064742.png
 ---
 不知不觉之中，这个小站已经走过了将近200天，在这两百多天里，这个小站经历了数次博客框架的变换：
 - Hexo&Next：小站最初的样子。
