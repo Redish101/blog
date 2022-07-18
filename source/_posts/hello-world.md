@@ -1,7 +1,7 @@
 ---
 title: 你好Hexo
-date: '2022-03-01 11:23'
-updated: '2022-03-01 11:23'
+date: '2022-01-07 11:23'
+updated: '2022-07-01 21:35'
 author:
   - Redish101
 tags:
@@ -11,9 +11,12 @@ categories:
   - Hexo教程
 abbrlink: 8071
 ---
+不知不觉之中，这个小站已经走过了将近200天，在这两百多天里，这个小站经历了数次博客框架的变换：
+- Hexo&Next：小站最初的样子。
+- Typecho：当时搞到了一台服务器，就挂了个动态
+- Wordpress：又知道了wp这个东西，但是过于臃肿，服务器吃不消，没几天又换了
+- Typecho：又换回了tp，用了一段时间
+- Hexo Fluid：到最后，发现还是hexo好用，换了回来，并且换了个主题
+- Hexo Butterfly：换了一个更耐看的主题，并写下了这篇短文
 
-啊啊啊啊啊，我终于升级完了，和wp的臃肿相比，Hexo显得十分简洁。  
-大家都说hexo写作困难，那是在没有HexoPlusPlus的情况下，部署后，写作体验比Typecho还要nice。  
-```python
-print("Hello world")
-```
+就这样草草结束吧，希望这个博客能够一直存在着。

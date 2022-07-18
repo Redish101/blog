@@ -1,9 +1,9 @@
 ---
 title: {{ title }}
 date: {{ date }}
-index_img: 
+cover: 
 tags:
- -
+ - null
 categories:
- -
+ - null
 ---

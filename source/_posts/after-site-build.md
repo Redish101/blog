@@ -9,6 +9,7 @@ categories:
 abbrlink: 33392
 date: '2022-03-14 20:58:15'
 updated: '2022-03-14 20:58:15'
+cover: 'https://cdn1.tianli0.top/gh/Redish101/cdn@src/img/20220718215839.png'
 ---
 
 > 这篇文章依旧有彩蛋（以后的文章也会有彩蛋）

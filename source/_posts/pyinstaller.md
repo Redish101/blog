@@ -7,6 +7,7 @@ categories:
 abbrlink: 15511
 date: '2022-03-08 00:00:00'
 updated: '2022-03-08 00:00:00'
+cover: 'https://cdn1.tianli0.top/gh/Redish101/cdn@src/img/20220718215839.png'
 ---
 有时候，烦人的甲方会要求我们把py程序编译为可执行文件，这时候要怎么办呢，用**pyinstaller**
 ## 安装

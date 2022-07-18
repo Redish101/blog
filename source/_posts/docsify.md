@@ -11,6 +11,7 @@ author:
 abbrlink: 45082
 date: '2022-03-05 00:00:00'
 updated: '2022-03-05 00:00:00'
+cover: 'https://cdn1.tianli0.top/gh/Redish101/cdn@src/img/20220718215950.png'
 ---
 
 > 我的同学**宋紫睿**为这篇文章作出了不可磨灭的贡献。
