@@ -209,6 +209,7 @@ custom_js:
 custom_css: 
   - //at.alicdn.com/t/font_3222048_uzvdhxu46sr.css
   - //cdn1.tianli0.top/npm/aplayer/dist/APlayer.min.css
+  - /css/harmony.css
 
 # 自定义 <head> 节点中的 HTML 内容
 # Customize <head> HTML content
