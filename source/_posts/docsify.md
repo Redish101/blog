@@ -1,16 +1,17 @@
 ---
 author:
-- Redish101
-- 宋紫睿
+  - Redish101
+  - 宋紫睿
 categories:
-- 教程
-cover: https://cdn1.tianli0.top/gh/Redish101/cdn@src/img/20220718215950.png
+  - 教程
+cover: 'https://cdn1.tianli0.top/gh/Redish101/cdn@src/img/20220718215950.png'
 date: '2022-03-05 00:00:00'
 tags:
-- docsify
-- 静态站点
+  - docsify
+  - 静态站点
 title: docsify - 一个优雅的静态文档生成器
 updated: '2022-07-20 14:49:57'
+abbrlink: 45082
 ---
 阅读之前，告诉大家一个消息:**本文有彩蛋**。
 

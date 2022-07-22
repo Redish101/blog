@@ -461,11 +461,10 @@ google_adsense:
   client: ca-pub-2653896444493474
   enable_page_level_ads: true
 
-# Insert ads manually (手動插入廣告)
-# ad:
-#   index:
-#   aside:
-#   post:
+ad:
+  index: '<a href="https://www.tsyvps.com/aff/AFUOIPMT"><img src="https://cdn1.tianli0.top/gh/Redish101/cdn@src/img/20220722214740.png" style="width:90%"></a>'
+  aside:
+  post: '<a href="https://www.tsyvps.com/aff/AFUOIPMT"><img src="https://cdn1.tianli0.top/gh/Redish101/cdn@src/img/20220722214740.png" style="width:90%"></a>'
 
 # Verification (站長驗證)
 # --------------------------------------
@@ -658,8 +657,8 @@ aside:
       text: Follow Me
       link: https://github.com/Redish101
   card_announcement:
-    enable: false
-    content: This is my Blog
+    enable: true
+    content: '广告位招租，请联系qq: 2757397558'
   card_recent_post:
     enable: true
     limit: 5 # if set 0 will show all
