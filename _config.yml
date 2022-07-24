@@ -125,3 +125,16 @@ aplayer:
 feed:
     type: atom
     path: atom.xml
+
+# offline config passed to sw-precache.
+service_worker:
+  maximumFileSizeToCacheInBytes: 1073741824
+  staticFileGlobs:
+    - public/**/*.{js,html,css,png,jpg,gif,svg,eot,ttf,woff,woff2}
+  stripPrefix: public
+  verbose: false
+  runtimeCaching:
+    - urlPattern: /*
+      handler: cacheFirst
+      options:
+        origin: cdn.tianli0.top
