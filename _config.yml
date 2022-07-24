@@ -93,10 +93,6 @@ pagination_dir: page
 ## Themes: https://hexo.io/themes/
 theme: butterfly_dev
 
-# Deployment
-## Docs: https://hexo.io/docs/one-command-deployment
-deploy:
-  type: ''
 
 sitemap: 
   path: /sitemap.xml
