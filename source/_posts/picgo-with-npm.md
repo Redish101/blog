@@ -20,10 +20,10 @@ cover: 'https://cdn1.tianli0.top/gh/Redish101/cdn@src/img/20220718215706.png'
 市面上有非常多的npm cdn，通过这些cdn，我们可以引用发布到npm的文件，例如本站的npm包是 `redish101-blog`，最新版本为 `1.3.656820088`，需要获取 `/public/index.html`，通过Jsdelivr Fastly引用，直接链接就是这样的:
 
 ```plaintext
-https://fastly.jsdelivr.net/npm/redish101-blog@1.3.656820088/public/index.html
+https://cdn1.tianli0.top/npm/redish101-blog@1.3.656820088/public/index.html
 ```
 
-> 这里为什么使用Fastly而非主域名(cdn.jsdelivr.net)：
+> 这里为什么使用Fastly而非主域名(cdn1.tianli0.top)：
 >
 > 最近,Jsd的主域名被dns污染了，Fastly是亚洲节点，所以没有受到影响，但电信访问Fastly绝对能急死人，所以，在目前情况下来看，在生产环境下使用jsd作为cdn是非常愚蠢的行为，这将大幅度拖慢网页加载速度。
 
@@ -65,7 +65,7 @@ https://你的cdn地址/包名@版本号/图片的相对路径
 但jsd是个例外：
 
 ```plaintext
-https://fastly.jsdelivr.net/npm/包名@版本号/相对路径
+https://cdn1.tianli0.top/npm/包名@版本号/相对路径
 ```
 
 至于哪里有npm cdn可以用，请自行谷歌，101推荐eleme。
@@ -161,7 +161,7 @@ Picgo是一个图床客户端，支持Github图床，可以更加方便的上传
 - **分支名**：储存图片的仓库分支
 - **Token**：你的GitHub密钥，在[这里](https://github.com/settings/tokens/new)生成，按这张图片填写信息![](https://cdn1.tianli0.top/gh/Redish101/cdn@src/img/20220708210252.png)
 - **图片路径**：不用管
-- **自定义域名**：你的npm包在npm的路径，版本选择latest，这里以jsd为例：`https://fastly.jsdelivr.net/npm/包名@latest/图片路径`
+- **自定义域名**：你的npm包在npm的路径，版本选择latest，这里以jsd为例：`https://cdn1.tianli0.top/npm/包名@latest/图片路径`
 
 保存配置并设置为默认图床。
 

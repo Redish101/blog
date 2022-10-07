@@ -8,5 +8,5 @@ date: 2022-03-12 11:08:00
 <script>loadQexoFriends("qexo-friends", "https://admin.redish101.top")</script>
 <center>申请加入</center>
 <div id="friends-api"></div>
-<script src="https://cdn1.tianli0.top/gh/Fgaoxing/blog-cdn@main/source/js/friends-api.js"></script>
+<script src="https://unpkg.com/qexo-friends/friends-api.js"></script>
 <script>qexo_friend_api("friends-api","https://admin.redish101.top");</script>
