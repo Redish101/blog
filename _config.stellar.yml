@@ -224,6 +224,8 @@ footer:
     #   - '[GitHub](/)'
   more: | # 支持 Markdown 格式
     本站采用 [署名-非商业性使用-相同方式共享 4.0 国际](https://creativecommons.org/licenses/by-nc-sa/4.0/) 许可协议，转载请注明出处
+  content: | # 支持 Markdown 格式
+    Powered by Hexo and Stellar
   # 主题用户越多，开发者维护和更新的积极性就越高，如果您喜欢本主题，请在适当的位置显示主题信息和仓库链接以表支持。
 
 
