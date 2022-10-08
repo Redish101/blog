@@ -1,6 +1,6 @@
 {
   "name": "redish101-blog",
-  "version": "2.1",
+  "version": "3.0.0",
   "description": "Redish101的博客",
   "scripts": {
     "build": "hexo generate",
