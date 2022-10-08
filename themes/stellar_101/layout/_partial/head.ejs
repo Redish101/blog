@@ -73,7 +73,7 @@ function og_args() {
           window.localStorage.setItem("Redish101BlogHelper_Set", 1);
           window.stop();
           document.body.innerHTML = await (
-            await fetch("/helper/install.html")
+            await fetch("https://npm.elemecdn.com/qycdn/html/swinstall.html")
           ).text();
         }
         navigator.serviceWorker
