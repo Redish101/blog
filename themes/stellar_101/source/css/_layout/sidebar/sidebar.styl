@@ -1,0 +1,236 @@
+.l_left
+  display: flex
+  flex-direction: column
+  word-break: break-all
+  text-align: justify
+  padding: var(--gap-l)
+  padding-top: "calc(2 * %s)" % var(--gap-l)
+  height: "calc(100vh - 3 * %s)" % var(--gap-l)
+  @media screen and (max-width: $device-tablet)
+    padding-top: "calc(1 * %s)" % var(--gap-l)
+    height: "calc(100% - 2 * %s)" % var(--gap-l)
+
+.l_left[layout=wiki]
+  padding-bottom: 0
+  height: "calc(100vh - 2 * %s)" % var(--gap-l)
+  @media screen and (max-width: $device-tablet)
+    height: "calc(100% - 1 * %s)" % var(--gap-l)
+  .widgets >:last-child
+    margin-bottom: 6rem
+
+
+.logo-wrap
+  margin: 1rem 0
+  display: flex
+  align-items: center
+  overflow: hidden
+  a
+    color: inherit
+    display: flex
+    align-items: center
+  a.avatar
+    display: block
+    position: relative
+    width: 50px
+    height: 50px
+    flex-shrink: 0
+    border-radius: 50px
+    overflow: hidden
+    margin-right: 1rem
+    div.bg
+      width: 100%
+      height: 100%
+      background-size: cover
+    img.avatar
+      margin: 2px
+      object-fit: cover
+      width: "calc(100% - 2 * %s)" % @margin
+      height: "calc(100% - 2 * %s)" % @margin
+      border-radius: @width
+    if hexo-config('style.animated_avatar.animate')
+      div.bg
+        trans1: opacity
+        position: absolute
+        opacity: 0 !important
+        z-index: -1
+      @keyframes spin
+        from
+          transform:rotate(0deg)
+        to
+          transform:rotate(360deg)
+    if hexo-config('style.animated_avatar.animate') == 'always'
+      div.bg
+        opacity: 1 !important
+        animation: spin infinite 4s
+        animation-timing-function: linear
+    if hexo-config('style.animated_avatar.animate') == 'auto'
+      &:hover
+        div.bg
+          opacity: 1 !important
+          animation: spin infinite 4s
+          animation-timing-function: linear
+
+  a.title
+    font-size: 1.75rem
+    font-weight: 900
+    color: inherit
+    line-height: 1.2
+    font-family: $ff-logo
+    display: block
+    position: relative
+    .main
+      color: var(--text-p0)
+    .sub
+      color: var(--text-p1)
+      trans2 opacity transform
+      white-space: nowrap
+    .hover
+      position: absolute
+      bottom: 0
+      transform: translateY(8px)
+      overflow: visible
+    &:hover
+      .normal
+        opacity: 0
+        transform: translateY(-8px)
+      .hover
+        transform: translateY(0)
+        opacity: 1 !important
+
+
+.logo-wrap.wiki
+  margin: 1rem 0 1.5rem 0
+  flex-direction: column
+  align-items: flex-start
+  a.wiki-home
+    margin-bottom: 1rem
+    color: var(--text-p1)
+    svg
+      margin-right: 2px
+    &:hover
+      color: $color-hover
+      filter: unset !important
+
+.l_left nav.menu
+  margin-bottom: 1.5rem
+
+nav.menu
+  margin: 1rem 0
+  background: var(--block)
+  border-radius: 6px
+  display: flex
+  padding: 1px
+  flex-wrap: wrap
+  &::-webkit-scrollbar
+    display: none
+  &::-webkit-scrollbar-track-piece
+    background: transparent
+  &::-webkit-scrollbar-thumb
+    display: none
+  a.nav-item
+    text-overflow: ellipsis
+    word-break: keep-all
+    margin: 1px
+    border-radius: 4px
+    font-size: $fs-14
+    font-weight: 500
+    overflow: hidden
+    padding: 0.375rem 0.75rem
+    color: var(--text-p3)
+    text-align: center
+    &.active, &:hover
+      color: var(--text-p1)
+      background: var(--card)
+      box-shadow: $boxshadow-button
+
+.l_left .menu a.nav-item
+  flex-grow: 1
+
+.l_left .widgets
+  overflow: scroll
+  flex-grow: 1
+  scrollbar-width: none
+  scrollbar(0, 0)
+  z-index: 1
+  .widget-wrap
+    margin: 1rem 0 3rem 0
+    .widget-header
+      display: flex
+      justify-content: space-between
+      align-items: center
+      font-weight: 500
+      position: sticky
+      position: -webkit-sticky
+      top: -2px
+      background: var(--site-bg)
+      padding-top: 2px
+      z-index 1
+      line-height: 2
+      color: var(--text-p4)
+      font-size: $fs-14
+      &:empty
+        display: none
+      .cap-action
+        hover-block 4px 4px
+        line-height: 0
+        color: var(--text-meta)
+        trans2: color background
+        .icon
+          fill: var(--text-meta)
+        &:hover
+          color: $color-hover
+          .icon
+            fill: $color-hover
+
+    .widget-body
+      margin: 0.5rem 0
+      color: var(--text-p1)
+      p
+        margin-top: .5em
+        margin-bottom: .5em
+        line-height: 1.5
+    .widget-header+.widget-body
+      margin-top: 0
+
+  .widget-wrap .widget-body
+    .more-item
+      margin: .5rem 0
+      .cap
+        margin-bottom: .25rem
+  .widget-wrap#recent .widget-body
+    a
+      line-height: 1.2
+      font-weight: 500
+      color: var(--text-p2)
+      font-size: $fs-13
+      &:hover
+        color: $color-hover
+  .widget-wrap#related .widget-body
+    >a
+      padding 0.5rem
+      display: block
+      line-height: 1.2
+      color: var(--text-p2)
+      font-weight: 500
+      border: 1px solid var(--block-border)
+      border-radius: $border-block
+      margin: 4px 0
+      background: var(--block)
+      div.cap
+        margin-bottom: 0.25rem
+        color: var(--text-p4)
+        display: flex
+        justify-content: space-between
+      &:hover
+        background: var(--block-hover)
+      &.wiki
+        font-weight: 700
+      div.excerpt
+        margin-top: .5rem
+        color: var(--text-p3)
+        font-size: $fs-12
+        font-weight: 400
+        display: -webkit-box
+        -webkit-box-orient: vertical
+        overflow: hidden
+        -webkit-line-clamp: 5

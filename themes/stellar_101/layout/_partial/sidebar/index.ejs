@@ -1,0 +1,74 @@
+<%
+// 默认组件
+if (page.sidebar == undefined) {
+  if (page.layout == 'post' && page.content) {
+    page.sidebar = theme.sidebar.widget_layout.post;
+  } else if (page.layout == 'wiki' && page.content && page.wiki) {
+    let proj = theme.wiki.projects[page.wiki];
+    if (proj.sidebar) {
+      page.sidebar = proj.sidebar;
+    } else {
+      page.sidebar = theme.sidebar.widget_layout.wiki;
+    }
+  } else if (is_home() || ['categories', 'tags', 'archives', 'index', '404', undefined].includes(page.layout)) {
+    page.sidebar = theme.sidebar.widget_layout.index;
+  } else if (page.layout == 'page') {
+    page.sidebar = theme.sidebar.widget_layout.page;
+  } else {
+    page.sidebar = [];
+  }
+}
+function layoutWidgets() {
+  var el = '';
+  el += '<div class="widgets">';
+  if (page.sidebar) {
+    page.sidebar.forEach((w, i) => {
+      if (w in theme.sidebar.widgets) {
+        let widget = theme.sidebar.widgets[w];
+        if (widget && widget.layout) {
+          el += partial('widgets/' + widget.layout, {item: widget});
+        }
+      }
+    });
+  }
+  el += '</div>';
+  return el;
+}
+function layoutFooterDiv() {
+  if (page.layout !== 'wiki' && theme.footer.social) {
+    var el = '<footer class="footer dis-select">';
+    el += '<div class="social-wrap">';
+    for (let id of Object.keys(theme.footer.social)) {
+      let item = theme.footer.social[id];
+      if (item.icon && (item.url || item.onclick)) {
+        el += '<a class="social"';
+        if (item.title) {
+          el += ' title="' + item.title + '"';
+        }
+        if (item.url) {
+          el += ' href="' + url_for(item.url) + '"';
+          if (item.url.includes('://')) {
+            el += ' target="_blank" rel="external nofollow noopener noreferrer"';
+          } else {
+            el += ' rel="noopener noreferrer"';
+          }
+        } else if (item.onclick) {
+          item.onclick = item.onclick.replace(/"|\'/g, '&quot;');
+          el += ' onclick="' + item.onclick + '"';
+        }
+        el += '>';
+        el += item.icon;
+        el += '</a>';
+      }
+    }
+    el += '</div>';
+    el += '</footer>';
+    return el;
+  } else {
+    return '';
+  }
+}
+%>
+<%- partial('header', {where: 'sidebar'}) %>
+<%- layoutWidgets() %>
+<%- layoutFooterDiv() %>

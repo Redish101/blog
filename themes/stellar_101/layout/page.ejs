@@ -1,0 +1,20 @@
+<%
+function layoutTitle() {
+  const title = page.h1 || page.title;
+  if (title && title.length > 0) {
+    return '<h1 class="article-title"><span>' + title + '</span></h1>';
+  } else {
+    return '';
+  }
+}
+%>
+<% if (page.h1 || page.title || (page.content && page.content.length > 0)) { %>
+  <%- partial('_partial/main/navbar/breadcrumb') %>
+  <article class='content md <%- page.layout %><%- page.indent ? ' indent' : '' %><%- scrollreveal() %>'>
+  <%- layoutTitle() %>
+  <% if (page.content && page.content.length > 0) { %>
+    <%- page.content %>
+  <% } %>
+  </article>
+<% } %>
+<%- partial('_partial/plugins/comments/layout') %>

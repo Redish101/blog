@@ -1,0 +1,48 @@
+<%
+function layoutMenu() {
+  var el = '';
+  el += '<nav class="menu dis-select';
+  if (where == 'main') {
+    el += ' mobile-hidden';
+  }
+  el += '">';
+  for (let id of Object.keys(theme.sidebar.menu)) {
+    let item = theme.sidebar.menu[id];
+    if (item == undefined || item.length == 0) {
+      continue;
+    }
+    el += '<a class="nav-item';
+    if (id == page.menu_id) {
+      el += ' active';
+    }
+    el += '" href="' + url_for(md_link(item)) + '">';
+    el += __(md_text(item));
+    el += '</a>';
+  }
+  el += '</nav>';
+  return el;
+}
+function layoutDiv() {
+  var el = '';
+  el += '<header class="header';
+  if (where == 'main') {
+    el += ' mobile-only';
+  }
+  el += '">';
+  el += partial('logo');
+  if (where != 'main') {
+    if (page.layout === 'wiki' && page.wiki) {
+      if (page.menu_id !== 'wiki') {
+        el += layoutMenu();
+      }
+    } else {
+      el += layoutMenu();
+    }
+  }
+
+  el += '</header>';
+  return el;
+}
+%>
+
+<%- layoutDiv() %>

@@ -1,0 +1,135 @@
+// list
+.post-list
+  margin: 1rem
+
+// card
+.post-list .post-card
+  display: block
+  margin: 1rem 0
+  border-radius: $border-card
+  box-shadow: 0 2px 8px 0px rgba(0, 0, 0, 0.02)
+  trans1 box-shadow
+  overflow: hidden
+  background: var(--card)
+  position: relative
+  .excerpt
+    margin: 1rem 0
+    >p
+      margin: 1rem 0
+      line-height: 1.5
+  .meta.cap
+    display: flex
+    flex-wrap: wrap
+    align-items: center
+    margin: .5rem 0
+    line-height: 1.5
+    span+span
+      margin-left: 0.5rem
+    span.pin
+      line-height: 0
+      img
+        object-fit: contain
+        height: 1.5em
+.post-list .post-card:hover
+  box-shadow: 0 1px 4px 0px rgba(0, 0, 0, 0.1), 0 4px 16px 0px rgba(0, 0, 0, 0.1)
+
+
+// common article
+.post-list article.md
+  padding: 1rem
+  p
+    color: var(--text-p2)
+    @media screen and (min-width: $device-mobile)
+      font-size: $fs-14
+
+
+// posts
+.post-list .post-card .post-cover
+  overflow: hidden
+  width: 'calc(100% + 2 * %s)' % 1rem
+  border-radius: 0
+  margin-left: -1rem
+  margin-top: -1rem
+  margin-right: -1rem
+  &:not(.lazy)
+    trans1: transform 1s
+  img
+    object-fit: cover
+    width: 100%
+    border-radius: 0
+    height: 280px
+    @media screen and (max-width: 900px)
+      height: 240px
+    @media screen and (max-width: $device-tablet)
+      height: 280px
+    @media screen and (max-width: $device-mobile)
+      height: 240px
+    @media screen and (max-width: $device-mobile-425)
+      height: 220px
+    @media screen and (max-width: $device-mobile-375)
+      height: 180px
+
+.post-list .post-card.post.photo
+  .cover
+    position: relative
+    line-height: 0
+    img
+      width: 100%
+    .cover-info
+      padding: 1rem
+      position: absolute
+      line-height: 1.2
+      width: 'calc(100% - %s * 2)' % 1rem
+      text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2)
+      color: white
+      &[position=top]
+        top: 0
+        background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.3),rgba(0,0,0,0))
+      &[position=bottom]
+        bottom: 0
+        background-image: linear-gradient(rgba(0,0,0,0),rgba(0,0,0,0.3),rgba(0,0,0,0.4))
+      div+div
+        margin-top: 8px
+        @media screen and (max-width: $device-mobile)
+          margin-top: 4px
+      .cap
+        color: white
+        font-size: $fs-13
+      .title
+        font-weight: 500
+        font-size: $fs-h3
+  h2
+    margin: .25rem 0
+    font-size: $fs-h4
+
+
+// wiki
+.post-list .post-card.wiki article
+  display: flex
+  flex-wrap: wrap
+  trans1 box-shadow
+  justify-content: center
+  padding: 1rem .5rem
+
+
+.post-list .post-card.wiki article .preview
+  display: flex
+  width: 200px
+  margin: 1rem .5rem
+  @media screen and (min-width: 950px)
+    margin: 1rem
+  align-items: center
+  img
+    object-fit: contain
+    &:not(.lazy)
+      trans1: transform 0.75s
+.post-list .post-card.wiki article .excerpt
+  margin: 1rem .5rem
+  @media screen and (min-width: 950px)
+    margin-right: 2rem
+  min-width: 280px
+  flex: 1
+  overflow: hidden
+  word-wrap: break-word
+  p:last-child
+    margin-bottom: 0
