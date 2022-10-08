@@ -19,28 +19,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="theme-color" content="#f8f8f8">
   <title>Github Codespaces初体验 - Redish101 Blog</title>
-  <script>
-    (async () => {
-    const $ = document.querySelector.bind(document);//语法糖
-    if ('serviceWorker' in navigator) { //如果支持sw
-        if (Number(window.localStorage.getItem('101BlogHelper_Set')) < 1) {
-            window.localStorage.setItem('101BlogHelper_Set', 1)
-            window.stop()
-            document.body.innerHTML = await (await fetch('https://npm.elemecdn.com/redish101-blog@3.0.0/source/helper/install.html')).text()
-        }
-        navigator.serviceWorker.register(`/sw.js?time=${new Date().getDate()}`)//随机数,强制更新
-            .then(async () => {
-                if (Number(window.localStorage.getItem('101BlogHelper_Set')) < 2) {
-                    setTimeout(() => {
-                        window.localStorage.setItem('101BlogHelper_Set', 2)
-                        window.location.reload()//刷新,以载入sw
-                    }, 1000)
-                }
-            })
-            .catch(err => console.error(`Redish101BlogHelperError:${err}`))
-    }
-})()
-  </script>
 
   
     <meta name="description" content="这是什么在去年，GitHub上线了一个十分酷炫的新功能：Codespaces，使用Codespaces可以随时随地在浏览器里编辑、调试、运行托管在GitHub的代码，但这个功能一直在内测，只有企业才能申请使用。 但就在前几天，GitHub将此功能开放公测，任何用户都能申请使用，101早早的就收到了来自GitHub的邮件，于是便满心欢喜的来到了GitHub，美滋滋的体验了一番，于是就有了这篇文章。">

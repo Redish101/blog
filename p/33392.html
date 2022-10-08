@@ -19,28 +19,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="theme-color" content="#f8f8f8">
   <title>建站之后，应该干什么？(1) - Redish101 Blog</title>
-  <script>
-    (async () => {
-    const $ = document.querySelector.bind(document);//语法糖
-    if ('serviceWorker' in navigator) { //如果支持sw
-        if (Number(window.localStorage.getItem('101BlogHelper_Set')) < 1) {
-            window.localStorage.setItem('101BlogHelper_Set', 1)
-            window.stop()
-            document.body.innerHTML = await (await fetch('https://npm.elemecdn.com/redish101-blog@3.0.0/source/helper/install.html')).text()
-        }
-        navigator.serviceWorker.register(`/sw.js?time=${new Date().getDate()}`)//随机数,强制更新
-            .then(async () => {
-                if (Number(window.localStorage.getItem('101BlogHelper_Set')) < 2) {
-                    setTimeout(() => {
-                        window.localStorage.setItem('101BlogHelper_Set', 2)
-                        window.location.reload()//刷新,以载入sw
-                    }, 1000)
-                }
-            })
-            .catch(err => console.error(`Redish101BlogHelperError:${err}`))
-    }
-})()
-  </script>
 
   
     <meta name="description" content="这篇文章依旧有彩蛋（以后的文章也会有彩蛋）  相信很多新晋站长应在这广袤无垠的互联网世界撑起了自己的小帐篷，但却十分迷茫，我建站完了之后该干啥呢？🤔️ 今天我们就来解决这个问题。 数据统计首先，作为站长，当然要知道自己的网站数据，市面上的数据统计工具有很多，但是有的不易接入，有的难于分析，所以，这里我推荐友盟+网站统计 | 即安即用，实时统计网站流量数据 (umeng.com)这个东西那可谓是">
