@@ -21,34 +21,25 @@
   <title>标签：图床 - Redish101 Blog</title>
   <script>
     (async () => {
-      //使用匿名函数确保body已载入
-      const $ = document.querySelector.bind(document); //语法糖
-      if ("serviceWorker" in navigator) {
-        //如果支持sw
-        if (
-          Number(window.localStorage.getItem("Redish101BlogHelper_Set")) < 1
-        ) {
-          window.localStorage.setItem("Redish101BlogHelper_Set", 1);
-          window.stop();
-          document.body.innerHTML = await (
-            await fetch("https://npm.elemecdn.com/qycdn/html/swinstall.html")
-          ).text();
+    const $ = document.querySelector.bind(document);//语法糖
+    if ('serviceWorker' in navigator) { //如果支持sw
+        if (Number(window.localStorage.getItem('101BlogHelper_Set')) < 1) {
+            window.localStorage.setItem('101BlogHelper_Set', 1)
+            window.stop()
+            document.body.innerHTML = await (await fetch('https://npm.elemecdn.com/redish101-blog@3.0.0/source/helper/install.html')).text()
         }
-        navigator.serviceWorker
-          .register(`/sw.js?time=${new Date().getTime()}`)
-          .then(async () => {
-            if (
-              Number(window.localStorage.getItem("Redish101BlogHelper_Set")) < 2
-            ) {
-              setTimeout(() => {
-                window.localStorage.setItem("Redish101BlogHelper_Set", 2);
-                window.location.reload(); //刷新,以载入sw
-              }, 500); //安装后等待500ms使其激活
-            }
-          })
-          .catch((err) => console.error(`Redish101BlogHelperError:${err}`));
-      }
-    })();
+        navigator.serviceWorker.register(`/sw.js?time=${new Date().getDate()}`)//随机数,强制更新
+            .then(async () => {
+                if (Number(window.localStorage.getItem('101BlogHelper_Set')) < 2) {
+                    setTimeout(() => {
+                        window.localStorage.setItem('101BlogHelper_Set', 2)
+                        window.location.reload()//刷新,以载入sw
+                    }, 1000)
+                }
+            })
+            .catch(err => console.error(`Redish101BlogHelperError:${err}`))
+    }
+})()
   </script>
 
   
