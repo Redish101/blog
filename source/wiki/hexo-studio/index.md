@@ -1,11 +1,9 @@
 ---
 layout: wiki  # 使用wiki布局模板
 wiki: Hexo Studio # 这是项目名
-title: 简介
+title: 极速开始
 order: 1
 ---
-## 极速开始
-
 从[发行版](https://github.com/Redish101/Hexo-Studio/releases)下载源码
 ```bash
 # 安装依赖
