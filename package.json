@@ -3,8 +3,7 @@
   "version": "3.0.0",
   "description": "Redish101的博客",
   "scripts": {
-    "build": "hexo generate && jsdoc -c jsdoc.config.json",
-    "build:docs": "jsdoc source/helper/main.js -r README.md",
+    "build": "hexo generate",
     "clean": "hexo clean",
     "deploy": "hexo deploy",
     "server": "hexo server"
