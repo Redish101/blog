@@ -23,6 +23,7 @@ sidebar:
     friends: '[btn.link](/links/)'
     wiki: '[btn.wiki](/wiki/)'
     talk: '[btn.talk](/talks/)'
+    sub: '[订阅](/sub/)'
     # about: '[关于](/about/)'
   # Sidebar widgets
   widget_layout:

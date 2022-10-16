@@ -3,7 +3,8 @@
   "version": "3.0.0",
   "description": "Redish101的博客",
   "scripts": {
-    "build": "hexo generate",
+    "build": "hexo generate && jsdoc -c jsdoc.config.json",
+    "build:docs": "jsdoc source/helper/main.js -r README.md",
     "clean": "hexo clean",
     "deploy": "hexo deploy",
     "server": "hexo server"
@@ -35,6 +36,7 @@
     "@commitlint/cli": "^16.2.1",
     "@commitlint/config-conventional": "^16.2.1",
     "husky": "^7.0.4",
+    "jsdoc": "^3.6.11",
     "workbox-webpack-plugin": "^6.5.3"
   }
 }
