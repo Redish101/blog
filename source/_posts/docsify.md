@@ -1,20 +1,18 @@
 ---
+abbrlink: '45082'
 author:
-  - Redish101
-  - 宋紫睿
+- Redish101
+- 宋紫睿
 categories:
-  - 教程
-cover: 'https://cdn1.tianli0.top/gh/Redish101/cdn@src/img/20220718215950.png'
+- 教程
+cover: https://cdn1.tianli0.top/gh/Redish101/cdn@src/img/20220718215950.png
 date: '2022-03-05 00:00:00'
 tags:
-  - docsify
-  - 静态站点
+- docsify
+- 静态站点
 title: docsify - 一个优雅的静态文档生成器
-updated: '2022-07-20 14:49:57'
-abbrlink: 45082
+updated: '2022-11-15 11:53:07'
 ---
-阅读之前，告诉大家一个消息:**本文有彩蛋**。
-
 ## docsify好在哪里
 
 开源项目的文档往往是一个很大的问题，许多静态站点生成器并不能兼顾**强大**与**简单**。
@@ -113,4 +111,3 @@ docs/zh-cn/guide.md   => http://domain.com/zh-cn/guide
 3. [Vercel 上自动部署你的个人博客 Hugo - SegmentFault 思否](https://segmentfault.com/a/1190000040063325?utm_source=tag-newest)
 
 感谢阅读
-彩蛋：🥚呵呵呵，答应你们的蛋。
